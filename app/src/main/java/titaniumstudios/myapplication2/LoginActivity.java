@@ -37,7 +37,7 @@ public class LoginActivity extends AppCompatActivity {
                 String campo_usuario = txtUsuario.getText().toString();
                 String campo_password = txtPassword.getText().toString();
 
-                if (campo_usuario.compareTo("Rosa") == 0 && campo_password.compareTo("i3915") == 0)
+                if ((campo_usuario.compareTo("Rosa") == 0 && campo_password.compareTo("i3915") == 0)||(campo_usuario.compareTo("Vale S") == 0 && campo_password.compareTo("valexd") == 0)||(campo_usuario.compareTo("Vale A") == 0 && campo_password.compareTo("vale05") == 0)||(campo_usuario.compareTo("Diego") == 0 && campo_password.compareTo("diego") == 0))
                 {
                     Intent c=new Intent(context,MenuActivity.class);
                     String[] datos=new String[2];
