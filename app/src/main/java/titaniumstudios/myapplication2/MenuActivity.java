@@ -29,6 +29,7 @@ public class MenuActivity extends AppCompatActivity {
         String[] datos_recibidos=new String[2];
         datos_recibidos=d.getStringArrayExtra("datos_usuario");
 
+        // debemos mandar un parametro q especifique el alimento para saber a qué layout nos van a mandar después
         imgHamburguesa.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
@@ -37,6 +38,12 @@ public class MenuActivity extends AppCompatActivity {
             }
         });
 
-
+        imgPizza.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent intent=new Intent(context,MenuHamburguesaActivity.class);
+                startActivity(intent);
+            }
+        });
     }
 }

@@ -9,6 +9,9 @@ import android.widget.ImageView;
 
 public class MenuHamburguesaActivity extends AppCompatActivity {
 
+    //creo q esta clase su puede llamar DecisionActivty (ya q es donde decides armar o usar predefinida)
+    //para saber a que layout mandar podemos guardar en una variable y utilizar en condiciones
+
     private ImageView imgArmalo;
     private ImageView imgArmado;
 
