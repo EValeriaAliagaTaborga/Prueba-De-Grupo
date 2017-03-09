@@ -1,11 +1,14 @@
 package titaniumstudios.myapplication2;
 
+import android.app.AlertDialog;
 import android.content.Context;
+import android.content.DialogInterface;
 import android.content.Intent;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.ImageView;
+import android.widget.Toast;
 
 public class MenuHamburguesaActivity extends AppCompatActivity {
 
@@ -31,6 +34,34 @@ public class MenuHamburguesaActivity extends AppCompatActivity {
             public void onClick(View view) {
                 Intent intent=new Intent(context,ArmadoActivity.class);
                 startActivity(intent);
+            }
+        });
+
+        imgArmalo.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+
+                AlertDialog.Builder Dialogo = new AlertDialog.Builder(
+                        MenuHamburguesaActivity.this);
+
+                Dialogo.setTitle("Estimado Cliente:");
+                Dialogo.setMessage("Muchas gracias por usar nuestros servicios. ¿Esta seguro de desear proseguir con su elección?");
+                Dialogo.setIcon(R.drawable.cubo);
+
+                Dialogo.setPositiveButton("Si",
+                        new DialogInterface.OnClickListener() {
+                            public void onClick(DialogInterface dialog, int which) {
+                                Toast.makeText(getApplicationContext(), "Prontamente pondremos a su disposición el Layout correspondiente para eso.", Toast.LENGTH_SHORT).show();
+                            }
+                        });
+                Dialogo.setNegativeButton("No",
+                        new DialogInterface.OnClickListener() {
+                            public void onClick(DialogInterface dialog, int which) {
+                                Toast.makeText(getApplicationContext(), "Tenga un buen día.", Toast.LENGTH_SHORT).show();
+                                dialog.cancel();
+                            }
+                        });
+                Dialogo.show();
             }
         });
     }

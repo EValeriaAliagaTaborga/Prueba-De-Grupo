@@ -2,23 +2,14 @@ package titaniumstudios.myapplication2;
 
 import android.content.Context;
 import android.content.Intent;
-
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
-import android.util.Log;
 import android.view.Menu;
-import android.view.MenuItem;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.TextView;
 import android.widget.Toast;
-
-import java.io.BufferedReader;
-import java.io.File;
-import java.io.FileInputStream;
-import java.io.InputStream;
-import java.io.InputStreamReader;
 
 public class LoginActivity extends AppCompatActivity {
 
@@ -37,16 +28,13 @@ public class LoginActivity extends AppCompatActivity {
 
         Intent b=getIntent();
 
-
         btnLogin=(Button)findViewById(R.id.btnLogin);
         txtUsuario=(EditText)findViewById(R.id.txtUsuario);
         txtPassword=(EditText)findViewById(R.id.txtPassword);
         txtResultado=(TextView)findViewById(R.id.txtResultado);
 
-
         btnLogin.setOnClickListener(new View.OnClickListener() {
             public void onClick(View v) {
-
                 String campo_usuario = txtUsuario.getText().toString();
                 String campo_password = txtPassword.getText().toString();
 
