@@ -28,6 +28,7 @@ public class MenuActivity extends AppCompatActivity {
 
     private Context context;
 
+    private boolean conCuenta = true;
 
     //Variables del menu
     private static final int opcion1= 1;
@@ -48,8 +49,11 @@ public class MenuActivity extends AppCompatActivity {
 
 
         Intent d=getIntent();
-        String[] datos_recibidos=new String[2];
+/*        String[] datos_recibidos=new String[2];
         datos_recibidos=d.getStringArrayExtra("datos_usuario");
+        if(datos_recibidos != null) {
+            conCuenta = true;
+        } */
 
         // debemos mandar un parametro q especifique el alimento para saber a qué layout nos van a mandar después
         imgHamburguesa.setOnClickListener(new View.OnClickListener() {
@@ -71,14 +75,18 @@ public class MenuActivity extends AppCompatActivity {
 
     @Override
     public boolean onCreateOptionsMenu(Menu menu) {
-        menu.add(Menu.NONE, opcion1, Menu.NONE, "Perfil")
-                .setIcon(android.R.drawable.ic_menu_add);
-        menu.add(Menu.NONE, opcion2, Menu.NONE, "Historial")
-                .setIcon(android.R.drawable.stat_notify_sdcard_prepare);
-        menu.add(Menu.NONE, opcion3, Menu.NONE, "Detalles de la app")
+        if(conCuenta) {
+            menu.add(Menu.NONE, opcion1, Menu.NONE, "Perfil")
+                    .setIcon(android.R.drawable.ic_menu_add);
+            menu.add(Menu.NONE, opcion2, Menu.NONE, "Historial")
+                    .setIcon(android.R.drawable.stat_notify_sdcard_prepare);
+        }
+            menu.add(Menu.NONE, opcion3, Menu.NONE, "Detalles de la app")
                 .setIcon(android.R.drawable.ic_dialog_info);
-        menu.add(Menu.NONE, opcion4, Menu.NONE, "Cerrar Sesión")
-                .setIcon(android.R.drawable.ic_dialog_info);
+        if(conCuenta) {
+            menu.add(Menu.NONE, opcion4, Menu.NONE, "Cerrar Sesión")
+                    .setIcon(android.R.drawable.ic_dialog_info);
+        }
         return true;
     }
 
@@ -104,7 +112,7 @@ public class MenuActivity extends AppCompatActivity {
                                 SharedPreferences prefs =
                                         getSharedPreferences("MisPreferencias",Context.MODE_PRIVATE);
 
-                                //Editamos los campos existentes
+                                //Editamos los campos existentes y en este caso borramos la cuenta existente
                                 SharedPreferences.Editor editor = prefs.edit();
                                 editor.putString("usuario", "no");
                                 editor.putString("password", "no");
