@@ -36,7 +36,7 @@ public class LoginActivity extends AppCompatActivity {
         String usuario_almacenado = prefs.getString("usuario","no");
         String password_almacenado = prefs.getString("password","no");
 
-        if(usuario_almacenado.compareTo("no")!=0 && password_almacenado.compareTo("no")!=0)
+        if(usuario_almacenado.compareTo("no")==0 && password_almacenado.compareTo("no")==0)
         {
             Intent a=new Intent(getApplicationContext(),MenuActivity.class);
             finish();
