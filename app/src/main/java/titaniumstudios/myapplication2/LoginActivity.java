@@ -4,10 +4,12 @@ import android.content.Context;
 import android.content.Intent;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
+import android.view.Menu;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.TextView;
+import android.widget.Toast;
 
 public class LoginActivity extends AppCompatActivity {
 
@@ -17,7 +19,6 @@ public class LoginActivity extends AppCompatActivity {
     private TextView txtResultado;
 
     private Context context;
-
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -46,10 +47,15 @@ public class LoginActivity extends AppCompatActivity {
                     c.putExtra("datos_usuario", datos);
                     startActivity(c);
 
+                    Toast mensaje=Toast.makeText(getApplicationContext(), "Bienvenido "+datos[0], Toast.LENGTH_LONG);
+                    mensaje.show();
+
                 }
                 else
                     txtResultado.setText("Login fallido");
             }
         });
     }
+
+
 }

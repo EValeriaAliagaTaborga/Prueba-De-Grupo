@@ -22,13 +22,12 @@
         android:layout_marginBottom="45dp">
 
         <ImageView
-            android:layout_width="265dp"
-            android:layout_height="177dp"
+            android:layout_width="251dp"
+            android:layout_height="164dp"
             app:srcCompat="@drawable/cubo"
             android:id="@+id/imgArmalo"
             android:layout_marginBottom="20dp"
-            android:layout_gravity="center_horizontal"
-            android:layout_weight="0.22" />
+            android:layout_gravity="center_horizontal" />
 
         <TextView
             android:text="!Ármalo tu mismo!"
@@ -41,13 +40,12 @@
             android:gravity="center_horizontal" />
 
         <ImageView
-            android:layout_width="281dp"
-            android:layout_height="176dp"
+            android:layout_width="271dp"
+            android:layout_height="157dp"
             app:srcCompat="@drawable/cubo1"
             android:id="@+id/imgArmado"
             android:layout_marginBottom="20dp"
-            android:layout_gravity="center_horizontal"
-            android:layout_weight="0.09" />
+            android:layout_gravity="center_horizontal" />
 
         <TextView
             android:text="Elige uno de nuestros Clásicos"

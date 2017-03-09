@@ -4,6 +4,7 @@ import android.content.Context;
 import android.content.Intent;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
+import android.view.Menu;
 import android.view.View;
 import android.widget.ImageView;
 
@@ -13,6 +14,12 @@ public class MenuActivity extends AppCompatActivity {
     private ImageView imgPizza;
 
     private Context context;
+
+
+    //Variables del menu
+    private static final int opcion1= 1;
+    private static final int opcion2 = 2;
+    private static final int opcion3 = 3;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -45,5 +52,16 @@ public class MenuActivity extends AppCompatActivity {
                 startActivity(intent);
             }
         });
+    }
+
+    @Override
+    public boolean onCreateOptionsMenu(Menu menu) {
+        menu.add(Menu.NONE, opcion1, Menu.NONE, "Perfil")
+                .setIcon(android.R.drawable.ic_menu_add);
+        menu.add(Menu.NONE, opcion2, Menu.NONE, "Historial")
+                .setIcon(android.R.drawable.stat_notify_sdcard_prepare);
+        menu.add(Menu.NONE, opcion3, Menu.NONE, "Detalles de la app")
+                .setIcon(android.R.drawable.ic_dialog_info);
+        return true;
     }
 }
