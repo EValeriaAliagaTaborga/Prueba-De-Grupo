@@ -19,6 +19,7 @@ public class LoginActivity extends AppCompatActivity {
     private EditText txtPassword;
     private TextView txtResultado;
 
+
     String nombre_ingresado;
     String password_ingresado;
 
