@@ -20,7 +20,8 @@
         <activity android:name=".MenuHamburguesaActivity" />
         <activity android:name=".ArmadoActivity" />
         <activity android:name=".VerificarFacturaActivity" />
-        <activity android:name=".DatosYFacturacionActivity"></activity>
+        <activity android:name=".DatosYFacturacionActivity" />
+        <activity android:name=".VarificacionDePedidoActivity"></activity>
     </application>
 
 </manifest>
