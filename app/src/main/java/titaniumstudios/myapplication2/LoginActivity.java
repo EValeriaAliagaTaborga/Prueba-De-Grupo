@@ -19,6 +19,7 @@ public class LoginActivity extends AppCompatActivity {
     private EditText txtPassword;
     private TextView txtResultado;
 
+
     String nombre_ingresado;
     String password_ingresado;
 
@@ -30,18 +31,6 @@ public class LoginActivity extends AppCompatActivity {
         setContentView(R.layout.activity_login);
         context=this;
 
-        SharedPreferences prefs =
-                getSharedPreferences("MisPreferencias", Context.MODE_PRIVATE);
-
-        String usuario_almacenado = prefs.getString("usuario","no");
-        String password_almacenado = prefs.getString("password","no");
-
-        if(usuario_almacenado.compareTo("no")!=0 && password_almacenado.compareTo("no")!=0)
-        {
-            Intent a=new Intent(getApplicationContext(),MenuActivity.class);
-            finish();
-            startActivity(a);
-        }
 
         Intent b=getIntent();
 
@@ -53,30 +42,12 @@ public class LoginActivity extends AppCompatActivity {
         btnLogin.setOnClickListener(new View.OnClickListener() {
             public void onClick(View v) {
 
-                nombre_ingresado=txtUsuario.getText().toString();
-                password_ingresado=txtPassword.getText().toString();
 
-                SharedPreferences prefs =
-                        getSharedPreferences("MisPreferencias",Context.MODE_PRIVATE);
-
-                SharedPreferences.Editor editor = prefs.edit();
-                editor.putString("usuario", nombre_ingresado);
-                editor.putString("password", password_ingresado);
-
-                editor.commit();
-
-                Toast.makeText(getApplicationContext(), "Usuario: " + nombre_ingresado + ", Password: " + password_ingresado, Toast.LENGTH_SHORT).show();
-
-                Intent a=new Intent(getApplicationContext(),MenuActivity.class);
-                startActivity(a);
-                finish();
-
-                /*String campo_usuario = txtUsuario.getText().toString();
+                String campo_usuario = txtUsuario.getText().toString();
                 String campo_password = txtPassword.getText().toString();
 
-                if ((campo_usuario.compareTo("Rosa") == 0 && campo_password.compareTo("i3915") == 0)||(campo_usuario.compareTo("Vale S") == 0 && campo_password.compareTo("valexd") == 0)||(campo_usuario.compareTo("Vale A") == 0 && campo_password.compareTo("vale05") == 0)||(campo_usuario.compareTo("Diego") == 0 && campo_password.compareTo("diego") == 0))
-                {
-                    Intent c=new Intent(context,MenuActivity.class);
+                if ((campo_usuario.compareTo("Rosa") == 0 && campo_password.compareTo("i3915") == 0) || (campo_usuario.compareTo("Vale S") == 0 && campo_password.compareTo("valexd") == 0) || (campo_usuario.compareTo("Vale A") == 0 && campo_password.compareTo("vale05") == 0) || (campo_usuario.compareTo("Diego") == 0 && campo_password.compareTo("diego") == 0)) {
+                   /* Intent c=new Intent(context,MenuActivity.class);
                     String[] datos=new String[2];
                     datos[0]=txtUsuario.getText().toString();
                     datos[1]=txtPassword.getText().toString();
@@ -85,13 +56,32 @@ public class LoginActivity extends AppCompatActivity {
 
                     Toast mensaje=Toast.makeText(getApplicationContext(), "Bienvenido "+datos[0], Toast.LENGTH_LONG);
                     mensaje.show();
+                    */
 
-                }
-                else
+
+                    //nombre_ingresado=txtUsuario.getText().toString();
+                    //password_ingresado=txtPassword.getText().toString();
+
+                    SharedPreferences prefs =
+                            getSharedPreferences("MisPreferencias", Context.MODE_PRIVATE);
+
+                    SharedPreferences.Editor editor = prefs.edit();
+                    editor.putString("usuario", campo_usuario);
+                    editor.putString("password", campo_password);
+
+                    editor.commit();
+
+                    Toast.makeText(getApplicationContext(), "Usuario: " + campo_usuario + ", Password: " + campo_password, Toast.LENGTH_SHORT).show();
+
+                    Intent a = new Intent(getApplicationContext(), MenuActivity.class);
+                    startActivity(a);
+                    finish();
+
+                } else {
                     txtResultado.setText("Login fallido");
-            }*/
-        };
-    });
-
+                }
+            }
+        });
     }
+
 }

@@ -18,7 +18,9 @@
         <activity android:name=".LoginActivity" />
         <activity android:name=".MenuActivity" />
         <activity android:name=".MenuHamburguesaActivity" />
-        <activity android:name=".ArmadoActivity"></activity>
+        <activity android:name=".ArmadoActivity" />
+        <activity android:name=".VerificarFacturaActivity" />
+        <activity android:name=".DatosYFacturacionActivity"></activity>
     </application>
 
 </manifest>

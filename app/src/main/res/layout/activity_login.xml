@@ -25,7 +25,7 @@
             android:layout_height="wrap_content"
             android:id="@+id/textView"
             android:textColor="@android:color/black"
-            android:textSize="24sp"
+            android:textSize="20sp"
             android:layout_marginBottom="25dp" />
 
         <ImageView
@@ -33,7 +33,7 @@
             android:layout_height="199dp"
             app:srcCompat="@drawable/cubo"
             android:id="@+id/imageView3"
-            android:layout_marginBottom="30dp" />
+            android:layout_marginBottom="10dp" />
 
         <EditText
             android:layout_width="match_parent"
