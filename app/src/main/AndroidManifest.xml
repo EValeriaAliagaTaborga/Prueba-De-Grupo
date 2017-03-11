@@ -23,7 +23,7 @@
         <activity android:name=".ArmadoActivity" />
         <activity android:name=".VerificarFacturaActivity" />
         <activity android:name=".DatosYFacturacionActivity" />
-        <activity android:name=".VarificacionDePedidoActivity"></activity>
+        <activity android:name=".VerificacionDePedidoActivity"></activity>
     </application>
 
 </manifest>
