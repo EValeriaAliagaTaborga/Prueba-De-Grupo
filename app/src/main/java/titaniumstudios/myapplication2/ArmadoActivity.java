@@ -34,8 +34,6 @@ public class ArmadoActivity extends AppCompatActivity {
 
     private boolean conCuenta = true;
 
-    ArrayList<String> datosDePedido = new ArrayList<>();
-
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -55,6 +53,7 @@ public class ArmadoActivity extends AppCompatActivity {
             @Override
             public void onClick(View view) {
                 Intent intent=new Intent(context,VerificacionDePedidoActivity.class);
+                ArrayList<String> datosDePedido = new ArrayList<>();
                 datosDePedido.add(0, "30");
                 datosDePedido.add("Pan Tradicional");
                 datosDePedido.add("Lechuga");
@@ -71,6 +70,7 @@ public class ArmadoActivity extends AppCompatActivity {
             @Override
             public void onClick(View view) {
                 Intent intent=new Intent(context,VerificacionDePedidoActivity.class);
+                ArrayList<String> datosDePedido = new ArrayList<>();
                 datosDePedido.add(0, "38");
                 datosDePedido.add("Pan Tradicional");
                 datosDePedido.add("Cebolla");
@@ -89,6 +89,7 @@ public class ArmadoActivity extends AppCompatActivity {
             @Override
             public void onClick(View view) {
                 Intent intent=new Intent(context,VerificacionDePedidoActivity.class);
+                ArrayList<String> datosDePedido = new ArrayList<>();
                 datosDePedido.add(0, "29");
                 datosDePedido.add("Lechuga");
                 datosDePedido.add("Queso Cheddar");
@@ -104,6 +105,7 @@ public class ArmadoActivity extends AppCompatActivity {
             @Override
             public void onClick(View view) {
                 Intent intent=new Intent(context,VerificacionDePedidoActivity.class);
+                ArrayList<String> datosDePedido = new ArrayList<>();
                 datosDePedido.add(0, "32");
                 datosDePedido.add("Pan Sin Semillas");
                 datosDePedido.add("Queso Cheddar");
@@ -123,6 +125,7 @@ public class ArmadoActivity extends AppCompatActivity {
             @Override
             public void onClick(View view) {
                 Intent intent=new Intent(context,VerificacionDePedidoActivity.class);
+                ArrayList<String> datosDePedido = new ArrayList<>();
                 datosDePedido.add(0, "21");
                 datosDePedido.add("Pan Integral");
                 datosDePedido.add("Tomate");
@@ -139,6 +142,7 @@ public class ArmadoActivity extends AppCompatActivity {
             @Override
             public void onClick(View view) {
                 Intent intent=new Intent(context,VerificacionDePedidoActivity.class);
+                ArrayList<String> datosDePedido = new ArrayList<>();
                 datosDePedido.add(0,"22");
                 datosDePedido.add("Pan Integral");
                 datosDePedido.add("Carne vegetariana de 10 oz");
