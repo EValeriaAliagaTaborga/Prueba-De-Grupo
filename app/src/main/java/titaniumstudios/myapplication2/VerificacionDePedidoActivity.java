@@ -1,10 +1,21 @@
 package titaniumstudios.myapplication2;
 
+import android.content.Context;
+import android.content.Intent;
+import android.content.SharedPreferences;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.Menu;
+import android.view.View;
+import android.widget.Button;
+import android.widget.ImageView;
+import android.widget.Toast;
 
 public class VerificacionDePedidoActivity extends AppCompatActivity {
+
+    private Button btnAnadir;
+
+    private Context context;
 
     private static final int opcion1 = 1;
     private static final int opcion2 = 2;
@@ -17,6 +28,14 @@ public class VerificacionDePedidoActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_verificacion_de_pedido);
+
+        btnAnadir=(Button)findViewById(R.id.btnAnadir);
+
+        btnAnadir.setOnClickListener(new View.OnClickListener() {
+            public void onClick(View v) {
+                Intent s=new Intent(context,MenuActivity.class);
+            }
+        });
     }
 
     @Override

@@ -13,6 +13,10 @@ public class ArmadoActivity extends AppCompatActivity {
 
     private ImageView imgHambQueso;
     private ImageView imgHambDoble;
+    private ImageView imgHambSinPan;
+    private ImageView imgHambTocino;
+    private ImageView imgHambIntegral;
+    private ImageView imgHambVegetariana;
 
     private static final int opcion1 = 1;
     private static final int opcion2 = 2;
@@ -32,6 +36,11 @@ public class ArmadoActivity extends AppCompatActivity {
 
         imgHambQueso=(ImageView)findViewById(R.id.imgHambQueso);
         imgHambDoble=(ImageView)findViewById(R.id.imgHambDoble);
+        imgHambSinPan=(ImageView)findViewById(R.id.imgHambSinPan);
+        imgHambTocino=(ImageView)findViewById(R.id.imgHambTocino);
+        imgHambIntegral=(ImageView)findViewById(R.id.imgHambIntegral);
+        imgHambVegetariana=(ImageView)findViewById(R.id.imgHambVegetariana);
+
 
         imgHambQueso.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -41,6 +50,34 @@ public class ArmadoActivity extends AppCompatActivity {
             }
         });
         imgHambDoble.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent intent=new Intent(context,VerificacionDePedidoActivity.class);
+                startActivity(intent);
+            }
+        });
+        imgHambSinPan.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent intent=new Intent(context,VerificacionDePedidoActivity.class);
+                startActivity(intent);
+            }
+        });
+        imgHambTocino.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent intent=new Intent(context,VerificacionDePedidoActivity.class);
+                startActivity(intent);
+            }
+        });
+        imgHambIntegral.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent intent=new Intent(context,VerificacionDePedidoActivity.class);
+                startActivity(intent);
+            }
+        });
+        imgHambVegetariana.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
                 Intent intent=new Intent(context,VerificacionDePedidoActivity.class);
