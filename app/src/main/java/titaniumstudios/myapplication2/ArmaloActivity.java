@@ -618,7 +618,7 @@ public class ArmaloActivity extends AppCompatActivity {
                         imgIngredienteElegido.setImageDrawable(getDrawable(imagen));
                         lyVertical.addView(imgIngredienteElegido);
                         setContentView(lyHorizontalPrincipal);
-                        lblPrecio.setText("$ " + Double.toString(precio) + "0");
+                        lblPrecio.setText("Bs. " + Double.toString(precio) + "0");
                         datosDePedido.add("Pan "+contenido);
                     }
                 });

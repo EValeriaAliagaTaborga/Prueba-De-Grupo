@@ -9,7 +9,12 @@ import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.Menu;
 import android.view.MenuItem;
+import android.view.View;
+import android.widget.ImageView;
+import android.widget.LinearLayout;
 import android.widget.Toast;
+
+import java.util.ArrayList;
 
 public class ExtrasActivity extends AppCompatActivity {
 
@@ -22,6 +27,15 @@ public class ExtrasActivity extends AppCompatActivity {
     private Context context;
     private boolean conCuenta = true;
 
+    private ArrayList<String> datosDePedido = new ArrayList<>();
+
+    private LinearLayout lyPapasFritas;
+    private LinearLayout lyCocaCola;
+    private LinearLayout lyFanta;
+    private LinearLayout lySprite;
+    private LinearLayout lyArroz;
+    private LinearLayout lyFideo;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -31,7 +45,87 @@ public class ExtrasActivity extends AppCompatActivity {
 
         Intent d = getIntent();
         conCuenta = d.getBooleanExtra("con_cuenta", true);
+
+        lyPapasFritas = (LinearLayout) findViewById(R.id.lyPapasFritas);
+        lyCocaCola = (LinearLayout) findViewById(R.id.lyCocaCola);
+        lyFanta = (LinearLayout) findViewById(R.id.lyFanta);
+        lySprite = (LinearLayout) findViewById(R.id.lySprite);
+        lyArroz = (LinearLayout) findViewById(R.id.lyArroz);
+        lyFideo = (LinearLayout) findViewById(R.id.lyFideo);
+
+        lyPapasFritas.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent intent=new Intent(context,VerificacionDePedidoActivity.class);
+                intent.putExtra("con_cuenta", conCuenta);
+                datosDePedido.add(0, "10");
+                datosDePedido.add("Papas fritas");
+                intent.putStringArrayListExtra("datos_de_pedido", datosDePedido);
+                startActivity(intent);
+            }
+        });
+
+        lyCocaCola.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent intent=new Intent(context,VerificacionDePedidoActivity.class);
+                intent.putExtra("con_cuenta", conCuenta);
+                datosDePedido.add(0, "8");
+                datosDePedido.add("Coca Cola");
+                intent.putStringArrayListExtra("datos_de_pedido", datosDePedido);
+                startActivity(intent);
+            }
+        });
+
+        lySprite.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent intent=new Intent(context,VerificacionDePedidoActivity.class);
+                intent.putExtra("con_cuenta", conCuenta);
+                datosDePedido.add(0, "8");
+                datosDePedido.add("Sprite");
+                intent.putStringArrayListExtra("datos_de_pedido", datosDePedido);
+                startActivity(intent);
+            }
+        });
+
+        lyFanta.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent intent=new Intent(context,VerificacionDePedidoActivity.class);
+                intent.putExtra("con_cuenta", conCuenta);
+                datosDePedido.add(0, "8");
+                datosDePedido.add("Fanta");
+                intent.putStringArrayListExtra("datos_de_pedido", datosDePedido);
+                startActivity(intent);
+            }
+        });
+
+        lyArroz.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent intent=new Intent(context,VerificacionDePedidoActivity.class);
+                intent.putExtra("con_cuenta", conCuenta);
+                datosDePedido.add(0, "10");
+                datosDePedido.add("Arroz");
+                intent.putStringArrayListExtra("datos_de_pedido", datosDePedido);
+                startActivity(intent);
+            }
+        });
+
+        lyFideo.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent intent=new Intent(context,VerificacionDePedidoActivity.class);
+                intent.putExtra("con_cuenta", conCuenta);
+                datosDePedido.add(0, "10");
+                datosDePedido.add("Fideo");
+                intent.putStringArrayListExtra("datos_de_pedido", datosDePedido);
+                startActivity(intent);
+            }
+        });
     }
+
     @Override
     public boolean onCreateOptionsMenu(Menu menu) {
         if(conCuenta) {

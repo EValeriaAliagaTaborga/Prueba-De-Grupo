@@ -33,6 +33,8 @@ public class VerificacionDePedidoActivity extends AppCompatActivity {
     private static final int opcion5 = 5;
 
     private boolean conCuenta = true;
+    private double precioTotal = 0.00;
+    private String pedidoTotal ="";
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -55,8 +57,8 @@ public class VerificacionDePedidoActivity extends AppCompatActivity {
         lblPrecio=(TextView) findViewById(R.id.lblPrecio);
         lblTextoLargo=(TextView) findViewById(R.id.lblTextoLargo);
 
-        lblPrecio.setText("Bs. "+precio);
-        lblTextoLargo.setText("Su pedido contiene: \n"+producto);
+        lblPrecio.setText("Bs. "+ precioTotal);
+        lblTextoLargo.setText("Su pedido contiene: \n"+pedidoTotal);
 
         btnAnadir.setOnClickListener(new View.OnClickListener() {
             public void onClick(View v) {

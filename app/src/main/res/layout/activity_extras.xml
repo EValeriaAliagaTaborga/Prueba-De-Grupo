@@ -47,6 +47,7 @@
                     android:padding="20dp">
 
                     <LinearLayout
+                        android:id="@+id/lyPapasFritas"
                         android:layout_width="0dp"
                         android:layout_height="match_parent"
                         android:layout_weight="1"
@@ -72,6 +73,7 @@
                     </LinearLayout>
 
                     <LinearLayout
+                        android:id="@+id/lyCocaCola"
                         android:layout_width="101dp"
                         android:layout_height="147dp"
                         android:orientation="vertical"
@@ -107,6 +109,7 @@
                     android:padding="20dp">
 
                     <LinearLayout
+                        android:id="@+id/lyFanta"
                         android:layout_width="0dp"
                         android:layout_height="match_parent"
                         android:layout_weight="1"
@@ -132,6 +135,7 @@
                     </LinearLayout>
 
                     <LinearLayout
+                        android:id="@+id/lySprite"
                         android:layout_width="0dp"
                         android:layout_height="match_parent"
                         android:layout_weight="1"
@@ -167,6 +171,7 @@
                     android:padding="20dp">
 
                     <LinearLayout
+                        android:id="@+id/lyArroz"
                         android:layout_width="0dp"
                         android:layout_height="match_parent"
                         android:layout_weight="1"
@@ -193,6 +198,7 @@
                     </LinearLayout>
 
                     <LinearLayout
+                        android:id="@+id/lyFideo"
                         android:layout_width="0dp"
                         android:layout_height="match_parent"
                         android:layout_weight="1"

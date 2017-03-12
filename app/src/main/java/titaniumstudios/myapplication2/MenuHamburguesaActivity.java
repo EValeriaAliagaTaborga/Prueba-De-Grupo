@@ -62,29 +62,7 @@ public class MenuHamburguesaActivity extends AppCompatActivity {
         imgArmalo.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-
-               /* AlertDialog.Builder Dialogo = new AlertDialog.Builder(
-                        MenuHamburguesaActivity.this);
-
-                Dialogo.setTitle("Estimado Cliente:");
-                Dialogo.setMessage("Muchas gracias por usar nuestros servicios. ¿Esta seguro de desear proseguir con su elección?");
-                Dialogo.setIcon(R.drawable.cubo);
-
-                Dialogo.setPositiveButton("Si",
-                        new DialogInterface.OnClickListener() {
-                            public void onClick(DialogInterface dialog, int which) {
-                                Toast.makeText(getApplicationContext(), "Prontamente pondremos a su disposición el Layout correspondiente para eso.", Toast.LENGTH_SHORT).show();
-                            }
-                        });
-                Dialogo.setNegativeButton("No",
-                        new DialogInterface.OnClickListener() {
-                            public void onClick(DialogInterface dialog, int which) {
-                                Toast.makeText(getApplicationContext(), "Tenga un buen día.", Toast.LENGTH_SHORT).show();
-                                dialog.cancel();
-                            }
-                        });
-                Dialogo.show();*/
-               if(producto.compareTo("hamburguesa") == 0) {
+                if(producto.compareTo("hamburguesa") == 0) {
                    Intent intent = new Intent(context, ArmaloActivity.class);
                    intent.putExtra("con_cuenta", conCuenta);
                    startActivity(intent);
