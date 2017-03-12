@@ -46,7 +46,7 @@ public class MenuHamburguesaActivity extends AppCompatActivity {
             @Override
             public void onClick(View view) {
 
-                AlertDialog.Builder Dialogo = new AlertDialog.Builder(
+               /* AlertDialog.Builder Dialogo = new AlertDialog.Builder(
                         MenuHamburguesaActivity.this);
 
                 Dialogo.setTitle("Estimado Cliente:");
@@ -66,10 +66,13 @@ public class MenuHamburguesaActivity extends AppCompatActivity {
                                 dialog.cancel();
                             }
                         });
-                Dialogo.show();
+                Dialogo.show();*/
+                Intent intent = new Intent(context, ArmaloActivity.class);
+                startActivity(intent);
             }
         });
     }
+
     @Override
     public boolean onCreateOptionsMenu(Menu menu) {
         menu.add(Menu.NONE, opcion1, Menu.NONE, "Perfil")
