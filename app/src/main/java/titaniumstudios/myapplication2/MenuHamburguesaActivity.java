@@ -30,6 +30,7 @@ public class MenuHamburguesaActivity extends AppCompatActivity {
     private static final int opcion2 = 2;
     private static final int opcion3 = 3;
     private static final int opcion4 = 4;
+    private static final int opcion5 = 5;
 
     private boolean conCuenta = true;
     private String producto = "";
@@ -109,6 +110,10 @@ public class MenuHamburguesaActivity extends AppCompatActivity {
         if (conCuenta) {
             menu.add(Menu.NONE, opcion4, Menu.NONE, "Cerrar Sesión")
                     .setIcon(android.R.drawable.ic_dialog_info);
+        } else {
+            menu.add(Menu.NONE, opcion5, Menu.NONE, "Login")
+                    //cambiar esto creo xD
+                    .setIcon(android.R.drawable.ic_dialog_info);
         }
         return true;
     }
@@ -156,9 +161,15 @@ public class MenuHamburguesaActivity extends AppCompatActivity {
                         });
                 Dialogo.show();
 
+                break;
+            case opcion5:
+                Intent intent = new Intent(context, LoginActivity.class);
+                startActivity(intent);
             default:
                 return super.onOptionsItemSelected(item);
         }
+        return false;
+        }
     }
 
-}
+

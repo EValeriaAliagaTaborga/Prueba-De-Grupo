@@ -28,7 +28,8 @@
         <activity android:name=".GraciasActivity" />
         <activity android:name=".ClienteFrecuenteActivity" />
         <activity android:name=".ExtrasActivity" />
-        <activity android:name=".ArmaloPizzaActivity"></activity>
+        <activity android:name=".ArmaloPizzaActivity" />
+        <activity android:name=".ArmadoPizzaActivity"></activity>
     </application>
 
 </manifest>

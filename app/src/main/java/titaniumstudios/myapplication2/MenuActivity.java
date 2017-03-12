@@ -1,6 +1,7 @@
 package titaniumstudios.myapplication2;
 
 import android.app.AlertDialog;
+import android.app.Dialog;
 import android.content.Context;
 import android.content.DialogInterface;
 import android.content.Intent;
@@ -12,6 +13,8 @@ import android.util.Log;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
+import android.widget.Button;
+import android.widget.EditText;
 import android.widget.ImageView;
 import android.widget.Toast;
 
@@ -27,16 +30,18 @@ public class MenuActivity extends AppCompatActivity {
     private ImageView imgPizza;
     private ImageView imgExtras;
 
+
     private Context context;
 
     private boolean conCuenta = true;
-    private String producto ="";
+    private String producto = "";
 
     //Variables del menu
-    private static final int opcion1= 1;
+    private static final int opcion1 = 1;
     private static final int opcion2 = 2;
     private static final int opcion3 = 3;
     private static final int opcion4 = 4;
+    private static final int opcion5 = 5;
 
 
     @Override
@@ -44,22 +49,22 @@ public class MenuActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_menu);
 
-        context=this;
+        context = this;
 
-        imgHamburguesa=(ImageView)findViewById(R.id.imgHamburguesa);
-        imgPizza=(ImageView)findViewById(R.id.imgPizza);
-        imgExtras=(ImageView)findViewById(R.id.imgExtras);
+        imgHamburguesa = (ImageView) findViewById(R.id.imgHamburguesa);
+        imgPizza = (ImageView) findViewById(R.id.imgPizza);
+        imgExtras = (ImageView) findViewById(R.id.imgExtras);
 
 
-        Intent d=getIntent();
+        Intent d = getIntent();
         conCuenta = d.getBooleanExtra("con_cuenta", true);
 
         // debemos mandar un parametro q especifique el alimento para saber a qué layout nos van a mandar después
         imgHamburguesa.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                producto="hamburguesa";
-                Intent intent=new Intent(context,MenuHamburguesaActivity.class);
+                producto = "hamburguesa";
+                Intent intent = new Intent(context, MenuHamburguesaActivity.class);
                 intent.putExtra("producto", producto);
                 intent.putExtra("con_cuenta", conCuenta);
                 startActivity(intent);
@@ -70,7 +75,7 @@ public class MenuActivity extends AppCompatActivity {
             @Override
             public void onClick(View view) {
                 producto = "pizza";
-                Intent intent=new Intent(context,MenuHamburguesaActivity.class);
+                Intent intent = new Intent(context, MenuHamburguesaActivity.class);
                 intent.putExtra("con_cuenta", conCuenta);
                 intent.putExtra("producto", producto);
                 startActivity(intent);
@@ -80,29 +85,31 @@ public class MenuActivity extends AppCompatActivity {
         imgExtras.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                Intent intent=new Intent(context,ExtrasActivity.class);
+                Intent intent = new Intent(context, ExtrasActivity.class);
                 intent.putExtra("con_cuenta", conCuenta);
                 startActivity(intent);
             }
         });
+
+
     }
 
     @Override
     public boolean onCreateOptionsMenu(Menu menu) {
-        if(conCuenta) {
+        if (conCuenta) {
             menu.add(Menu.NONE, opcion1, Menu.NONE, "Perfil")
                     .setIcon(android.R.drawable.ic_menu_add);
             menu.add(Menu.NONE, opcion2, Menu.NONE, "Historial")
                     .setIcon(android.R.drawable.stat_notify_sdcard_prepare);
         }
-            menu.add(Menu.NONE, opcion3, Menu.NONE, "Detalles de la app")
-                    .setIcon(android.R.drawable.ic_dialog_info);
+        menu.add(Menu.NONE, opcion3, Menu.NONE, "Detalles de la app")
+                .setIcon(android.R.drawable.ic_dialog_info);
 
-        if(conCuenta) {
+        if (conCuenta) {
             menu.add(Menu.NONE, opcion4, Menu.NONE, "Cerrar Sesión")
                     .setIcon(android.R.drawable.ic_dialog_info);
         } else {
-            menu.add(Menu.NONE, opcion3, Menu.NONE, "Login")
+            menu.add(Menu.NONE, opcion5, Menu.NONE, "Login")
                     //cambiar esto creo xD
                     .setIcon(android.R.drawable.ic_dialog_info);
         }
@@ -111,10 +118,8 @@ public class MenuActivity extends AppCompatActivity {
 
 
     @Override
-    public boolean onOptionsItemSelected(MenuItem item)
-    {
-        switch (item.getItemId())
-        {
+    public boolean onOptionsItemSelected(MenuItem item) {
+        switch (item.getItemId()) {
             case opcion4:
                 AlertDialog.Builder Dialogo = new AlertDialog.Builder(
                         MenuActivity.this);
@@ -129,7 +134,7 @@ public class MenuActivity extends AppCompatActivity {
 
                                 //Abrimos el archivo de preferencias
                                 SharedPreferences prefs =
-                                        getSharedPreferences("MisPreferencias",Context.MODE_PRIVATE);
+                                        getSharedPreferences("MisPreferencias", Context.MODE_PRIVATE);
 
                                 //Editamos los campos existentes y en este caso borramos la cuenta existente
                                 SharedPreferences.Editor editor = prefs.edit();
@@ -152,10 +157,15 @@ public class MenuActivity extends AppCompatActivity {
                             }
                         });
                 Dialogo.show();
-
+                break;
+            case opcion5:
+                Intent intent = new Intent(context, LoginActivity.class);
+                startActivity(intent);
             default:
                 return super.onOptionsItemSelected(item);
         }
+        return false;
     }
-
 }
+
+
