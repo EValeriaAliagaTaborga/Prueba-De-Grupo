@@ -51,11 +51,7 @@ public class MenuActivity extends AppCompatActivity {
 
 
         Intent d=getIntent();
-/*        String[] datos_recibidos=new String[2];
-        datos_recibidos=d.getStringArrayExtra("datos_usuario");
-        if(datos_recibidos != null) {
-            conCuenta = true;
-        } */
+        conCuenta = d.getBooleanExtra("con_cuenta", true);
 
         // debemos mandar un parametro q especifique el alimento para saber a qué layout nos van a mandar después
         imgHamburguesa.setOnClickListener(new View.OnClickListener() {
@@ -84,17 +80,18 @@ public class MenuActivity extends AppCompatActivity {
 
     @Override
     public boolean onCreateOptionsMenu(Menu menu) {
+        if(conCuenta) {
             menu.add(Menu.NONE, opcion1, Menu.NONE, "Perfil")
                     .setIcon(android.R.drawable.ic_menu_add);
             menu.add(Menu.NONE, opcion2, Menu.NONE, "Historial")
                     .setIcon(android.R.drawable.stat_notify_sdcard_prepare);
-        if(conCuenta) {
+        }
             menu.add(Menu.NONE, opcion3, Menu.NONE, "Detalles de la app")
                     .setIcon(android.R.drawable.ic_dialog_info);
-        }
+        if(conCuenta) {
             menu.add(Menu.NONE, opcion4, Menu.NONE, "Cerrar Sesión")
                     .setIcon(android.R.drawable.ic_dialog_info);
-
+        }
         return true;
     }
 

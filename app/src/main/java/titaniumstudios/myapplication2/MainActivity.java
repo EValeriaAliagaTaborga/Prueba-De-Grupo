@@ -16,8 +16,6 @@ public class MainActivity extends AppCompatActivity {
     private Context context;
     private ImageView imgLogo;
 
-    private boolean conCuenta=false;
-
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -57,6 +55,7 @@ public class MainActivity extends AppCompatActivity {
         imgLogo.setOnClickListener(new View.OnClickListener() {
             public void onClick(View v) {
                 Intent a=new Intent(context,MenuActivity.class);
+                a.putExtra("con_cuenta", false);
                 startActivity(a);
             }
         });
