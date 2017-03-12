@@ -58,6 +58,7 @@ public class MenuActivity extends AppCompatActivity {
             @Override
             public void onClick(View view) {
                 Intent intent=new Intent(context,MenuHamburguesaActivity.class);
+                intent.putExtra("con_cuenta", false);
                 startActivity(intent);
             }
         });
@@ -66,6 +67,7 @@ public class MenuActivity extends AppCompatActivity {
             @Override
             public void onClick(View view) {
                 Intent intent=new Intent(context,MenuHamburguesaActivity.class);
+                intent.putExtra("con_cuenta", false);
                 startActivity(intent);
             }
         });
@@ -73,6 +75,7 @@ public class MenuActivity extends AppCompatActivity {
             @Override
             public void onClick(View view) {
                 Intent intent=new Intent(context,ExtrasActivity.class);
+                intent.putExtra("con_cuenta", false);
                 startActivity(intent);
             }
         });

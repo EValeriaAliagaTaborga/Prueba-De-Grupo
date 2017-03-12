@@ -37,6 +37,8 @@ public class MenuHamburguesaActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_menu_hamburguesa);
+        Intent d=getIntent();
+        conCuenta = d.getBooleanExtra("con_cuenta", true);
         context = this;
 
         imgArmalo = (ImageView) findViewById(R.id.imgArmalo);
@@ -46,6 +48,7 @@ public class MenuHamburguesaActivity extends AppCompatActivity {
             @Override
             public void onClick(View view) {
                 Intent intent = new Intent(context, ArmadoActivity.class);
+                intent.putExtra("con_cuenta", false);
                 startActivity(intent);
             }
         });
@@ -77,6 +80,7 @@ public class MenuHamburguesaActivity extends AppCompatActivity {
                         });
                 Dialogo.show();*/
                 Intent intent = new Intent(context, ArmaloActivity.class);
+                intent.putExtra("con_cuenta", false);
                 startActivity(intent);
             }
         });

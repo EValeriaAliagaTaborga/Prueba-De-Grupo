@@ -30,6 +30,8 @@ public class ClienteFrecuenteActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_cliente_frecuente);
+        Intent d=getIntent();
+        conCuenta = d.getBooleanExtra("con_cuenta", true);
 
         context=this;
 
@@ -38,6 +40,7 @@ public class ClienteFrecuenteActivity extends AppCompatActivity {
         btnRegMenu.setOnClickListener(new View.OnClickListener() {
             public void onClick(View v) {
                 Intent s=new Intent(context,MenuActivity.class);
+                s.putExtra("con_cuenta", false);
                 startActivity(s);
             }
         });

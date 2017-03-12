@@ -31,6 +31,9 @@ public class DatosYFacturacionActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_datos_y_facturacion);
 
+        Intent d=getIntent();
+        conCuenta = d.getBooleanExtra("con_cuenta", true);
+
         context = this;
 
         btnEnviar=(Button)findViewById(R.id.btnEnviar);
@@ -39,6 +42,7 @@ public class DatosYFacturacionActivity extends AppCompatActivity {
             @Override
             public void onClick(View view) {
                 Intent intent=new Intent(context,VerificarFacturaActivity.class);
+                intent.putExtra("con_cuenta", false);
                 startActivity(intent);
             }
         });

@@ -35,6 +35,9 @@ public class VerificarFacturaActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_verificar_factura);
 
+        Intent d=getIntent();
+        conCuenta = d.getBooleanExtra("con_cuenta", true);
+
         context=this;
 
         btnEditar=(Button)findViewById(R.id.btnEditar);
@@ -45,6 +48,7 @@ public class VerificarFacturaActivity extends AppCompatActivity {
             @Override
             public void onClick(View view) {
                 Intent intent=new Intent(context,DatosYFacturacionActivity.class);
+                intent.putExtra("con_cuenta", false);
                 startActivity(intent);
             }
         });
@@ -64,6 +68,7 @@ public class VerificarFacturaActivity extends AppCompatActivity {
                             public void onClick(DialogInterface dialog, int which) {
                                 Toast.makeText(getApplicationContext(), "Orden cancelada. Tenga un buen día.", Toast.LENGTH_SHORT).show();
                                 Intent intent=new Intent(context,MenuActivity.class);
+                                intent.putExtra("con_cuenta", false);
                                 startActivity(intent);
                             }
                         });
@@ -80,6 +85,7 @@ public class VerificarFacturaActivity extends AppCompatActivity {
             @Override
             public void onClick(View view) {
                 Intent intent=new Intent(context,GraciasActivity.class);
+                intent.putExtra("con_cuenta", false);
                 startActivity(intent);
             }
         });

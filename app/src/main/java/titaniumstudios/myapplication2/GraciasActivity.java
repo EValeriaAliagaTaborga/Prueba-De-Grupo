@@ -31,6 +31,9 @@ public class GraciasActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_gracias);
 
+        Intent d=getIntent();
+        conCuenta = d.getBooleanExtra("con_cuenta", true);
+
         context=this;
 
         btnHecho=(Button)findViewById(R.id.btnHecho);
@@ -38,6 +41,7 @@ public class GraciasActivity extends AppCompatActivity {
         btnHecho.setOnClickListener(new View.OnClickListener() {
             public void onClick(View v) {
                 Intent s=new Intent(context,ClienteFrecuenteActivity.class);
+                s.putExtra("con_cuenta", false);
                 startActivity(s);
             }
         });

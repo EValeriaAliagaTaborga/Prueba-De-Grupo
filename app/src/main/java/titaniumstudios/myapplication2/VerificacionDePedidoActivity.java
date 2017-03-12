@@ -39,6 +39,7 @@ public class VerificacionDePedidoActivity extends AppCompatActivity {
         setContentView(R.layout.activity_verificacion_de_pedido);
 
         Intent b = getIntent();
+        conCuenta = b.getBooleanExtra("con_cuenta", true);
         ArrayList<String> datosDePedido = b.getStringArrayListExtra("datos_de_pedido");
         String precio = datosDePedido.get(0);
         String producto = "";
@@ -59,12 +60,14 @@ public class VerificacionDePedidoActivity extends AppCompatActivity {
         btnAnadir.setOnClickListener(new View.OnClickListener() {
             public void onClick(View v) {
                 Intent s=new Intent(context,MenuActivity.class);
+                s.putExtra("con_cuenta", false);
                 startActivity(s);
             }
         });
         btnComprar.setOnClickListener(new View.OnClickListener() {
             public void onClick(View v) {
                 Intent s=new Intent(context,DatosYFacturacionActivity.class);
+                s.putExtra("con_cuenta", false);
                 startActivity(s);
             }
         });

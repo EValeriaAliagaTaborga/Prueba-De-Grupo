@@ -41,6 +41,9 @@ public class ArmadoActivity extends AppCompatActivity {
 
         context=this;
 
+        Intent d=getIntent();
+        conCuenta = d.getBooleanExtra("con_cuenta", true);
+
         imgHambQueso=(ImageView)findViewById(R.id.imgHambQueso);
         imgHambDoble=(ImageView)findViewById(R.id.imgHambDoble);
         imgHambSinPan=(ImageView)findViewById(R.id.imgHambSinPan);
@@ -53,6 +56,7 @@ public class ArmadoActivity extends AppCompatActivity {
             @Override
             public void onClick(View view) {
                 Intent intent=new Intent(context,VerificacionDePedidoActivity.class);
+                intent.putExtra("con_cuenta", false);
                 ArrayList<String> datosDePedido = new ArrayList<>();
                 datosDePedido.add(0, "30");
                 datosDePedido.add("Pan Tradicional");
@@ -70,6 +74,7 @@ public class ArmadoActivity extends AppCompatActivity {
             @Override
             public void onClick(View view) {
                 Intent intent=new Intent(context,VerificacionDePedidoActivity.class);
+                intent.putExtra("con_cuenta", false);
                 ArrayList<String> datosDePedido = new ArrayList<>();
                 datosDePedido.add(0, "38");
                 datosDePedido.add("Pan Tradicional");
@@ -89,6 +94,7 @@ public class ArmadoActivity extends AppCompatActivity {
             @Override
             public void onClick(View view) {
                 Intent intent=new Intent(context,VerificacionDePedidoActivity.class);
+                intent.putExtra("con_cuenta", false);
                 ArrayList<String> datosDePedido = new ArrayList<>();
                 datosDePedido.add(0, "29");
                 datosDePedido.add("Lechuga");
@@ -105,6 +111,7 @@ public class ArmadoActivity extends AppCompatActivity {
             @Override
             public void onClick(View view) {
                 Intent intent=new Intent(context,VerificacionDePedidoActivity.class);
+                intent.putExtra("con_cuenta", false);
                 ArrayList<String> datosDePedido = new ArrayList<>();
                 datosDePedido.add(0, "32");
                 datosDePedido.add("Pan Sin Semillas");
@@ -125,6 +132,7 @@ public class ArmadoActivity extends AppCompatActivity {
             @Override
             public void onClick(View view) {
                 Intent intent=new Intent(context,VerificacionDePedidoActivity.class);
+                intent.putExtra("con_cuenta", false);
                 ArrayList<String> datosDePedido = new ArrayList<>();
                 datosDePedido.add(0, "21");
                 datosDePedido.add("Pan Integral");
@@ -142,6 +150,7 @@ public class ArmadoActivity extends AppCompatActivity {
             @Override
             public void onClick(View view) {
                 Intent intent=new Intent(context,VerificacionDePedidoActivity.class);
+                intent.putExtra("con_cuenta", false);
                 ArrayList<String> datosDePedido = new ArrayList<>();
                 datosDePedido.add(0,"22");
                 datosDePedido.add("Pan Integral");
@@ -157,7 +166,7 @@ public class ArmadoActivity extends AppCompatActivity {
 
     @Override
     public boolean onCreateOptionsMenu(Menu menu) {
-        if (conCuenta) {
+        if(conCuenta) {
             menu.add(Menu.NONE, opcion1, Menu.NONE, "Perfil")
                     .setIcon(android.R.drawable.ic_menu_add);
             menu.add(Menu.NONE, opcion2, Menu.NONE, "Historial")
@@ -165,12 +174,14 @@ public class ArmadoActivity extends AppCompatActivity {
         }
         menu.add(Menu.NONE, opcion3, Menu.NONE, "Detalles de la app")
                 .setIcon(android.R.drawable.ic_dialog_info);
-        if (conCuenta) {
+        if(conCuenta) {
             menu.add(Menu.NONE, opcion4, Menu.NONE, "Cerrar Sesión")
                     .setIcon(android.R.drawable.ic_dialog_info);
         }
         return true;
     }
+
+
     @Override
     public boolean onOptionsItemSelected(MenuItem item)
     {
