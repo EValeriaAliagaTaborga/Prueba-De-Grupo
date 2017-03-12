@@ -17,13 +17,13 @@
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:fontFamily="cursive"
-                    android:text="Verifique los datos para su factura:"
+                    android:text="Verifique los datos para su factura y sus datos de envio:"
                     android:textColor="@android:color/white"
                     android:textSize="30sp"
                     android:textStyle="bold" />
 
                 <TextView
-                    android:id="@+id/factura"
+                    android:id="@+id/lblFactura"
                     android:layout_width="wrap_content"
                     android:layout_height="219dp"
                     android:layout_margin="5dp"

@@ -19,7 +19,7 @@ public class VerificarFacturaActivity extends AppCompatActivity {
     private Button btnEditar;
     private Button btnCancelar;
     private Button btnComprar;
-    private TextView factura;
+    private TextView lblFactura;
 
     private Context context;
 
@@ -30,7 +30,7 @@ public class VerificarFacturaActivity extends AppCompatActivity {
     private static final int opcion5 = 5;
 
     private boolean conCuenta = true;
-
+    String[] datosDeCliente;
 
 
     @Override
@@ -40,12 +40,17 @@ public class VerificarFacturaActivity extends AppCompatActivity {
 
         Intent d=getIntent();
         conCuenta = d.getBooleanExtra("con_cuenta", true);
+        datosDeCliente = d.getStringArrayExtra("datos_de_cliente");
 
         context=this;
 
         btnEditar=(Button)findViewById(R.id.btnEditar);
         btnCancelar=(Button)findViewById(R.id.btnCancelar);
         btnComprar=(Button)findViewById(R.id.btnComprar);
+        lblFactura=(TextView) findViewById(R.id.lblFactura);
+
+        lblFactura.setText("Factura: \n SEÑOR (ES): "+datosDeCliente[1]+"\n NIT/CI: "+datosDeCliente[5]+"\n Total Factura: "+datosDeCliente[6]+
+                "\n\nEnvio: \n Nombre: "+datosDeCliente[0]+"\n Telefono/Celular: "+datosDeCliente[2]+"\n Direccion: "+datosDeCliente[3]+"\n Email: "+datosDeCliente[4]);
 
         btnEditar.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -85,6 +90,7 @@ public class VerificarFacturaActivity extends AppCompatActivity {
                 Dialogo.show();
             }
         });
+
         btnComprar.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {

@@ -53,7 +53,7 @@
                         android:id="@+id/lblCelularOTelefono"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
-                        android:text="Celular o Teléfono fijo"
+                        android:text="Celular o Teléfono fijo *"
                         android:textColor="@android:color/white"
                         android:textSize="18sp"
                         android:textStyle="bold" />
@@ -71,7 +71,7 @@
                         android:id="@+id/lblDireccion"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
-                        android:text="Dirección de Entrega"
+                        android:text="Dirección de Entrega *"
                         android:textColor="@android:color/white"
                         android:textSize="18sp"
                         android:textStyle="bold" />

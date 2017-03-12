@@ -11,22 +11,18 @@ import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
 import android.widget.Button;
-import android.widget.TextView;
+import android.widget.EditText;
 import android.widget.Toast;
-
-import org.w3c.dom.Text;
-
-import java.util.ArrayList;
 
 public class DatosYFacturacionActivity extends AppCompatActivity {
 
     private Button btnEnviar;
-    private TextView txtNombreOApellido;
-    private TextView txtNombreFac;
-    private TextView txtCelularOTel;
-    private TextView txtDireccion;
-    private TextView txtEmail;
-    private TextView txtNIT;
+    private EditText txtNombreOApellido;
+    private EditText txtNombreFac;
+    private EditText txtCelularOTel;
+    private EditText txtDireccion;
+    private EditText txtEmail;
+    private EditText txtNIT;
 
     private Context context;
 
@@ -37,6 +33,7 @@ public class DatosYFacturacionActivity extends AppCompatActivity {
     private static final int opcion5 = 5;
 
     private boolean conCuenta = true;
+    private String precioTotal;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -45,24 +42,42 @@ public class DatosYFacturacionActivity extends AppCompatActivity {
 
         Intent d=getIntent();
         conCuenta = d.getBooleanExtra("con_cuenta", true);
-        final ArrayList<String> datosDeFactura = new ArrayList<String>();
+        precioTotal = d.getStringExtra("dato_precio");
 
         context = this;
 
         btnEnviar=(Button)findViewById(R.id.btnEnviar);
-        txtNombreOApellido=(TextView)findViewById(R.id.txtNombreOApellido);
-        txtNombreFac=(TextView)findViewById(R.id.txtNombreFac);
-        txtCelularOTel=(TextView)findViewById(R.id.txtCelularOTel);
-        txtDireccion=(TextView)findViewById(R.id.txtDireccion);
-        txtEmail=(TextView)findViewById(R.id.txtEmail);
-        txtNIT=(TextView)findViewById(R.id.txtNIT);
+        txtNombreOApellido=(EditText) findViewById(R.id.txtNombreOApellido);
+        txtNombreFac=(EditText) findViewById(R.id.txtNombreFac);
+        txtCelularOTel=(EditText) findViewById(R.id.txtCelularOTel);
+        txtDireccion=(EditText) findViewById(R.id.txtDireccion);
+        txtEmail=(EditText) findViewById(R.id.txtEmail);
+        txtNIT=(EditText) findViewById(R.id.txtNIT);
+
+
 
         btnEnviar.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                Intent intent=new Intent(context,VerificarFacturaActivity.class);
-                intent.putExtra("con_cuenta", conCuenta);
-                startActivity(intent);
+
+                String[] datosDeCliente = new String[7];
+
+                datosDeCliente[0] = txtNombreOApellido.getText().toString();
+                datosDeCliente[1] = txtNombreFac.getText().toString();
+                datosDeCliente[2] = txtCelularOTel.getText().toString();
+                datosDeCliente[3] = txtDireccion.getText().toString();
+                datosDeCliente[4] = txtEmail.getText().toString();
+                datosDeCliente[5] = txtNIT.getText().toString();
+                datosDeCliente[6] = precioTotal;
+
+                if((datosDeCliente[2].length() == 7 || datosDeCliente[2].length() == 8 ) && !datosDeCliente[3].equals("")) {
+                    Intent intent = new Intent(context, VerificarFacturaActivity.class);
+                    intent.putExtra("con_cuenta", conCuenta);
+                    intent.putExtra("datos_de_cliente", datosDeCliente);
+                    startActivity(intent);
+                } else {
+                    Toast.makeText(context, "El campo de telefono y direccion son obligatorios, por favor llenar los datos", Toast.LENGTH_SHORT).show();
+                }
             }
         });
     }

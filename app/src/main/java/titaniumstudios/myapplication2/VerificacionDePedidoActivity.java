@@ -44,7 +44,7 @@ public class VerificacionDePedidoActivity extends AppCompatActivity {
         Intent b = getIntent();
         conCuenta = b.getBooleanExtra("con_cuenta", true);
         ArrayList<String> datosDePedido = b.getStringArrayListExtra("datos_de_pedido");
-        String precio = datosDePedido.get(0);
+        final String precio = datosDePedido.get(0);
         String producto = "";
         for(int i = 1; i < datosDePedido.size(); i++) {
                 producto += datosDePedido.get(i)+"\n";
@@ -71,6 +71,7 @@ public class VerificacionDePedidoActivity extends AppCompatActivity {
             public void onClick(View v) {
                 Intent s=new Intent(context,DatosYFacturacionActivity.class);
                 s.putExtra("con_cuenta", conCuenta);
+                s.putExtra("dato_precio", Double.toString(precioTotal));
                 startActivity(s);
             }
         });
