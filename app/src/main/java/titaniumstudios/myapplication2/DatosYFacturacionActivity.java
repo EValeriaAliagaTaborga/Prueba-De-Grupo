@@ -11,11 +11,22 @@ import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
 import android.widget.Button;
+import android.widget.TextView;
 import android.widget.Toast;
+
+import org.w3c.dom.Text;
+
+import java.util.ArrayList;
 
 public class DatosYFacturacionActivity extends AppCompatActivity {
 
     private Button btnEnviar;
+    private TextView txtNombreOApellido;
+    private TextView txtNombreFac;
+    private TextView txtCelularOTel;
+    private TextView txtDireccion;
+    private TextView txtEmail;
+    private TextView txtNIT;
 
     private Context context;
 
@@ -33,10 +44,17 @@ public class DatosYFacturacionActivity extends AppCompatActivity {
 
         Intent d=getIntent();
         conCuenta = d.getBooleanExtra("con_cuenta", true);
+        final ArrayList<String> datosDeFactura = new ArrayList<String>();
 
         context = this;
 
         btnEnviar=(Button)findViewById(R.id.btnEnviar);
+        txtNombreOApellido=(TextView)findViewById(R.id.txtNombreOApellido);
+        txtNombreFac=(TextView)findViewById(R.id.txtNombreFac);
+        txtCelularOTel=(TextView)findViewById(R.id.txtCelularOTel);
+        txtDireccion=(TextView)findViewById(R.id.txtDireccion);
+        txtEmail=(TextView)findViewById(R.id.txtEmail);
+        txtNIT=(TextView)findViewById(R.id.txtNIT);
 
         btnEnviar.setOnClickListener(new View.OnClickListener() {
             @Override

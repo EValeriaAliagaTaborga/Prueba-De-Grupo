@@ -4,6 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:background="@drawable/backgroundcubitos"
     tools:context="titaniumstudios.myapplication2.GraciasActivity">
 
         <LinearLayout
@@ -18,9 +19,12 @@
                 android:layout_width="344dp"
                 android:layout_height="wrap_content"
                 android:layout_gravity="center"
+                android:fontFamily="cursive"
                 android:gravity="center"
                 android:text="¡Gracias por su compra!"
+                android:textColor="@android:color/black"
                 android:textSize="50dp"
+                android:textStyle="bold"
                 tools:layout_editor_absoluteX="0dp"
                 tools:layout_editor_absoluteY="68dp" />
 
@@ -30,7 +34,7 @@
                 android:layout_height="204dp"
                 android:layout_gravity="center"
                 android:layout_marginBottom="20dp"
-                app:srcCompat="@drawable/cubo1" />
+                app:srcCompat="@drawable/rubikcolors" />
 
             <TextView
                 android:id="@+id/textView6"
@@ -40,6 +44,7 @@
                 android:layout_marginBottom="20dp"
                 android:gravity="center"
                 android:text="* El costo de envío no exederá los 20bs."
+                android:textColor="@android:color/black"
                 android:textSize="18sp" />
 
             <Button

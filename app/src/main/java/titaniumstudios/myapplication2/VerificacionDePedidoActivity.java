@@ -54,7 +54,7 @@ public class VerificacionDePedidoActivity extends AppCompatActivity {
         lblPrecio=(TextView) findViewById(R.id.lblPrecio);
         lblTextoLargo=(TextView) findViewById(R.id.lblTextoLargo);
 
-        lblPrecio.setText("$ "+precio);
+        lblPrecio.setText("Bs. "+precio);
         lblTextoLargo.setText("Su pedido contiene: \n"+producto);
 
         btnAnadir.setOnClickListener(new View.OnClickListener() {
