@@ -60,14 +60,14 @@ public class VerificacionDePedidoActivity extends AppCompatActivity {
         btnAnadir.setOnClickListener(new View.OnClickListener() {
             public void onClick(View v) {
                 Intent s=new Intent(context,MenuActivity.class);
-                s.putExtra("con_cuenta", false);
+                s.putExtra("con_cuenta", conCuenta);
                 startActivity(s);
             }
         });
         btnComprar.setOnClickListener(new View.OnClickListener() {
             public void onClick(View v) {
                 Intent s=new Intent(context,DatosYFacturacionActivity.class);
-                s.putExtra("con_cuenta", false);
+                s.putExtra("con_cuenta", conCuenta);
                 startActivity(s);
             }
         });

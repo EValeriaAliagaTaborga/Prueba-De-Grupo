@@ -52,7 +52,7 @@ public class MenuHamburguesaActivity extends AppCompatActivity {
             @Override
             public void onClick(View view) {
                 Intent intent = new Intent(context, ArmadoActivity.class);
-                intent.putExtra("con_cuenta", false);
+                intent.putExtra("con_cuenta", conCuenta);
                 startActivity(intent);
             }
         });
@@ -85,11 +85,11 @@ public class MenuHamburguesaActivity extends AppCompatActivity {
                 Dialogo.show();*/
                if(producto.compareTo("hamburguesa") == 0) {
                    Intent intent = new Intent(context, ArmaloActivity.class);
-                   intent.putExtra("con_cuenta", false);
+                   intent.putExtra("con_cuenta", conCuenta);
                    startActivity(intent);
                } else if(producto.compareTo("pizza") == 0) {
                    Intent intent = new Intent(context, ArmaloPizzaActivity.class);
-                   intent.putExtra("con_cuenta", false);
+                   intent.putExtra("con_cuenta", conCuenta);
                    startActivity(intent);
                }
             }

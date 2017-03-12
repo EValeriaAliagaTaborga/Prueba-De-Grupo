@@ -61,7 +61,7 @@ public class MenuActivity extends AppCompatActivity {
                 producto="hamburguesa";
                 Intent intent=new Intent(context,MenuHamburguesaActivity.class);
                 intent.putExtra("producto", producto);
-                intent.putExtra("con_cuenta", false);
+                intent.putExtra("con_cuenta", conCuenta);
                 startActivity(intent);
             }
         });
@@ -71,7 +71,7 @@ public class MenuActivity extends AppCompatActivity {
             public void onClick(View view) {
                 producto = "pizza";
                 Intent intent=new Intent(context,MenuHamburguesaActivity.class);
-                intent.putExtra("con_cuenta", false);
+                intent.putExtra("con_cuenta", conCuenta);
                 intent.putExtra("producto", producto);
                 startActivity(intent);
             }
@@ -81,7 +81,7 @@ public class MenuActivity extends AppCompatActivity {
             @Override
             public void onClick(View view) {
                 Intent intent=new Intent(context,ExtrasActivity.class);
-                intent.putExtra("con_cuenta", false);
+                intent.putExtra("con_cuenta", conCuenta);
                 startActivity(intent);
             }
         });
@@ -97,8 +97,13 @@ public class MenuActivity extends AppCompatActivity {
         }
             menu.add(Menu.NONE, opcion3, Menu.NONE, "Detalles de la app")
                     .setIcon(android.R.drawable.ic_dialog_info);
+
         if(conCuenta) {
             menu.add(Menu.NONE, opcion4, Menu.NONE, "Cerrar Sesión")
+                    .setIcon(android.R.drawable.ic_dialog_info);
+        } else {
+            menu.add(Menu.NONE, opcion3, Menu.NONE, "Login")
+                    //cambiar esto creo xD
                     .setIcon(android.R.drawable.ic_dialog_info);
         }
         return true;

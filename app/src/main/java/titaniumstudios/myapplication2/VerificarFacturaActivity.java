@@ -48,7 +48,7 @@ public class VerificarFacturaActivity extends AppCompatActivity {
             @Override
             public void onClick(View view) {
                 Intent intent=new Intent(context,DatosYFacturacionActivity.class);
-                intent.putExtra("con_cuenta", false);
+                intent.putExtra("con_cuenta", conCuenta);
                 startActivity(intent);
             }
         });
@@ -59,6 +59,7 @@ public class VerificarFacturaActivity extends AppCompatActivity {
                 AlertDialog.Builder Dialogo = new AlertDialog.Builder(
                         VerificarFacturaActivity.this);
 
+
                 Dialogo.setTitle("¿Está seguro de cancelar su pedido?");
                 Dialogo.setMessage("Los datos de su pedido se perderán si cancela la orden.");
                 Dialogo.setIcon(R.drawable.cubo);
@@ -68,7 +69,7 @@ public class VerificarFacturaActivity extends AppCompatActivity {
                             public void onClick(DialogInterface dialog, int which) {
                                 Toast.makeText(getApplicationContext(), "Orden cancelada. Tenga un buen día.", Toast.LENGTH_SHORT).show();
                                 Intent intent=new Intent(context,MenuActivity.class);
-                                intent.putExtra("con_cuenta", false);
+                                intent.putExtra("con_cuenta", conCuenta);
                                 startActivity(intent);
                             }
                         });
@@ -85,7 +86,7 @@ public class VerificarFacturaActivity extends AppCompatActivity {
             @Override
             public void onClick(View view) {
                 Intent intent=new Intent(context,GraciasActivity.class);
-                intent.putExtra("con_cuenta", false);
+                intent.putExtra("con_cuenta", conCuenta);
                 startActivity(intent);
             }
         });

@@ -631,6 +631,7 @@ public class ArmaloActivity extends AppCompatActivity {
                 Intent intent = new Intent(context, VerificacionDePedidoActivity.class);
                 datosDePedido.add(0, Double.toString(precio));
                 intent.putExtra("datos_de_pedido", datosDePedido);
+                intent.putExtra("con_cuenta", conCuenta);
                 startActivity(intent);
             }
 

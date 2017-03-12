@@ -42,7 +42,7 @@ public class DatosYFacturacionActivity extends AppCompatActivity {
             @Override
             public void onClick(View view) {
                 Intent intent=new Intent(context,VerificarFacturaActivity.class);
-                intent.putExtra("con_cuenta", false);
+                intent.putExtra("con_cuenta", conCuenta);
                 startActivity(intent);
             }
         });

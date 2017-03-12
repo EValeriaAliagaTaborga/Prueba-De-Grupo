@@ -40,7 +40,7 @@ public class ClienteFrecuenteActivity extends AppCompatActivity {
         btnRegMenu.setOnClickListener(new View.OnClickListener() {
             public void onClick(View v) {
                 Intent s=new Intent(context,MenuActivity.class);
-                s.putExtra("con_cuenta", false);
+                s.putExtra("con_cuenta", conCuenta);
                 startActivity(s);
             }
         });

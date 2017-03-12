@@ -41,7 +41,7 @@ public class GraciasActivity extends AppCompatActivity {
         btnHecho.setOnClickListener(new View.OnClickListener() {
             public void onClick(View v) {
                 Intent s=new Intent(context,ClienteFrecuenteActivity.class);
-                s.putExtra("con_cuenta", false);
+                s.putExtra("con_cuenta", conCuenta);
                 startActivity(s);
             }
         });
