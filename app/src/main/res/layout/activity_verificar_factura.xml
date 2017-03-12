@@ -4,6 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:background="@drawable/backgrounddefault2"
     tools:context="titaniumstudios.myapplication2.VerificarFacturaActivity">
 
     <LinearLayout
@@ -18,14 +19,19 @@
             android:id="@+id/lblVerificar"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
+            android:fontFamily="cursive"
             android:text="Verifique los datos para su factura:"
-            android:textSize="18sp"
+            android:textColor="@android:color/white"
+            android:textSize="30sp"
             android:textStyle="bold" />
 
         <TextView
-            android:id="@+id/lblFactura"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content" />
+            android:id="@+id/factura"
+            android:layout_width="wrap_content"
+            android:layout_height="219dp"
+            android:layout_margin="5dp"
+            android:text="Comer un hamburguesa es un placer irresistible para muchos y es por eso que los restaurantes de comida rápida proliferan. El exquisito sabor de la carne al pan es una de las cosas en que muchas personas coinciden. Aunque para los más saludables sea una comida rápida que daña el cuerpo, es bueno conocer su trayectoria. Una hamburguesa es un alimento en forma de bocadillo de carne picada aglutinada en forma de filete, cocinado a la parrilla o a la plancha, aunque también puede freírse u hornearse. Fuera del ámbito de habla hispana es más común encontrar la denominación inglesa burger. Se presenta en un pan ligero partido en dos que posee una forma de óvalo. Suele estar acompañada de aros de cebolla, hojas de lechuga, alguna rodaja de tomate, láminas de encurtidos, papas fritas etc."
+            android:textColor="@android:color/white" />
 
         <Button
             android:id="@+id/btnEditar"
@@ -33,14 +39,11 @@
             android:layout_height="wrap_content"
             android:text="Editar" />
 
-        <ImageView
-            android:id="@+id/imgCubo"
-            android:layout_width="97dp"
-            android:layout_height="98dp"
-            android:layout_gravity="right"
-            android:adjustViewBounds="false"
-            android:cropToPadding="false"
-            app:srcCompat="@drawable/cubo1" />
+        <titaniumstudios.myapplication2.CustomGifView
+            android:id="@+id/gifview"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="right"/>
 
         <LinearLayout
             android:layout_width="match_parent"

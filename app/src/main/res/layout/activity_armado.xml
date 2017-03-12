@@ -10,12 +10,23 @@
     android:paddingRight="@dimen/activity_horizontal_margin"
     android:paddingTop="@dimen/activity_vertical_margin"
     tools:context="titaniumstudios.myapplication2.ArmadoActivity"
-    android:background="@android:color/holo_orange_light">
+    android:background="@drawable/backgrounddefault2">
 
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:orientation="vertical">
+
+        <TextView
+            android:id="@+id/lblEspeciales"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:fontFamily="cursive"
+            android:text="¡Rubik's Armados!"
+            android:textColor="@android:color/white"
+            android:textSize="30sp"
+            android:textStyle="bold|italic" />
 
         <ScrollView
             android:layout_width="match_parent"
@@ -40,22 +51,23 @@
                         android:layout_height="match_parent"
                         android:layout_weight="1"
                         android:orientation="vertical"
-                        android:paddingLeft="25dp"
-                        android:paddingRight="25dp">
+                        android:paddingLeft="10dp"
+                        android:paddingRight="20dp">
 
                         <ImageView
                             android:id="@+id/imgHambQueso"
                             android:layout_width="match_parent"
                             android:layout_height="wrap_content"
                             android:adjustViewBounds="true"
-                            android:padding="16dp"
                             android:src="@drawable/ham_queso" />
 
                         <TextView
                             android:layout_width="match_parent"
                             android:layout_height="wrap_content"
                             android:gravity="center_horizontal"
-                            android:text="Hamburguesa de Queso" />
+                            android:text="Hamburguesa de Queso"
+                            android:textColor="@android:color/white"
+                            android:textStyle="bold" />
 
                     </LinearLayout>
 
@@ -64,22 +76,23 @@
                         android:layout_height="match_parent"
                         android:layout_weight="1"
                         android:orientation="vertical"
-                        android:paddingLeft="25dp"
-                        android:paddingRight="25dp">
+                        android:paddingLeft="10dp"
+                        android:paddingRight="20dp">
 
                         <ImageView
                             android:id="@+id/imgHambDoble"
                             android:layout_width="match_parent"
                             android:layout_height="wrap_content"
                             android:adjustViewBounds="true"
-                            android:padding="16dp"
                             android:src="@drawable/ham_doble" />
 
                         <TextView
                             android:layout_width="match_parent"
                             android:layout_height="wrap_content"
                             android:gravity="center_horizontal"
-                            android:text="Hamburguesa Doble" />
+                            android:text="Hamburguesa Doble"
+                            android:textColor="@android:color/white"
+                            android:textStyle="bold" />
 
                     </LinearLayout>
                 </LinearLayout>
@@ -98,22 +111,23 @@
                         android:layout_height="match_parent"
                         android:layout_weight="1"
                         android:orientation="vertical"
-                        android:paddingLeft="25dp"
-                        android:paddingRight="25dp">
+                        android:paddingLeft="10dp"
+                        android:paddingRight="20dp">
 
                         <ImageView
                             android:id="@+id/imgHambSinPan"
                             android:layout_width="match_parent"
                             android:layout_height="wrap_content"
                             android:adjustViewBounds="true"
-                            android:padding="16dp"
                             android:src="@drawable/ham_sin_pan" />
 
                         <TextView
                             android:layout_width="match_parent"
                             android:layout_height="wrap_content"
                             android:gravity="center_horizontal"
-                            android:text="Hamburguesa sin Pan" />
+                            android:text="Hamburguesa sin Pan"
+                            android:textColor="@android:color/white"
+                            android:textStyle="bold" />
 
                     </LinearLayout>
 
@@ -122,22 +136,23 @@
                         android:layout_height="match_parent"
                         android:layout_weight="1"
                         android:orientation="vertical"
-                        android:paddingLeft="25dp"
-                        android:paddingRight="25dp">
+                        android:paddingLeft="10dp"
+                        android:paddingRight="20dp">
 
                         <ImageView
                             android:id="@+id/imgHambTocino"
                             android:layout_width="match_parent"
                             android:layout_height="wrap_content"
                             android:adjustViewBounds="true"
-                            android:padding="16dp"
                             android:src="@drawable/ham_tocino" />
 
                         <TextView
                             android:layout_width="match_parent"
                             android:layout_height="wrap_content"
                             android:gravity="center_horizontal"
-                            android:text="Hamburguesa de Tocino y Huevo" />
+                            android:text="Hamburguesa de Tocino y Huevo"
+                            android:textColor="@android:color/white"
+                            android:textStyle="bold" />
 
                     </LinearLayout>
                 </LinearLayout>
@@ -156,22 +171,24 @@
                         android:layout_height="match_parent"
                         android:layout_weight="1"
                         android:orientation="vertical"
-                        android:paddingLeft="25dp"
-                        android:paddingRight="25dp">
+                        android:paddingLeft="10dp"
+                        android:paddingRight="20dp">
 
                         <ImageView
                             android:id="@+id/imgHambIntegral"
                             android:layout_width="match_parent"
                             android:layout_height="wrap_content"
                             android:adjustViewBounds="true"
-                            android:padding="16dp"
                             android:src="@drawable/ham_integral" />
 
                         <TextView
+                            android:id="@+id/textView5"
                             android:layout_width="match_parent"
                             android:layout_height="wrap_content"
                             android:gravity="center_horizontal"
-                            android:text="Hamburguesa con Pan Integral" />
+                            android:text="Hamburguesa con Pan Integral"
+                            android:textColor="@android:color/white"
+                            android:textStyle="bold" />
 
                     </LinearLayout>
 
@@ -180,22 +197,23 @@
                         android:layout_height="match_parent"
                         android:layout_weight="1"
                         android:orientation="vertical"
-                        android:paddingLeft="25dp"
-                        android:paddingRight="25dp">
+                        android:paddingLeft="10dp"
+                        android:paddingRight="20dp">
 
                         <ImageView
                             android:id="@+id/imgHambVegetariana"
                             android:layout_width="match_parent"
                             android:layout_height="wrap_content"
                             android:adjustViewBounds="true"
-                            android:padding="16dp"
                             android:src="@drawable/ham_vegetariana" />
 
                         <TextView
                             android:layout_width="match_parent"
                             android:layout_height="wrap_content"
                             android:gravity="center_horizontal"
-                            android:text="Hamburguesa Vegetariana" />
+                            android:text="Hamburguesa Vegetariana"
+                            android:textColor="@android:color/white"
+                            android:textStyle="bold" />
 
                     </LinearLayout>
                 </LinearLayout>

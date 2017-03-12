@@ -10,7 +10,7 @@
     android:paddingRight="@dimen/activity_horizontal_margin"
     android:paddingTop="@dimen/activity_vertical_margin"
     tools:context="titaniumstudios.myapplication2.MenuHamburguesaActivity"
-    android:background="@android:color/holo_orange_light">
+    android:background="@drawable/backgrounddefault2">
 
     <LinearLayout
         android:orientation="vertical"
@@ -22,38 +22,45 @@
         android:layout_marginBottom="45dp">
 
         <ImageView
-            android:layout_width="251dp"
-            android:layout_height="164dp"
-            app:srcCompat="@drawable/cubo"
             android:id="@+id/imgArmalo"
+            android:layout_width="177dp"
+            android:layout_height="137dp"
+            android:layout_gravity="center_horizontal"
             android:layout_marginBottom="20dp"
-            android:layout_gravity="center_horizontal" />
+            app:srcCompat="@drawable/rubikarmalo" />
 
         <TextView
-            android:text="!Ármalo tu mismo!"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
             android:id="@+id/textView2"
+            android:layout_width="279dp"
+            android:layout_height="wrap_content"
             android:layout_marginBottom="20dp"
-            android:textSize="18sp"
-            android:textColor="@android:color/black"
-            android:gravity="center_horizontal" />
+            android:fontFamily="cursive"
+            android:gravity="center_horizontal"
+            android:text="!Ármalo tu mismo!"
+            android:textColor="@android:color/white"
+            android:textSize="30sp"
+            android:textStyle="bold"
+            android:layout_weight="0.12" />
 
         <ImageView
-            android:layout_width="271dp"
-            android:layout_height="157dp"
-            app:srcCompat="@drawable/cubo1"
             android:id="@+id/imgArmado"
+            android:layout_width="135dp"
+            android:layout_height="122dp"
+            android:layout_gravity="center_horizontal"
             android:layout_marginBottom="20dp"
-            android:layout_gravity="center_horizontal" />
+            android:cropToPadding="true"
+            app:srcCompat="@drawable/cubologo" />
 
         <TextView
-            android:text="Elige uno de nuestros Clásicos"
+            android:id="@+id/textView3"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:id="@+id/textView3"
-            android:textSize="18sp"
-            android:textColor="@android:color/black"
-            android:gravity="center_horizontal" />
+            android:layout_weight="0.25"
+            android:fontFamily="cursive"
+            android:gravity="center_horizontal"
+            android:text="Elige uno de nuestros Clásicos"
+            android:textColor="@android:color/white"
+            android:textSize="30sp"
+            android:textStyle="bold" />
     </LinearLayout>
 </RelativeLayout>
