@@ -1,13 +1,11 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
-    <string-array name="array_tiposDePan">
-        
+    <string-array name="array_tipos_de_pan">
         <item>Tradicional</item>
-        <item>Sin semillas</item>
+        <item>Sin Semillas</item>
         <item>Croissant</item>
         <item>Integral</item>
         <item>Tostadas</item>
         <item>Marraqueta</item>
-
     </string-array>
 </resources>

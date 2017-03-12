@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string-array name="array_tamanios_de_carne_de_res">
+        <item>8 oz</item>
+        <item>10 oz</item>
+        <item>12 oz</item>
+        <item>15 oz</item>
+    </string-array>
+</resources>

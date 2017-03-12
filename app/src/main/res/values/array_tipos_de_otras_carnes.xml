@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string-array name="array_tipos_de_otras_carnes">
+        <item>Tocino</item>
+        <item>Jamon</item>
+        <item>Salami</item>
+        <item>Pepperoni</item>
+        <item>Salchicha</item>
+        <item>Chorizo</item>
+    </string-array>
+</resources>

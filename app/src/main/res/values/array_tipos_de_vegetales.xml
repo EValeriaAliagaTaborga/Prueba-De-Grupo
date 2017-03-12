@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string-array name="array_tipos_de_vegetales">
+        <item>Tomate</item>
+        <item>Lechuga</item>
+        <item>Cebolla</item>
+        <item>Pepinillos</item>
+        <item>Rabanos</item>
+
+    </string-array>
+</resources>
