@@ -517,7 +517,7 @@ public class ArmaloActivity extends AppCompatActivity {
                         int imagen = R.drawable.cajita_feliz;
                         switch (contenido) {
                             case "Tocino":
-                                imagen = R.drawable.ham_tocino;
+                                imagen = R.drawable.otrascarnes_tocino;
                                 precio += 4;
                                 break;
                             case "Jamon":
