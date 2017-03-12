@@ -15,7 +15,7 @@ public class VerificacionDePedidoActivity extends AppCompatActivity {
 
     private Button btnAnadir;
 
-    private Context context;
+    private Context context = this;
 
     private static final int opcion1 = 1;
     private static final int opcion2 = 2;
@@ -34,6 +34,7 @@ public class VerificacionDePedidoActivity extends AppCompatActivity {
         btnAnadir.setOnClickListener(new View.OnClickListener() {
             public void onClick(View v) {
                 Intent s=new Intent(context,MenuActivity.class);
+                startActivity(s);
             }
         });
     }
