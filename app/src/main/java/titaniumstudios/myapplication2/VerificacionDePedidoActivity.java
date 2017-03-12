@@ -9,12 +9,17 @@ import android.view.Menu;
 import android.view.View;
 import android.widget.Button;
 import android.widget.ImageView;
+import android.widget.TextView;
 import android.widget.Toast;
+
+import java.util.ArrayList;
 
 public class VerificacionDePedidoActivity extends AppCompatActivity {
 
     private Button btnAnadir;
     private Button btnComprar;
+    private TextView lblPrecio;
+    private TextView lblTextoLargo;
 
     private Context context = this;
 
@@ -30,8 +35,23 @@ public class VerificacionDePedidoActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_verificacion_de_pedido);
 
+        Intent b = getIntent();
+        ArrayList<String> datosDePedido = b.getStringArrayListExtra("datos_de_pedido");
+        String precio = datosDePedido.get(0);
+        String producto = "";
+        for(int i = 1; i < datosDePedido.size(); i++) {
+                producto += datosDePedido.get(i)+"\n";
+        }
+
+
+
         btnAnadir=(Button)findViewById(R.id.btnAnadir);
         btnComprar=(Button)findViewById(R.id.btnComprar);
+        lblPrecio=(TextView) findViewById(R.id.lblPrecio);
+        lblTextoLargo=(TextView) findViewById(R.id.lblTextoLargo);
+
+        lblPrecio.setText("$ "+precio);
+        lblTextoLargo.setText("Su pedido contiene: \n"+producto);
 
         btnAnadir.setOnClickListener(new View.OnClickListener() {
             public void onClick(View v) {
