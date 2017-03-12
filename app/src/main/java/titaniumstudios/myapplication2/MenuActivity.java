@@ -30,6 +30,7 @@ public class MenuActivity extends AppCompatActivity {
     private Context context;
 
     private boolean conCuenta = true;
+    private String producto ="";
 
     //Variables del menu
     private static final int opcion1= 1;
@@ -57,7 +58,9 @@ public class MenuActivity extends AppCompatActivity {
         imgHamburguesa.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
+                producto="hamburguesa";
                 Intent intent=new Intent(context,MenuHamburguesaActivity.class);
+                intent.putExtra("producto", producto);
                 intent.putExtra("con_cuenta", false);
                 startActivity(intent);
             }
@@ -66,11 +69,14 @@ public class MenuActivity extends AppCompatActivity {
         imgPizza.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
+                producto = "pizza";
                 Intent intent=new Intent(context,MenuHamburguesaActivity.class);
                 intent.putExtra("con_cuenta", false);
+                intent.putExtra("producto", producto);
                 startActivity(intent);
             }
         });
+
         imgExtras.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {

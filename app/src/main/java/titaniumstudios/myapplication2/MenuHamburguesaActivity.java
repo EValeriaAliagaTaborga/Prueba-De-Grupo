@@ -32,14 +32,18 @@ public class MenuHamburguesaActivity extends AppCompatActivity {
     private static final int opcion4 = 4;
 
     private boolean conCuenta = true;
+    private String producto = "";
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_menu_hamburguesa);
+
+        context = this;
+
         Intent d=getIntent();
         conCuenta = d.getBooleanExtra("con_cuenta", true);
-        context = this;
+        producto = d.getStringExtra("producto");
 
         imgArmalo = (ImageView) findViewById(R.id.imgArmalo);
         imgArmado = (ImageView) findViewById(R.id.imgArmado);
@@ -79,9 +83,15 @@ public class MenuHamburguesaActivity extends AppCompatActivity {
                             }
                         });
                 Dialogo.show();*/
-                Intent intent = new Intent(context, ArmaloActivity.class);
-                intent.putExtra("con_cuenta", false);
-                startActivity(intent);
+               if(producto.compareTo("hamburguesa") == 0) {
+                   Intent intent = new Intent(context, ArmaloActivity.class);
+                   intent.putExtra("con_cuenta", false);
+                   startActivity(intent);
+               } else if(producto.compareTo("pizza") == 0) {
+                   Intent intent = new Intent(context, ArmaloPizzaActivity.class);
+                   intent.putExtra("con_cuenta", false);
+                   startActivity(intent);
+               }
             }
         });
     }
