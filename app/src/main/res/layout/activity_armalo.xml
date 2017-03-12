@@ -21,7 +21,7 @@
             android:orientation="vertical">
 
             <ImageView
-                android:id="@+id/imgPan"
+                android:id="@+id/imgPanSuperior"
                 android:layout_width="match_parent"
                 android:layout_height="40dp"
                 app:srcCompat="@drawable/pizza_menu"
@@ -80,7 +80,15 @@
                 android:id="@+id/imgHuevo"
                 android:layout_width="match_parent"
                 android:layout_height="40dp"
-                app:srcCompat="@drawable/cubo1" />
+                app:srcCompat="@drawable/cubo1"
+                android:layout_margin="10dp"/>
+
+            <ImageView
+                android:id="@+id/imgPanInferior"
+                android:layout_width="match_parent"
+                android:layout_height="40dp"
+                app:srcCompat="@drawable/cubo"
+                android:layout_margin="10dp"/>
 
 
         </LinearLayout>
@@ -101,7 +109,7 @@
             android:layout_marginEnd="10dp"
             android:layout_marginTop="10dp"
             android:padding="15dp"
-            android:text="0.00"
+            android:text="$ 0.00"
             android:textSize="24sp" />
 
         <LinearLayout

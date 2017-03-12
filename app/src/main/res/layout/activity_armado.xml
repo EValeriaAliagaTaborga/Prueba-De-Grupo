@@ -59,7 +59,7 @@
                             android:layout_width="match_parent"
                             android:layout_height="wrap_content"
                             android:adjustViewBounds="true"
-                            android:src="@drawable/ham_queso" />
+                            android:src="@drawable/btnqueso" />
 
                         <TextView
                             android:layout_width="match_parent"

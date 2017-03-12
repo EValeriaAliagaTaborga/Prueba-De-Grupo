@@ -13,6 +13,8 @@ import android.view.View;
 import android.widget.ImageView;
 import android.widget.Toast;
 
+import java.util.ArrayList;
+
 
 public class ArmadoActivity extends AppCompatActivity {
 
@@ -31,6 +33,8 @@ public class ArmadoActivity extends AppCompatActivity {
     private Context context;
 
     private boolean conCuenta = true;
+
+    ArrayList<String> datosDePedido = new ArrayList<>();
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -51,6 +55,15 @@ public class ArmadoActivity extends AppCompatActivity {
             @Override
             public void onClick(View view) {
                 Intent intent=new Intent(context,VerificacionDePedidoActivity.class);
+                datosDePedido.add(0, "30");
+                datosDePedido.add("Pan Tradicional");
+                datosDePedido.add("Lechuga");
+                datosDePedido.add("Tomate");
+                datosDePedido.add("Queso Criollo");
+                datosDePedido.add("Carne de res de 12 oz");
+                datosDePedido.add("Queso Mozarella");
+                datosDePedido.add("Pan Tradicional");
+                intent.putExtra("datos_de_pedido", datosDePedido);
                 startActivity(intent);
             }
         });
@@ -58,6 +71,17 @@ public class ArmadoActivity extends AppCompatActivity {
             @Override
             public void onClick(View view) {
                 Intent intent=new Intent(context,VerificacionDePedidoActivity.class);
+                datosDePedido.add(0, "38");
+                datosDePedido.add("Pan Tradicional");
+                datosDePedido.add("Cebolla");
+                datosDePedido.add("Tomate");
+                datosDePedido.add("Lechuga");
+                datosDePedido.add("Pepinillos");
+                datosDePedido.add("Carne de res de 10 oz");
+                datosDePedido.add("Queso Criollo");
+                datosDePedido.add("Carne de res de 10 oz");
+                datosDePedido.add("Pan Tradicional");
+                intent.putExtra("datos_de_pedido", datosDePedido);
                 startActivity(intent);
             }
         });
@@ -65,6 +89,14 @@ public class ArmadoActivity extends AppCompatActivity {
             @Override
             public void onClick(View view) {
                 Intent intent=new Intent(context,VerificacionDePedidoActivity.class);
+                datosDePedido.add(0, "29");
+                datosDePedido.add("Lechuga");
+                datosDePedido.add("Queso Cheddar");
+                datosDePedido.add("Carne de res de 12 oz");
+                datosDePedido.add("Tomate");
+                datosDePedido.add("Pepinillos");
+                datosDePedido.add("Lechuga");
+                intent.putExtra("datos_de_pedido", datosDePedido);
                 startActivity(intent);
             }
         });
@@ -72,6 +104,18 @@ public class ArmadoActivity extends AppCompatActivity {
             @Override
             public void onClick(View view) {
                 Intent intent=new Intent(context,VerificacionDePedidoActivity.class);
+                datosDePedido.add(0, "32");
+                datosDePedido.add("Pan Sin Semillas");
+                datosDePedido.add("Queso Cheddar");
+                datosDePedido.add("Huevo Frito");
+                datosDePedido.add("Queso Gouda");
+                datosDePedido.add("Tocino");
+                datosDePedido.add("Carne de res de 8 oz");
+                datosDePedido.add("Tomate");
+                datosDePedido.add("Cebolla");
+                datosDePedido.add("Lechuga");
+                datosDePedido.add("Pan Sin Semillas");
+                intent.putExtra("datos_de_pedido", datosDePedido);
                 startActivity(intent);
             }
         });
@@ -79,6 +123,15 @@ public class ArmadoActivity extends AppCompatActivity {
             @Override
             public void onClick(View view) {
                 Intent intent=new Intent(context,VerificacionDePedidoActivity.class);
+                datosDePedido.add(0, "21");
+                datosDePedido.add("Pan Integral");
+                datosDePedido.add("Tomate");
+                datosDePedido.add("Cebolla");
+                datosDePedido.add("Lechuga");
+                datosDePedido.add("Pepinillos");
+                datosDePedido.add("Carne de pollo d 10 oz");
+                datosDePedido.add("Pan Integral");
+                intent.putExtra("datos_de_pedido", datosDePedido);
                 startActivity(intent);
             }
         });
@@ -86,6 +139,13 @@ public class ArmadoActivity extends AppCompatActivity {
             @Override
             public void onClick(View view) {
                 Intent intent=new Intent(context,VerificacionDePedidoActivity.class);
+                datosDePedido.add(0,"22");
+                datosDePedido.add("Pan Integral");
+                datosDePedido.add("Carne vegetariana de 10 oz");
+                datosDePedido.add("Tomate");
+                datosDePedido.add("Lechuga");
+                datosDePedido.add("Pan Integral");
+                intent.putExtra("datos_de_pedido", datosDePedido);
                 startActivity(intent);
             }
         });
