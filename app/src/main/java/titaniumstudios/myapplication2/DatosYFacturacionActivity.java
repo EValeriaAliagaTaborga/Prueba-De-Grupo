@@ -1,10 +1,18 @@
 package titaniumstudios.myapplication2;
 
+import android.content.Context;
+import android.content.Intent;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.Menu;
+import android.view.View;
+import android.widget.Button;
 
 public class DatosYFacturacionActivity extends AppCompatActivity {
+
+    private Button btnEnviar;
+
+    private Context context;
 
     private static final int opcion1 = 1;
     private static final int opcion2 = 2;
@@ -17,6 +25,18 @@ public class DatosYFacturacionActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_datos_y_facturacion);
+
+        context = this;
+
+        btnEnviar=(Button)findViewById(R.id.btnEnviar);
+
+        btnEnviar.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent intent=new Intent(context,VerificarFacturaActivity.class);
+                startActivity(intent);
+            }
+        });
     }
 
     @Override
