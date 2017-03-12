@@ -150,7 +150,7 @@ public class ArmaloActivity extends AppCompatActivity {
                         imgIngredienteElegido.setImageDrawable(getDrawable(imagen));
                         lyVertical.addView(imgIngredienteElegido);
                         setContentView(lyHorizontalPrincipal);
-                        lblPrecio.setText("$ " + Double.toString(precio) + "0");
+                        lblPrecio.setText("Bs. " + Double.toString(precio) + "0");
                         datosDePedido.add("Pan "+contenido);
                     }
                 });
@@ -199,7 +199,7 @@ public class ArmaloActivity extends AppCompatActivity {
                         imgIngredienteElegido.setImageDrawable(getDrawable(imagen));
                         lyVertical.addView(imgIngredienteElegido);
                         setContentView(lyHorizontalPrincipal);
-                        lblPrecio.setText("$ " + Double.toString(precio) + "0");
+                        lblPrecio.setText("Bs. " + Double.toString(precio) + "0");
                         datosDePedido.add("Carne de res de "+contenido);
                     }
                 });
@@ -252,7 +252,7 @@ public class ArmaloActivity extends AppCompatActivity {
                         imgIngredienteElegido.setImageDrawable(getDrawable(imagen));
                         lyVertical.addView(imgIngredienteElegido);
                         setContentView(lyHorizontalPrincipal);
-                        lblPrecio.setText("$ " + Double.toString(precio) + "0");
+                        lblPrecio.setText("Bs. " + Double.toString(precio) + "0");
                         datosDePedido.add("Queso "+contenido);
                     }
                 });
@@ -301,7 +301,7 @@ public class ArmaloActivity extends AppCompatActivity {
                         imgIngredienteElegido.setImageDrawable(getDrawable(imagen));
                         lyVertical.addView(imgIngredienteElegido);
                         setContentView(lyHorizontalPrincipal);
-                        lblPrecio.setText("$ " + Double.toString(precio) + "0");
+                        lblPrecio.setText("Bs. " + Double.toString(precio) + "0");
                         datosDePedido.add("Carne de pollo de "+contenido);
                     }
                 });
@@ -342,7 +342,7 @@ public class ArmaloActivity extends AppCompatActivity {
                         imgIngredienteElegido.setImageDrawable(getDrawable(imagen));
                         lyVertical.addView(imgIngredienteElegido);
                         setContentView(lyHorizontalPrincipal);
-                        lblPrecio.setText("$ " + Double.toString(precio) + "0");
+                        lblPrecio.setText("Bs. " + Double.toString(precio) + "0");
                         datosDePedido.add("Carne vegetariana de "+contenido);
                     }
                 });
@@ -395,7 +395,7 @@ public class ArmaloActivity extends AppCompatActivity {
                         imgIngredienteElegido.setImageDrawable(getDrawable(imagen));
                         lyVertical.addView(imgIngredienteElegido);
                         setContentView(lyHorizontalPrincipal);
-                        lblPrecio.setText("$ " + Double.toString(precio) + "0");
+                        lblPrecio.setText("Bs. " + Double.toString(precio) + "0");
                         datosDePedido.add(contenido);
                     }
                 });
@@ -464,7 +464,7 @@ public class ArmaloActivity extends AppCompatActivity {
                         imgIngredienteElegido.setImageDrawable(getDrawable(imagen));
                         lyVertical.addView(imgIngredienteElegido);
                         setContentView(lyHorizontalPrincipal);
-                        lblPrecio.setText("$ " + Double.toString(precio) + "0");
+                        lblPrecio.setText("Bs. " + Double.toString(precio) + "0");
                         datosDePedido.add(contenido);
                     }
                 });
@@ -505,7 +505,7 @@ public class ArmaloActivity extends AppCompatActivity {
                         imgIngredienteElegido.setImageDrawable(getDrawable(imagen));
                         lyVertical.addView(imgIngredienteElegido);
                         setContentView(lyHorizontalPrincipal);
-                        lblPrecio.setText("$ " + Double.toString(precio) + "0");
+                        lblPrecio.setText("Bs. " + Double.toString(precio) + "0");
                         datosDePedido.add("Huevo "+contenido);
                     }
                 });
@@ -562,7 +562,7 @@ public class ArmaloActivity extends AppCompatActivity {
                         imgIngredienteElegido.setImageDrawable(getDrawable(imagen));
                         lyVertical.addView(imgIngredienteElegido);
                         setContentView(lyHorizontalPrincipal);
-                        lblPrecio.setText("$ " + Double.toString(precio) + "0");
+                        lblPrecio.setText("Bs. " + Double.toString(precio) + "0");
                         datosDePedido.add(contenido);
                     }
                 });

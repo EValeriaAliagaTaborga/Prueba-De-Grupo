@@ -49,8 +49,8 @@ public class VerificacionDePedidoActivity extends AppCompatActivity {
         for(int i = 1; i < datosDePedido.size(); i++) {
                 producto += datosDePedido.get(i)+"\n";
         }
-
-
+        precioTotal+=Double.parseDouble(precio);
+        pedidoTotal+=producto;
 
         btnAnadir=(Button)findViewById(R.id.btnAnadir);
         btnComprar=(Button)findViewById(R.id.btnComprar);
