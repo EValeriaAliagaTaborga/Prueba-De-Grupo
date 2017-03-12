@@ -11,12 +11,22 @@ import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
 import android.widget.Button;
+import android.widget.EditText;
 import android.widget.Toast;
 
-public class ClienteFrecuenteActivity extends AppCompatActivity {
-
-    private Button btnRegMenu;
+public class RegistroActivity extends AppCompatActivity {
     private Button btnRegistrarse;
+    private EditText txtNombreyApellido;
+    private EditText txtNombreUsuario;
+    private EditText txtCelularTelefono;
+    private EditText txtDomicilio;
+    private EditText txtEmail;
+    private EditText txtContrasenia;
+    private EditText txtRepContrasenia;
+    private EditText txtNomFac;
+    private EditText txtNIT;
+
+    private Context context;
 
     private static final int opcion1 = 1;
     private static final int opcion2 = 2;
@@ -26,32 +36,54 @@ public class ClienteFrecuenteActivity extends AppCompatActivity {
 
     private boolean conCuenta = true;
 
-    private Context context;
-
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_cliente_frecuente);
+        setContentView(R.layout.activity_registro);
+
         Intent d=getIntent();
         conCuenta = d.getBooleanExtra("con_cuenta", true);
 
-        context=this;
+        context = this;
 
-        btnRegMenu=(Button)findViewById(R.id.btnRegMenu);
         btnRegistrarse=(Button)findViewById(R.id.btnRegistrarse);
+        txtNombreyApellido=(EditText) findViewById(R.id.txtNombreyApellido);
+        txtNombreUsuario=(EditText) findViewById(R.id.txtNombreUsuario);
+        txtCelularTelefono=(EditText) findViewById(R.id.txtCelularTelefono);
+        txtDomicilio=(EditText) findViewById(R.id.txtDomicilio);
+        txtEmail=(EditText) findViewById(R.id.txtEmail);
+        txtContrasenia=(EditText) findViewById(R.id.txtContrasenia);
+        txtRepContrasenia=(EditText) findViewById(R.id.txtRepContrasenia);
+        txtNomFac=(EditText) findViewById(R.id.txtNomFac);
+        txtNIT=(EditText) findViewById(R.id.txtNIT);
 
-        btnRegMenu.setOnClickListener(new View.OnClickListener() {
-            public void onClick(View v) {
-                Intent s=new Intent(context,MenuActivity.class);
-                s.putExtra("con_cuenta", conCuenta);
-                startActivity(s);
-            }
-        });
+
+
         btnRegistrarse.setOnClickListener(new View.OnClickListener() {
-            public void onClick(View v) {
-                Intent s=new Intent(context,RegistroActivity.class);
-                s.putExtra("con_cuenta", conCuenta);
-                startActivity(s);
+            @Override
+            public void onClick(View view) {
+
+                String[] datosDeCliente = new String[9];
+
+                datosDeCliente[0] = txtNombreyApellido.getText().toString();
+                datosDeCliente[1] = txtNombreUsuario.getText().toString();
+                datosDeCliente[2] = txtCelularTelefono.getText().toString();
+                datosDeCliente[3] = txtDomicilio.getText().toString();
+                datosDeCliente[4] = txtEmail.getText().toString();
+                datosDeCliente[5] = txtContrasenia.getText().toString();
+                datosDeCliente[6] = txtRepContrasenia.getText().toString();
+                datosDeCliente[7] = txtNomFac.getText().toString();
+                datosDeCliente[8] = txtNIT.getText().toString();
+
+
+                if(!datosDeCliente[0].equals("")&&!datosDeCliente[1].equals("")&&(datosDeCliente[2].length() == 7 || datosDeCliente[2].length() == 8 ) && !datosDeCliente[3].equals("")&&!datosDeCliente[4].equals("")&&(datosDeCliente[5].compareTo(datosDeCliente[6])==0)) {
+                    Intent intent = new Intent(context, LoginActivity.class);
+                    intent.putExtra("con_cuenta", conCuenta);
+                    intent.putExtra("datos_de_cliente", datosDeCliente);
+                    startActivity(intent);
+                } else {
+                    Toast.makeText(context, "Algun campo esta vacio, por favor llenar los datos", Toast.LENGTH_SHORT).show();
+                }
             }
         });
     }
@@ -82,7 +114,7 @@ public class ClienteFrecuenteActivity extends AppCompatActivity {
         {
             case opcion4:
                 AlertDialog.Builder Dialogo = new AlertDialog.Builder(
-                        ClienteFrecuenteActivity.this);
+                        RegistroActivity.this);
 
                 Dialogo.setTitle("Atención!");
                 Dialogo.setMessage("¿Seguro que desea cerrar sesión?");

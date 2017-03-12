@@ -10,12 +10,16 @@ import android.os.Environment;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.util.Log;
+import android.view.Gravity;
+import android.view.LayoutInflater;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
+import android.view.ViewGroup;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.ImageView;
+import android.widget.TextView;
 import android.widget.Toast;
 
 import java.io.BufferedReader;
@@ -120,6 +124,25 @@ public class MenuActivity extends AppCompatActivity {
     @Override
     public boolean onOptionsItemSelected(MenuItem item) {
         switch (item.getItemId()) {
+            case opcion3:
+                //Layout inflater será el método para agregar un mayout
+                LayoutInflater inflater = getLayoutInflater();
+                //Utilizaremos el layout llamado layout_toast que contiene el id específico layout_vista
+                View layouttoast = inflater.inflate(R.layout.layout_toast, (ViewGroup)findViewById(R.id.layout_vista));
+                //Llenamos el TextView con id=texto con el mensaje
+                ((TextView) layouttoast.findViewById(R.id.texto)).setText("Comer un hamburguesa es un placer irresistible para muchos y es por eso que los restaurantes de comida rápida proliferan. El exquisito sabor de la carne al pan es una de las cosas en que muchas personas coinciden. Aunque para los más saludables sea una comida rápida que daña el cuerpo, es bueno conocer su trayectoria. Una hamburguesa es un alimento en forma de bocadillo de carne picada aglutinada en forma de filete, cocinado a la parrilla o a la plancha, aunque también puede freírse u hornearse. Fuera del ámbito de habla hispana es más común encontrar la denominación inglesa burger. Se presenta en un pan ligero partido en dos que posee una forma de óvalo. Suele estar acompañada de aros de cebolla, hojas de lechuga, alguna rodaja de tomate, láminas de encurtidos, papas fritas etc.");
+
+                //Declaramos el context
+                Toast mensaje = new Toast(getBaseContext());
+
+                //Declaramos la ubicación en pantalla
+                mensaje.setGravity(Gravity.CENTER_VERTICAL, 0, 0);
+
+                //Declaramos el contenido
+                mensaje.setView(layouttoast);
+                mensaje.setDuration(Toast.LENGTH_LONG);
+                mensaje.show();
+             break;
             case opcion4:
                 AlertDialog.Builder Dialogo = new AlertDialog.Builder(
                         MenuActivity.this);

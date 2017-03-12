@@ -1,0 +1,188 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context="titaniumstudios.myapplication2.DatosYFacturacionActivity"
+    android:background="@drawable/backgrounddefault2">
+
+    <LinearLayout
+        android:layout_marginTop="5dp"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical">
+
+        <TextView
+            android:id="@+id/lblNombreyApellido"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Nombre y Apellido *"
+            android:textColor="@android:color/white"
+            android:textSize="18sp"
+            android:textStyle="bold" />
+
+        <EditText
+            android:id="@+id/txtNombreyApellido"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:ems="10"
+            android:hint="Ej.: Familia Rubik"
+            android:inputType="textPersonName"
+            android:textColor="@android:color/white" />
+
+        <TextView
+            android:id="@+id/lblNombreUsuario"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Nombre de Usuario *"
+            android:textColor="@android:color/white"
+            android:textSize="18sp"
+            android:textStyle="bold" />
+
+        <EditText
+            android:id="@+id/txtNombreUsuario"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:ems="10"
+            android:hint="Ej.: Rubik's Delivery"
+            android:inputType="textPersonName"
+            android:textColor="@android:color/white" />
+
+        <TextView
+            android:id="@+id/lblCelularTelefono"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Celular o Teléfono fijo *"
+            android:textColor="@android:color/white"
+            android:textSize="18sp"
+            android:textStyle="bold" />
+
+        <EditText
+            android:id="@+id/txtCelularTelefono"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:ems="10"
+            android:hint="Ej.: 60000077"
+            android:inputType="phone"
+            android:textColor="@android:color/white" />
+
+        <TextView
+            android:id="@+id/lblDomicilio"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Domicilio "
+            android:textColor="@android:color/white"
+            android:textSize="18sp"
+            android:textStyle="bold" />
+
+        <EditText
+            android:id="@+id/txtDomicilio"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:ems="10"
+            android:hint="Ej.: Calle 6 Colores, 1778"
+            android:inputType="textPersonName"
+            android:textColor="@android:color/white" />
+
+        <TextView
+            android:id="@+id/lblEmail"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="E-mail *"
+            android:textColor="@android:color/white"
+            android:textSize="18sp"
+            android:textStyle="bold" />
+
+        <EditText
+            android:id="@+id/txtEmail"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:ems="10"
+            android:hint="Ej.: rubiks.deliveryandfood@example.com"
+            android:inputType="textEmailAddress"
+            android:textColor="@android:color/white" />
+
+        <TextView
+        android:id="@+id/lblContrasenia"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Contraseña *"
+        android:textColor="@android:color/white"
+        android:textSize="18sp"
+        android:textStyle="bold" />
+
+        <EditText
+            android:id="@+id/txtContrasenia"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:ems="10"
+            android:hint="**********"
+            android:inputType="numberPassword"
+            android:textColor="@android:color/white" />
+        <TextView
+            android:id="@+id/lblRepContrasenia"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Repetir Contraseña *"
+            android:textColor="@android:color/white"
+            android:textSize="18sp"
+            android:textStyle="bold" />
+
+        <EditText
+            android:id="@+id/txtRepContrasenia"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:ems="10"
+            android:hint="**********"
+            android:inputType="numberPassword"
+            android:textColor="@android:color/white" />
+        <TextView
+            android:id="@+id/lblNomFac"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Nombre para Factura"
+            android:textColor="@android:color/white"
+            android:textSize="18sp"
+            android:textStyle="bold" />
+
+        <EditText
+            android:id="@+id/txtNomFac"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:ems="10"
+            android:hint="Ej.: Rubik's Delivery"
+            android:inputType="textPersonName"
+            android:textColor="@android:color/white" />
+        <TextView
+            android:id="@+id/lblNIT"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="NIT o Carnet"
+            android:textColor="@android:color/white"
+            android:textSize="18sp"
+            android:textStyle="bold" />
+
+        <EditText
+            android:id="@+id/txtNIT"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="10dp"
+            android:ems="10"
+            android:hint="Ej.: 5125269"
+            android:inputType="textPersonName"
+            android:textColor="@android:color/white" />
+
+        <Button
+            android:id="@+id/btnRegistrarse"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="right"
+            android:layout_marginBottom="20dp"
+            android:text="Registrarse" />
+
+
+
+    </LinearLayout>
+
+</ScrollView>
