@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string-array name="array_tipos_de_queso_pizza" >
+        <item>Mozarella</item>
+        <item>Cheddar</item>
+        <item>Gouda</item>
+        <item>Gruyere</item>
+    </string-array>
+</resources>

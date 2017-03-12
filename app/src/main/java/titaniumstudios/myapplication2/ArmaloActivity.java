@@ -98,7 +98,7 @@ public class ArmaloActivity extends AppCompatActivity {
 
 
         final LinearLayout.LayoutParams layoutImagenes = new LinearLayout.LayoutParams(
-                LinearLayout.LayoutParams.WRAP_CONTENT, 30
+                LinearLayout.LayoutParams.WRAP_CONTENT, 35
         );
 
 

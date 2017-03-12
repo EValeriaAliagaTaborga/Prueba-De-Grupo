@@ -5,7 +5,6 @@ import android.content.Intent;
 import android.content.SharedPreferences;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
-import android.view.Menu;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
@@ -20,10 +19,12 @@ public class LoginActivity extends AppCompatActivity {
     private TextView txtResultado;
 
 
-    String nombre_ingresado;
-    String password_ingresado;
+    String usuario_registrado;
+    String password_registrado;
 
     private Context context;
+
+    private boolean usuarioRegistrado = false;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -33,6 +34,8 @@ public class LoginActivity extends AppCompatActivity {
 
 
         Intent b=getIntent();
+        usuario_registrado = b.getStringArrayExtra("datos_de_cliente")[1];
+        password_registrado = b.getStringArrayExtra("datos_de_cliente")[5];
 
         btnLogin=(Button)findViewById(R.id.btnLogin);
         txtUsuario=(EditText)findViewById(R.id.txtUsuario);
@@ -46,21 +49,15 @@ public class LoginActivity extends AppCompatActivity {
                 String campo_usuario = txtUsuario.getText().toString();
                 String campo_password = txtPassword.getText().toString();
 
-                if ((campo_usuario.compareTo("Rosa") == 0 && campo_password.compareTo("i3915") == 0) || (campo_usuario.compareTo("Vale S") == 0 && campo_password.compareTo("valexd") == 0) || (campo_usuario.compareTo("Vale A") == 0 && campo_password.compareTo("vale05") == 0) || (campo_usuario.compareTo("Diego") == 0 && campo_password.compareTo("diego") == 0)) {
-                   /* Intent c=new Intent(context,MenuActivity.class);
-                    String[] datos=new String[2];
-                    datos[0]=txtUsuario.getText().toString();
-                    datos[1]=txtPassword.getText().toString();
-                    c.putExtra("datos_usuario", datos);
-                    startActivity(c);
+                if(!usuario_registrado.equals("") && !password_registrado.equals("")) {
+                    if(campo_usuario.compareTo(usuario_registrado)== 0 &&  campo_password.compareTo(password_registrado) == 0) {
+                        usuarioRegistrado = true;
+                    }
+                }
 
-                    Toast mensaje=Toast.makeText(getApplicationContext(), "Bienvenido "+datos[0], Toast.LENGTH_LONG);
-                    mensaje.show();
-                    */
-
-
-                    //nombre_ingresado=txtUsuario.getText().toString();
-                    //password_ingresado=txtPassword.getText().toString();
+                if ((campo_usuario.compareTo("Rosa") == 0 && campo_password.compareTo("i3915") == 0) || (campo_usuario.compareTo("Vale S") == 0 && campo_password.compareTo("valexd") == 0)
+                        || (campo_usuario.compareTo("Vale A") == 0 && campo_password.compareTo("vale05") == 0) || (campo_usuario.compareTo("Diego") == 0 && campo_password.compareTo("diego") == 0)
+                        || (usuarioRegistrado)) {
 
                     SharedPreferences prefs =
                             getSharedPreferences("MisPreferencias", Context.MODE_PRIVATE);

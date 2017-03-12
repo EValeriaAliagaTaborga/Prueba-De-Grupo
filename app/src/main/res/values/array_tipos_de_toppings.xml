@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string-array name="array_tipos_de_toppings" >
+        <item>Piña</item>
+        <item>Cereza Cherry</item>
+        <item>Champiñones</item>
+        <item>Pimientos</item>
+        <item>Brocoli</item>
+        <item>Tomate</item>
+        <item>Aceitunas</item>
+
+    </string-array>
+</resources>

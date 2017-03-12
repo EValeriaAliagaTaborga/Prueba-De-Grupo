@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string-array name="array_tipos_de_carnes_pizza">
+        <item>Carne molida</item>
+        <item>Pepperoni</item>
+        <item>Salchicha</item>
+        <item>Jamon</item>
+        <item>Chorizo</item>
+        <item>Salami</item>
+
+    </string-array>
+</resources>

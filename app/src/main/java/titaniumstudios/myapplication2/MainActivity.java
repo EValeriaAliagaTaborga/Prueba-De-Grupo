@@ -46,6 +46,7 @@ public class MainActivity extends AppCompatActivity {
         btnSignIn.setOnClickListener(new View.OnClickListener() {
             public void onClick(View v) {
                 Intent a=new Intent(context,LoginActivity.class);
+                a.putExtra("datos_de_cliente", new String[]{"","","","","","",""});
                 startActivity(a);
 
             }

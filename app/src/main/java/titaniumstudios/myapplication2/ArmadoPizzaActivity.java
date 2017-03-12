@@ -55,6 +55,15 @@ public class ArmadoPizzaActivity extends AppCompatActivity {
             @Override
             public void onClick(View view) {
                 Intent intent=new Intent(context,VerificacionDePedidoActivity.class);
+                ArrayList<String> datosDePedido = new ArrayList<String>();
+                datosDePedido.add(0, "77");
+                datosDePedido.add("Oregano");
+                datosDePedido.add("Carne molida");
+                datosDePedido.add("Pepperoni");
+                datosDePedido.add("Jamon");
+                datosDePedido.add("Mozarella");
+                datosDePedido.add("Salsa de Tomate Tradicional");
+                intent.putStringArrayListExtra("datos_de_pedido",datosDePedido);
                 intent.putExtra("con_cuenta", conCuenta);
                 startActivity(intent);
             }
@@ -63,6 +72,14 @@ public class ArmadoPizzaActivity extends AppCompatActivity {
             @Override
             public void onClick(View view) {
                 Intent intent=new Intent(context,VerificacionDePedidoActivity.class);
+                ArrayList<String> datosDePedido = new ArrayList<String>();
+                datosDePedido.add(0, "66");
+                datosDePedido.add("Piña");
+                datosDePedido.add("Cereza Cherry");
+                datosDePedido.add("Jamon");
+                datosDePedido.add("Mozarella");
+                datosDePedido.add("Salsa de Tomate Tradicional");
+                intent.putStringArrayListExtra("datos_de_pedido",datosDePedido);
                 intent.putExtra("con_cuenta", conCuenta);
                 startActivity(intent);
             }
@@ -71,6 +88,15 @@ public class ArmadoPizzaActivity extends AppCompatActivity {
             @Override
             public void onClick(View view) {
                 Intent intent=new Intent(context,VerificacionDePedidoActivity.class);
+                ArrayList<String> datosDePedido = new ArrayList<String>();
+                datosDePedido.add(0, "110");
+                datosDePedido.add("Mozarella");
+                datosDePedido.add("Cheddar");
+                datosDePedido.add("Gouda");
+                datosDePedido.add("Gruyere");
+                datosDePedido.add("Oregano");
+                datosDePedido.add("Salsa de Tomate Tradicional");
+                intent.putStringArrayListExtra("datos_de_pedido",datosDePedido);
                 intent.putExtra("con_cuenta", conCuenta);
                 startActivity(intent);
             }
@@ -79,6 +105,18 @@ public class ArmadoPizzaActivity extends AppCompatActivity {
             @Override
             public void onClick(View view) {
                 Intent intent=new Intent(context,VerificacionDePedidoActivity.class);
+                ArrayList<String> datosDePedido = new ArrayList<String>();
+                datosDePedido.add(0, "77");
+                datosDePedido.add("Pimientos");
+                datosDePedido.add("Oregano");
+                datosDePedido.add("Pepperoni");
+                datosDePedido.add("Jamon");
+                datosDePedido.add("Chorizo");
+                datosDePedido.add("Cheddar");
+                datosDePedido.add("Salsa de Tomate Tradicional");
+                datosDePedido.add("Salsa de Tomate Picante");
+                datosDePedido.add("Aceitunas");
+                intent.putStringArrayListExtra("datos_de_pedido",datosDePedido);
                 intent.putExtra("con_cuenta", conCuenta);
                 startActivity(intent);
             }
@@ -87,6 +125,14 @@ public class ArmadoPizzaActivity extends AppCompatActivity {
             @Override
             public void onClick(View view) {
                 Intent intent=new Intent(context,VerificacionDePedidoActivity.class);
+                ArrayList<String> datosDePedido = new ArrayList<String>();
+                datosDePedido.add(0, "60");
+                datosDePedido.add("Champiñones");
+                datosDePedido.add("Locoto en polvo");
+                datosDePedido.add("Jamon");
+                datosDePedido.add("Gouda");
+                datosDePedido.add("Salsa de Tomate Tradicional");
+                intent.putStringArrayListExtra("datos_de_pedido",datosDePedido);
                 intent.putExtra("con_cuenta", conCuenta);
                 startActivity(intent);
             }
@@ -95,6 +141,15 @@ public class ArmadoPizzaActivity extends AppCompatActivity {
             @Override
             public void onClick(View view) {
                 Intent intent=new Intent(context,VerificacionDePedidoActivity.class);
+                ArrayList<String> datosDePedido = new ArrayList<String>();
+                datosDePedido.add(0, "52");
+                datosDePedido.add("Pimientos");
+                datosDePedido.add("Tomate");
+                datosDePedido.add("Brocoli");
+                datosDePedido.add("Champiñones");
+                datosDePedido.add("Gruyere");
+                datosDePedido.add("Salsa de Tomate Tradicional");
+                intent.putStringArrayListExtra("datos_de_pedido",datosDePedido);
                 intent.putExtra("con_cuenta", conCuenta);
                 startActivity(intent);
             }

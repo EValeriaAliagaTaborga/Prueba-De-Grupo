@@ -76,13 +76,22 @@ public class RegistroActivity extends AppCompatActivity {
                 datosDeCliente[8] = txtNIT.getText().toString();
 
 
-                if(!datosDeCliente[0].equals("")&&!datosDeCliente[1].equals("")&&(datosDeCliente[2].length() == 7 || datosDeCliente[2].length() == 8 ) && !datosDeCliente[3].equals("")&&!datosDeCliente[4].equals("")&&(datosDeCliente[5].compareTo(datosDeCliente[6])==0)) {
+                if(!datosDeCliente[0].equals("")&&!datosDeCliente[1].equals("")&&(datosDeCliente[2].length() == 7 || datosDeCliente[2].length() == 8 ) &&
+                        !datosDeCliente[3].equals("")&&!datosDeCliente[4].equals("")&&(datosDeCliente[5].compareTo(datosDeCliente[6])==0)) {
                     Intent intent = new Intent(context, LoginActivity.class);
-                    intent.putExtra("con_cuenta", conCuenta);
-                    intent.putExtra("datos_de_cliente", datosDeCliente);
-                    startActivity(intent);
+                    if(conCuenta) {
+                        //TODO crear snack bar
+                    } else {
+                        intent.putExtra("con_cuenta", conCuenta);
+                        intent.putExtra("datos_de_cliente", datosDeCliente);
+                        startActivity(intent);
+                    }
                 } else {
-                    Toast.makeText(context, "Algun campo esta vacio, por favor llenar los datos", Toast.LENGTH_SHORT).show();
+                    if (datosDeCliente[5].compareTo(datosDeCliente[6]) != 0) {
+                        Toast.makeText(context, "Verificacion de contrasenia fallida, coloque la misma contrasenia en ambos espacios", Toast.LENGTH_SHORT).show();
+                    } else {
+                        Toast.makeText(context, "Algun campo esta vacio, por favor llenar los datos", Toast.LENGTH_SHORT).show();
+                    }
                 }
             }
         });

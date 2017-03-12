@@ -68,7 +68,7 @@ public class MenuActivity extends AppCompatActivity {
             @Override
             public void onClick(View view) {
                 producto = "hamburguesa";
-                Intent intent = new Intent(context, MenuHamburguesaActivity.class);
+                Intent intent = new Intent(context, MenuEleccionActivity.class);
                 intent.putExtra("producto", producto);
                 intent.putExtra("con_cuenta", conCuenta);
                 startActivity(intent);
@@ -79,7 +79,7 @@ public class MenuActivity extends AppCompatActivity {
             @Override
             public void onClick(View view) {
                 producto = "pizza";
-                Intent intent = new Intent(context, MenuHamburguesaActivity.class);
+                Intent intent = new Intent(context, MenuEleccionActivity.class);
                 intent.putExtra("con_cuenta", conCuenta);
                 intent.putExtra("producto", producto);
                 startActivity(intent);

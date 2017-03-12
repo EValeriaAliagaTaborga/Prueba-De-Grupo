@@ -5,18 +5,15 @@ import android.content.Context;
 import android.content.DialogInterface;
 import android.content.Intent;
 import android.content.SharedPreferences;
-import android.os.PersistableBundle;
-import android.support.annotation.Nullable;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
-import android.util.Log;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
 import android.widget.ImageView;
 import android.widget.Toast;
 
-public class MenuHamburguesaActivity extends AppCompatActivity {
+public class MenuEleccionActivity extends AppCompatActivity {
 
     //creo q esta clase su puede llamar DecisionActivty (ya q es donde decides armar o usar predefinida)
     //para saber a que layout mandar podemos guardar en una variable y utilizar en condiciones
@@ -38,7 +35,7 @@ public class MenuHamburguesaActivity extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_menu_hamburguesa);
+        setContentView(R.layout.activity_menu_eleccion);
 
         context = this;
 
@@ -52,10 +49,16 @@ public class MenuHamburguesaActivity extends AppCompatActivity {
         imgArmado.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                Intent intent = new Intent(context, ArmadoActivity.class);
-                intent.putExtra("con_cuenta", conCuenta);
-                startActivity(intent);
-            }
+                if(producto.compareTo("hamburguesa") == 0) {
+                    Intent intent = new Intent(context, ArmadoActivity.class);
+                    intent.putExtra("con_cuenta", conCuenta);
+                    startActivity(intent);
+                } else if(producto.compareTo("pizza") == 0) {
+                    Intent intent = new Intent(context, ArmadoPizzaActivity.class);
+                    intent.putExtra("con_cuenta", conCuenta);
+                    startActivity(intent);
+                }
+           }
         });
 
 
@@ -103,7 +106,7 @@ public class MenuHamburguesaActivity extends AppCompatActivity {
         {
             case opcion4:
                 AlertDialog.Builder Dialogo = new AlertDialog.Builder(
-                        MenuHamburguesaActivity.this);
+                        MenuEleccionActivity.this);
 
                 Dialogo.setTitle("Atención!");
                 Dialogo.setMessage("¿Seguro que desea cerrar sesión?");

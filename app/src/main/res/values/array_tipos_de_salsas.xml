@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string-array name="array_tipos_de_salsas">
+        <item>Tomate Tradicional</item>
+        <item>Tomate Picante</item>
+    </string-array>
+</resources>
