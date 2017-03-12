@@ -4,9 +4,13 @@ import android.app.AlertDialog;
 import android.content.Context;
 import android.content.DialogInterface;
 import android.content.Intent;
+import android.os.PersistableBundle;
+import android.support.annotation.Nullable;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
+import android.util.Log;
 import android.view.Menu;
+import android.view.MenuItem;
 import android.view.View;
 import android.widget.ImageView;
 import android.widget.Toast;
@@ -21,26 +25,30 @@ public class MenuHamburguesaActivity extends AppCompatActivity {
 
     private Context context;
 
-    private static final int opcion1= 1;
+    private static final int opcion1 = 1;
     private static final int opcion2 = 2;
     private static final int opcion3 = 3;
+    private static final int opcion4 = 4;
+
+    private boolean conCuenta = true;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_menu_hamburguesa);
-        context=this;
+        context = this;
 
-        imgArmalo=(ImageView)findViewById(R.id.imgArmalo);
-        imgArmado=(ImageView)findViewById(R.id.imgArmado);
+        imgArmalo = (ImageView) findViewById(R.id.imgArmalo);
+        imgArmado = (ImageView) findViewById(R.id.imgArmado);
 
         imgArmado.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                Intent intent=new Intent(context,ArmadoActivity.class);
+                Intent intent = new Intent(context, ArmadoActivity.class);
                 startActivity(intent);
             }
         });
+
 
         imgArmalo.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -70,14 +78,22 @@ public class MenuHamburguesaActivity extends AppCompatActivity {
             }
         });
     }
+
     @Override
     public boolean onCreateOptionsMenu(Menu menu) {
-        menu.add(Menu.NONE, opcion1, Menu.NONE, "Perfil")
-                .setIcon(android.R.drawable.ic_menu_add);
-        menu.add(Menu.NONE, opcion2, Menu.NONE, "Historial")
-                .setIcon(android.R.drawable.stat_notify_sdcard_prepare);
+        if (conCuenta) {
+            menu.add(Menu.NONE, opcion1, Menu.NONE, "Perfil")
+                    .setIcon(android.R.drawable.ic_menu_add);
+            menu.add(Menu.NONE, opcion2, Menu.NONE, "Historial")
+                    .setIcon(android.R.drawable.stat_notify_sdcard_prepare);
+        }
         menu.add(Menu.NONE, opcion3, Menu.NONE, "Detalles de la app")
                 .setIcon(android.R.drawable.ic_dialog_info);
+        if (conCuenta) {
+            menu.add(Menu.NONE, opcion4, Menu.NONE, "Cerrar Sesión")
+                    .setIcon(android.R.drawable.ic_dialog_info);
+        }
         return true;
     }
+
 }
