@@ -113,6 +113,7 @@ public class GraciasActivity extends AppCompatActivity {
                 break;
             case opcion5:
                 Intent intent = new Intent(context, LoginActivity.class);
+                intent.putExtra("datos_de_cliente", new String[]{"","","","","","",""});
                 startActivity(intent);
             default:
                 return super.onOptionsItemSelected(item);
