@@ -11,6 +11,7 @@ import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
 import android.widget.Button;
+import android.widget.TextView;
 import android.widget.Toast;
 
 public class VerificarFacturaActivity extends AppCompatActivity {
@@ -18,6 +19,7 @@ public class VerificarFacturaActivity extends AppCompatActivity {
     private Button btnEditar;
     private Button btnCancelar;
     private Button btnComprar;
+    private TextView factura;
 
     private Context context;
 
@@ -122,7 +124,7 @@ public class VerificarFacturaActivity extends AppCompatActivity {
                 AlertDialog.Builder Dialogo = new AlertDialog.Builder(
                        VerificarFacturaActivity.this);
 
-                Dialogo.setTitle("Atención!");
+                Dialogo.setTitle("¡Atención!");
                 Dialogo.setMessage("¿Seguro que desea cerrar sesión?");
 
                 Dialogo.setPositiveButton("Si",

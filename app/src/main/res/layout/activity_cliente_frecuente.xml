@@ -4,6 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:background="@drawable/backgroundclientefrec"
     tools:context="titaniumstudios.myapplication2.ClienteFrecuenteActivity">
 
 
@@ -18,8 +19,12 @@
                         android:layout_height="wrap_content"
                         android:layout_gravity="center"
                         android:layout_marginBottom="20dp"
+                        android:fontFamily="cursive"
                         android:text="¿Desea convertirse en un cliente frecuente?"
-                        android:textSize="30sp" />
+                        android:textAlignment="center"
+                        android:textColor="@android:color/black"
+                        android:textSize="30sp"
+                        android:textStyle="bold" />
 
                     <Button
                         android:id="@+id/btnRegistrarse"
@@ -27,21 +32,24 @@
                         android:layout_height="wrap_content"
                         android:layout_marginBottom="20dp"
                         android:background="@android:color/transparent"
-                        android:text="¡Registrate ya!" />
+                        android:text="¡Registrate ya!"
+                        android:textSize="18sp" />
 
                     <ImageView
                         android:id="@+id/imageView2"
                         android:layout_width="match_parent"
                         android:layout_height="212dp"
                         android:layout_marginBottom="10dp"
-                        app:srcCompat="@drawable/cubo" />
+                        app:srcCompat="@drawable/rubik2" />
 
                     <TextView
                         android:id="@+id/textView8"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
+                        android:fontFamily="cursive"
                         android:text="     ¿En otra ocasión?"
-                        android:textSize="24sp" />
+                        android:textSize="24sp"
+                        android:textStyle="bold" />
 
                     <Button
                         android:id="@+id/btnRegMenu"

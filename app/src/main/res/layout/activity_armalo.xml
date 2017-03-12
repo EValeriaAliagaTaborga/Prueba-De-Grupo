@@ -7,6 +7,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:id="@+id/lyHorizontalPrincipal"
+    android:background="@drawable/backgroundlogo"
     tools:context="titaniumstudios.myapplication2.ArmaloActivity">
 
     <ScrollView
@@ -24,70 +25,70 @@
                 android:id="@+id/imgPanSuperior"
                 android:layout_width="match_parent"
                 android:layout_height="40dp"
-                app:srcCompat="@drawable/pizza_menu"
-                android:layout_margin="10dp"/>
+                android:layout_margin="10dp"
+                app:srcCompat="@drawable/pan_tradicional_superior" />
 
             <ImageView
                 android:id="@+id/imgCarneRes"
                 android:layout_width="match_parent"
                 android:layout_height="40dp"
-                app:srcCompat="@drawable/ham_queso"
-                android:layout_margin="10dp"/>
+                android:layout_margin="10dp"
+                app:srcCompat="@drawable/btnhamres" />
 
             <ImageView
                 android:id="@+id/imgCarnePollo"
                 android:layout_width="match_parent"
                 android:layout_height="40dp"
-                app:srcCompat="@drawable/fondo_comida"
-                android:layout_margin="10dp"/>
+                android:layout_margin="10dp"
+                app:srcCompat="@drawable/btnhampollo" />
 
             <ImageView
                 android:id="@+id/imgCarneVegetariana"
                 android:layout_width="wrap_content"
                 android:layout_height="40dp"
-                app:srcCompat="@drawable/ham_doble"
-                android:layout_margin="10dp"/>
+                android:layout_margin="10dp"
+                app:srcCompat="@drawable/btnhamveg" />
 
             <ImageView
                 android:id="@+id/imgQueso"
                 android:layout_width="match_parent"
                 android:layout_height="49dp"
-                app:srcCompat="@drawable/ham_menu"
-                android:layout_margin="10dp"/>
+                android:layout_margin="10dp"
+                app:srcCompat="@drawable/btnquesos" />
 
             <ImageView
                 android:id="@+id/imgVegetales"
                 android:layout_width="match_parent"
                 android:layout_height="40dp"
-                app:srcCompat="@drawable/pizza_menu"
-                android:layout_margin="10dp"/>
+                android:layout_margin="10dp"
+                app:srcCompat="@drawable/btnverduras" />
 
             <ImageView
                 android:id="@+id/imgAdherezo"
                 android:layout_width="match_parent"
                 android:layout_height="40dp"
-                app:srcCompat="@drawable/ham_menu"
-                android:layout_margin="10dp"/>
+                android:layout_margin="10dp"
+                app:srcCompat="@drawable/btnadherezos" />
 
             <ImageView
                 android:id="@+id/imgOtrasCarnes"
                 android:layout_width="match_parent"
                 android:layout_height="40dp"
-                app:srcCompat="@drawable/ham_queso"
-                android:layout_margin="10dp"/>
+                android:layout_margin="10dp"
+                app:srcCompat="@drawable/btnotrascarnes" />
 
             <ImageView
                 android:id="@+id/imgHuevo"
                 android:layout_width="match_parent"
                 android:layout_height="40dp"
-                app:srcCompat="@drawable/cubo1"
-                android:layout_margin="10dp"/>
+                android:layout_margin="10dp"
+                app:srcCompat="@drawable/huevo_frito" />
 
             <ImageView
                 android:id="@+id/imgPanInferior"
                 android:layout_width="match_parent"
                 android:layout_height="40dp"
-                app:srcCompat="@drawable/cubo"
+                app:srcCompat="@drawable/pan_tradicional_inferior"
                 android:layout_margin="10dp"/>
 
 
