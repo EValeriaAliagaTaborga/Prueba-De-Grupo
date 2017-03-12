@@ -6,7 +6,7 @@
         android:allowBackup="true"
         android:hardwareAccelerated="false"
         android:icon="@mipmap/ic_launcher"
-        android:label="@string/app_name"
+        android:label="Rubik's"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
         <activity android:name=".MainActivity">
@@ -21,7 +21,6 @@
         <activity android:name=".MenuHamburguesaActivity" />
         <activity android:name=".ArmadoActivity" />
         <activity android:name=".ArmaloActivity" />
-        <activity android:name=".ArmadoActivity" />
         <activity android:name=".VerificarFacturaActivity" />
         <activity android:name=".DatosYFacturacionActivity" />
         <activity android:name=".VerificacionDePedidoActivity" />

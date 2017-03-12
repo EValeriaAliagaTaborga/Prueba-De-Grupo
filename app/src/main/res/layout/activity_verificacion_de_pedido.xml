@@ -21,7 +21,7 @@
             android:id="@+id/imgCajitaFeliz"
             android:layout_width="match_parent"
             android:layout_height="150dp"
-            app:srcCompat="@drawable/cajita_feliz" />
+            app:srcCompat="@drawable/cajitafelizrubik" />
 
         <LinearLayout
             android:layout_width="match_parent"
