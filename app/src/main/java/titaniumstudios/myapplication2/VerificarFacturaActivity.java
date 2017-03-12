@@ -15,6 +15,7 @@ public class VerificarFacturaActivity extends AppCompatActivity {
 
     private Button btnEditar;
     private Button btnCancelar;
+    private Button btnComprar;
 
     private Context context;
 
@@ -36,6 +37,7 @@ public class VerificarFacturaActivity extends AppCompatActivity {
 
         btnEditar=(Button)findViewById(R.id.btnEditar);
         btnCancelar=(Button)findViewById(R.id.btnCancelar);
+        btnComprar=(Button)findViewById(R.id.btnComprar);
 
         btnEditar.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -70,6 +72,13 @@ public class VerificarFacturaActivity extends AppCompatActivity {
                             }
                         });
                 Dialogo.show();
+            }
+        });
+        btnComprar.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent intent=new Intent(context,GraciasActivity.class);
+                startActivity(intent);
             }
         });
     }

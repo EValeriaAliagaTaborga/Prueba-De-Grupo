@@ -25,7 +25,8 @@
         <activity android:name=".VerificarFacturaActivity" />
         <activity android:name=".DatosYFacturacionActivity" />
         <activity android:name=".VerificacionDePedidoActivity" />
-        <activity android:name=".GraciasActivity"></activity>
+        <activity android:name=".GraciasActivity" />
+        <activity android:name=".ClienteFrecuenteActivity"></activity>
     </application>
 
 </manifest>

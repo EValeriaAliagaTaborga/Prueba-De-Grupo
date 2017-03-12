@@ -14,6 +14,7 @@ import android.widget.Toast;
 public class VerificacionDePedidoActivity extends AppCompatActivity {
 
     private Button btnAnadir;
+    private Button btnComprar;
 
     private Context context = this;
 
@@ -30,10 +31,17 @@ public class VerificacionDePedidoActivity extends AppCompatActivity {
         setContentView(R.layout.activity_verificacion_de_pedido);
 
         btnAnadir=(Button)findViewById(R.id.btnAnadir);
+        btnComprar=(Button)findViewById(R.id.btnComprar);
 
         btnAnadir.setOnClickListener(new View.OnClickListener() {
             public void onClick(View v) {
                 Intent s=new Intent(context,MenuActivity.class);
+                startActivity(s);
+            }
+        });
+        btnComprar.setOnClickListener(new View.OnClickListener() {
+            public void onClick(View v) {
+                Intent s=new Intent(context,DatosYFacturacionActivity.class);
                 startActivity(s);
             }
         });
