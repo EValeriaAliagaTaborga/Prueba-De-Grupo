@@ -12,48 +12,60 @@
     tools:context="titaniumstudios.myapplication2.MenuHamburguesaActivity"
     android:background="@android:color/holo_orange_light">
 
-    <LinearLayout
-        android:orientation="vertical"
-        android:layout_width="wrap_content"
-        android:layout_height="match_parent"
-        android:weightSum="1"
-        android:layout_alignParentBottom="true"
-        android:layout_centerHorizontal="true"
-        android:layout_marginBottom="45dp">
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
 
-        <ImageView
-            android:layout_width="251dp"
-            android:layout_height="164dp"
-            app:srcCompat="@drawable/cubo"
-            android:id="@+id/imgArmalo"
-            android:layout_marginBottom="20dp"
-            android:layout_gravity="center_horizontal" />
-
-        <TextView
-            android:text="!Ármalo tu mismo!"
+        <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:id="@+id/textView2"
-            android:layout_marginBottom="20dp"
-            android:textSize="18sp"
-            android:textColor="@android:color/black"
-            android:gravity="center_horizontal" />
+            android:orientation="vertical" >
 
-        <ImageView
-            android:layout_width="271dp"
-            android:layout_height="157dp"
-            app:srcCompat="@drawable/cubo1"
-            android:id="@+id/imgArmado"
-            android:layout_marginBottom="20dp"
-            android:layout_gravity="center_horizontal" />
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_alignParentBottom="true"
+                android:layout_centerHorizontal="true"
+                android:layout_marginBottom="45dp"
+                android:orientation="vertical"
+                android:weightSum="1">
 
-        <TextView
-            android:text="Elige uno de nuestros Clásicos"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:id="@+id/textView3"
-            android:textSize="18sp"
-            android:textColor="@android:color/black"
-            android:gravity="center_horizontal" />
-    </LinearLayout>
+                <ImageView
+                    android:id="@+id/imgArmalo"
+                    android:layout_width="251dp"
+                    android:layout_height="164dp"
+                    android:layout_gravity="center_horizontal"
+                    android:layout_marginBottom="20dp"
+                    app:srcCompat="@drawable/cubo" />
+
+                <TextView
+                    android:id="@+id/textView2"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginBottom="20dp"
+                    android:gravity="center_horizontal"
+                    android:text="!Ármalo tu mismo!"
+                    android:textColor="@android:color/black"
+                    android:textSize="18sp" />
+
+                <ImageView
+                    android:id="@+id/imgArmado"
+                    android:layout_width="271dp"
+                    android:layout_height="157dp"
+                    android:layout_gravity="center_horizontal"
+                    android:layout_marginBottom="20dp"
+                    app:srcCompat="@drawable/cubo1" />
+
+                <TextView
+                    android:id="@+id/textView3"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:gravity="center_horizontal"
+                    android:text="Elige uno de nuestros Clásicos"
+                    android:textColor="@android:color/black"
+                    android:textSize="18sp" />
+            </LinearLayout>
+        </LinearLayout>
+    </ScrollView>
+
 </RelativeLayout>

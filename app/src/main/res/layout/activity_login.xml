@@ -12,59 +12,76 @@
     tools:context="titaniumstudios.myapplication2.MainActivity"
     android:background="@android:color/holo_orange_light">
 
-    <LinearLayout
-        android:orientation="vertical"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_centerVertical="true"
-        android:layout_centerHorizontal="true">
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
 
-        <TextView
-            android:text="Bienvenido a "
+        <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:id="@+id/textView"
-            android:textColor="@android:color/black"
-            android:textSize="20sp"
-            android:layout_marginBottom="25dp" />
+            android:orientation="vertical" >
 
-        <ImageView
-            android:layout_width="228dp"
-            android:layout_height="199dp"
-            app:srcCompat="@drawable/cubo"
-            android:id="@+id/imageView3"
-            android:layout_marginBottom="10dp" />
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent">
 
-        <EditText
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:inputType="textPersonName"
-            android:ems="10"
-            android:id="@+id/txtUsuario"
-            android:hint="Nombre de Usuario" />
+                <LinearLayout
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_centerHorizontal="true"
+                    android:layout_centerVertical="true"
+                    android:orientation="vertical">
 
-        <EditText
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:inputType="textPassword"
-            android:ems="10"
-            android:id="@+id/txtPassword"
-            android:hint="Password"
-            android:layout_marginBottom="15dp" />
+                    <TextView
+                        android:id="@+id/textView"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginBottom="25dp"
+                        android:text="Bienvenido a "
+                        android:textColor="@android:color/black"
+                        android:textSize="20sp" />
 
-        <Button
-            android:text="Login"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:id="@+id/btnLogin"
-            android:layout_marginBottom="20dp" />
+                    <ImageView
+                        android:id="@+id/imageView3"
+                        android:layout_width="228dp"
+                        android:layout_height="199dp"
+                        android:layout_marginBottom="10dp"
+                        app:srcCompat="@drawable/cubo" />
 
-        <TextView
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:id="@+id/txtResultado"
-            android:textSize="18sp"
-            android:gravity="center_horizontal"
-            android:textColor="@android:color/black" />
-    </LinearLayout>
+                    <EditText
+                        android:id="@+id/txtUsuario"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:ems="10"
+                        android:hint="Nombre de Usuario"
+                        android:inputType="textPersonName" />
+
+                    <EditText
+                        android:id="@+id/txtPassword"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginBottom="15dp"
+                        android:ems="10"
+                        android:hint="Password"
+                        android:inputType="textPassword" />
+
+                    <Button
+                        android:id="@+id/btnLogin"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginBottom="20dp"
+                        android:text="Login" />
+
+                    <TextView
+                        android:id="@+id/txtResultado"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:gravity="center_horizontal"
+                        android:textColor="@android:color/black"
+                        android:textSize="18sp" />
+                </LinearLayout>
+            </RelativeLayout>
+        </LinearLayout>
+    </ScrollView>
+
 </RelativeLayout>
