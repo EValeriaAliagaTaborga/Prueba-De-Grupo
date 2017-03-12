@@ -5,7 +5,7 @@
     <application
         android:allowBackup="true"
         android:hardwareAccelerated="false"
-        android:icon="@mipmap/ic_launcher"
+        android:icon="@mipmap/launcher_icon"
         android:label="Rubik's"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
