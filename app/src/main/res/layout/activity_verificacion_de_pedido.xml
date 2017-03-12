@@ -1,9 +1,118 @@
 <?xml version="1.0" encoding="utf-8"?>
-<android.support.constraint.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/activity_menu"
     android:layout_width="match_parent"
-    android:layout_height="match_parent"
-    tools:context="titaniumstudios.myapplication2.VerificacionDePedidoActivity">
+    android:layout_height="wrap_content"
+    android:background="@android:color/holo_orange_light"
+    android:paddingBottom="@dimen/activity_vertical_margin"
+    android:paddingLeft="@dimen/activity_horizontal_margin"
+    android:paddingRight="@dimen/activity_horizontal_margin"
+    android:paddingTop="@dimen/activity_vertical_margin"
+    tools:context="titaniumstudios.myapplication2.MenuActivity">
 
-</android.support.constraint.ConstraintLayout>
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical"
+        android:layout_alignParentTop="true"
+        android:layout_alignParentStart="true">
+
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:layout_weight="3.5"
+            android:orientation="vertical">
+
+            <ImageView
+                android:id="@+id/imgCajitaFeliz"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_margin="5dp"
+                android:layout_marginBottom="5dp"
+                android:layout_marginEnd="5dp"
+                android:layout_marginLeft="5dp"
+                android:layout_marginTop="5dp"
+                app:srcCompat="@drawable/cajita_feliz" />
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_weight="6"
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:orientation="vertical">
+
+            <ScrollView
+                android:id="@+id/scrollView1"
+                android:layout_width="match_parent"
+                android:layout_height="0dp"
+                android:layout_weight="2" >
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="0dp"
+                    android:layout_weight="2"
+                    android:orientation="vertical" >
+
+                    <TextView
+                        android:id="@+id/textoLargo"
+                        android:layout_width="wrap_content"
+                        android:layout_height="match_parent"
+                        android:layout_margin="5dp"
+                        android:text="Comer un hamburguesa es un placer irresistible para muchos y es por eso que los restaurantes de comida rápida proliferan. El exquisito sabor de la carne al pan es una de las cosas en que muchas personas coinciden. Aunque para los más saludables sea una comida rápida que daña el cuerpo, es bueno conocer su trayectoria. Una hamburguesa es un alimento en forma de bocadillo de carne picada aglutinada en forma de filete, cocinado a la parrilla o a la plancha, aunque también puede freírse u hornearse. Fuera del ámbito de habla hispana es más común encontrar la denominación inglesa burger. Se presenta en un pan ligero partido en dos que posee una forma de óvalo. Suele estar acompañada de aros de cebolla, hojas de lechuga, alguna rodaja de tomate, láminas de encurtidos, papas fritas etc." />
+
+                </LinearLayout>
+            </ScrollView>
+
+            <TextView
+                android:id="@+id/textView4"
+                android:layout_width="wrap_content"
+                android:layout_height="0dp"
+                android:layout_margin="5dp"
+                android:layout_marginStart="20dp"
+                android:layout_weight="1"
+                android:gravity="center_vertical"
+                android:text="$$$" />
+
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="0dp"
+                android:layout_weight="2">
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:layout_alignParentStart="true"
+                    android:layout_alignParentTop="true"
+                    android:layout_margin="5dp"
+                    android:gravity="center"
+                    android:orientation="horizontal">
+
+                    <Button
+                        android:id="@+id/btnAnadir"
+                        android:layout_width="178dp"
+                        android:layout_height="wrap_content"
+                        android:layout_alignParentStart="true"
+                        android:layout_centerVertical="true"
+                        android:layout_marginStart="26dp"
+                        android:text="Añade algo a tu orden" />
+
+                    <Button
+                        android:id="@+id/btnComprar"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_alignBaseline="@+id/btnAnadir"
+                        android:layout_alignBottom="@+id/btnAnadir"
+                        android:layout_alignParentEnd="true"
+                        android:layout_marginEnd="23dp"
+                        android:layout_weight="1"
+                        android:text="Comprar" />
+                </LinearLayout>
+
+            </RelativeLayout>
+
+        </LinearLayout>
+    </LinearLayout>
+</RelativeLayout>
