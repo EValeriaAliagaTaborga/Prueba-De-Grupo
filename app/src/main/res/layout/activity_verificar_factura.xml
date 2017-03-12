@@ -7,62 +7,76 @@
     android:background="@drawable/backgrounddefault2"
     tools:context="titaniumstudios.myapplication2.VerificarFacturaActivity">
 
-    <LinearLayout
-        android:layout_width="368dp"
+    <ScrollView
+        android:layout_width="344dp"
         android:layout_height="495dp"
-        android:orientation="vertical"
         tools:layout_editor_absoluteX="8dp"
-        tools:layout_editor_absoluteY="8dp"
-        tools:ignore="MissingConstraints">
-
-        <TextView
-            android:id="@+id/lblVerificar"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:fontFamily="cursive"
-            android:text="Verifique los datos para su factura:"
-            android:textColor="@android:color/white"
-            android:textSize="30sp"
-            android:textStyle="bold" />
-
-        <TextView
-            android:id="@+id/factura"
-            android:layout_width="wrap_content"
-            android:layout_height="219dp"
-            android:layout_margin="5dp"
-            android:text="Comer un hamburguesa es un placer irresistible para muchos y es por eso que los restaurantes de comida rápida proliferan. El exquisito sabor de la carne al pan es una de las cosas en que muchas personas coinciden. Aunque para los más saludables sea una comida rápida que daña el cuerpo, es bueno conocer su trayectoria. Una hamburguesa es un alimento en forma de bocadillo de carne picada aglutinada en forma de filete, cocinado a la parrilla o a la plancha, aunque también puede freírse u hornearse. Fuera del ámbito de habla hispana es más común encontrar la denominación inglesa burger. Se presenta en un pan ligero partido en dos que posee una forma de óvalo. Suele estar acompañada de aros de cebolla, hojas de lechuga, alguna rodaja de tomate, láminas de encurtidos, papas fritas etc."
-            android:textColor="@android:color/white" />
-
-        <Button
-            android:id="@+id/btnEditar"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="Editar" />
-
-        <titaniumstudios.myapplication2.CustomGifView
-            android:id="@+id/gifview"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_gravity="right"/>
+        tools:layout_editor_absoluteY="8dp">
 
         <LinearLayout
             android:layout_width="match_parent"
-            android:layout_height="match_parent"
-            android:orientation="horizontal">
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
 
-            <Button
-                android:id="@+id/btnCancelar"
-                android:layout_width="92dp"
-                android:layout_height="wrap_content"
-                android:text="Cancelar Pedido"
-                android:layout_weight="0.08" />
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:orientation="vertical"
+                tools:ignore="MissingConstraints"
+                tools:layout_editor_absoluteX="8dp"
+                tools:layout_editor_absoluteY="8dp">
 
-            <Button
-                android:id="@+id/btnComprar"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_weight="0.08"
-                android:text="Comprar" />
+                <TextView
+                    android:id="@+id/lblVerificar"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:fontFamily="cursive"
+                    android:text="Verifique los datos para su factura:"
+                    android:textColor="@android:color/white"
+                    android:textSize="30sp"
+                    android:textStyle="bold" />
+
+                <TextView
+                    android:id="@+id/factura"
+                    android:layout_width="wrap_content"
+                    android:layout_height="219dp"
+                    android:layout_margin="5dp"
+                    android:text="Comer un hamburguesa es un placer irresistible para muchos y es por eso que los restaurantes de comida rápida proliferan. El exquisito sabor de la carne al pan es una de las cosas en que muchas personas coinciden. Aunque para los más saludables sea una comida rápida que daña el cuerpo, es bueno conocer su trayectoria. Una hamburguesa es un alimento en forma de bocadillo de carne picada aglutinada en forma de filete, cocinado a la parrilla o a la plancha, aunque también puede freírse u hornearse. Fuera del ámbito de habla hispana es más común encontrar la denominación inglesa burger. Se presenta en un pan ligero partido en dos que posee una forma de óvalo. Suele estar acompañada de aros de cebolla, hojas de lechuga, alguna rodaja de tomate, láminas de encurtidos, papas fritas etc."
+                    android:textColor="@android:color/white" />
+
+                <Button
+                    android:id="@+id/btnEditar"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Editar" />
+
+                <titaniumstudios.myapplication2.CustomGifView
+                    android:id="@+id/gifview"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="right" />
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:orientation="horizontal">
+
+                    <Button
+                        android:id="@+id/btnCancelar"
+                        android:layout_width="92dp"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="0.08"
+                        android:text="Cancelar Pedido" />
+
+                    <Button
+                        android:id="@+id/btnComprar"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="0.08"
+                        android:text="Comprar" />
+                </LinearLayout>
+            </LinearLayout>
         </LinearLayout>
-    </LinearLayout>
+    </ScrollView>
+
 </android.support.constraint.ConstraintLayout>

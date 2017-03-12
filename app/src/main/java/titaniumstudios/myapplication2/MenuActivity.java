@@ -25,6 +25,7 @@ public class MenuActivity extends AppCompatActivity {
 
     private ImageView imgHamburguesa;
     private ImageView imgPizza;
+    private ImageView imgExtras;
 
     private Context context;
 
@@ -46,6 +47,7 @@ public class MenuActivity extends AppCompatActivity {
 
         imgHamburguesa=(ImageView)findViewById(R.id.imgHamburguesa);
         imgPizza=(ImageView)findViewById(R.id.imgPizza);
+        imgExtras=(ImageView)findViewById(R.id.imgExtras);
 
 
         Intent d=getIntent();
@@ -68,6 +70,13 @@ public class MenuActivity extends AppCompatActivity {
             @Override
             public void onClick(View view) {
                 Intent intent=new Intent(context,MenuHamburguesaActivity.class);
+                startActivity(intent);
+            }
+        });
+        imgExtras.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent intent=new Intent(context,ExtrasActivity.class);
                 startActivity(intent);
             }
         });
