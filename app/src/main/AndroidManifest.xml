@@ -20,11 +20,12 @@
         <activity android:name=".MenuActivity" />
         <activity android:name=".MenuHamburguesaActivity" />
         <activity android:name=".ArmadoActivity" />
-        <activity android:name=".ArmaloActivity"></activity>
+        <activity android:name=".ArmaloActivity" />
         <activity android:name=".ArmadoActivity" />
         <activity android:name=".VerificarFacturaActivity" />
         <activity android:name=".DatosYFacturacionActivity" />
-        <activity android:name=".VerificacionDePedidoActivity"></activity>
+        <activity android:name=".VerificacionDePedidoActivity" />
+        <activity android:name=".GraciasActivity"></activity>
     </application>
 
 </manifest>

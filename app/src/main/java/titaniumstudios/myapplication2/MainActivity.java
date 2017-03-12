@@ -16,6 +16,9 @@ public class MainActivity extends AppCompatActivity {
     private Context context;
     private ImageView imgLogo;
 
+    private boolean conCuenta=false;
+
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
