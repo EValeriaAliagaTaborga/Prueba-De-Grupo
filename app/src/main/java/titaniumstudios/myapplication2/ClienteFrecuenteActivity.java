@@ -54,6 +54,9 @@ public class ClienteFrecuenteActivity extends AppCompatActivity {
                 startActivity(s);
             }
         });
+
+
+
     }
     @Override
     public boolean onCreateOptionsMenu(Menu menu) {

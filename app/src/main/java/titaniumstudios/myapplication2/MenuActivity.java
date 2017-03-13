@@ -33,6 +33,7 @@ public class MenuActivity extends AppCompatActivity {
     private ImageView imgHamburguesa;
     private ImageView imgPizza;
     private ImageView imgExtras;
+    private ImageView imgAyuda;
 
 
     private Context context;
@@ -58,6 +59,7 @@ public class MenuActivity extends AppCompatActivity {
         imgHamburguesa = (ImageView) findViewById(R.id.imgHamburguesa);
         imgPizza = (ImageView) findViewById(R.id.imgPizza);
         imgExtras = (ImageView) findViewById(R.id.imgExtras);
+        imgAyuda = (ImageView) findViewById(R.id.imgAyuda);
 
 
         Intent d = getIntent();
@@ -95,6 +97,24 @@ public class MenuActivity extends AppCompatActivity {
             }
         });
 
+        imgAyuda.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                AlertDialog dialogo;
+                AlertDialog.Builder builder = new AlertDialog.Builder(MenuActivity.this);
+
+                builder.setTitle("Rubik's?");
+                builder.setMessage("La App que te permite realizar tus combinaciones de comida sin restricciones! Elige algun producto y comienza a crear tus alimentos!");
+                dialogo = builder.create();
+                dialogo.getWindow().getAttributes().windowAnimations = R.style.transicion;
+                dialogo.show();
+                dialogo.setOnCancelListener(new DialogInterface.OnCancelListener() {
+                    public void onCancel(DialogInterface dialog) {
+                        dialog.dismiss();
+                    }
+                });
+            }
+        });
 
     }
 

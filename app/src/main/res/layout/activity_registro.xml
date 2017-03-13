@@ -11,6 +11,7 @@
         android:layout_marginTop="5dp"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
+        android:padding="8dp"
         android:orientation="vertical">
 
         <TextView
@@ -104,13 +105,13 @@
             android:textColor="@android:color/white" />
 
         <TextView
-        android:id="@+id/lblContrasenia"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:text="Contraseña *"
-        android:textColor="@android:color/white"
-        android:textSize="18sp"
-        android:textStyle="bold" />
+            android:id="@+id/lblContrasenia"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Contraseña *"
+            android:textColor="@android:color/white"
+            android:textSize="18sp"
+            android:textStyle="bold" />
 
         <EditText
             android:id="@+id/txtContrasenia"
@@ -118,7 +119,7 @@
             android:layout_height="wrap_content"
             android:ems="10"
             android:hint="**********"
-            android:inputType="numberPassword"
+            android:inputType="textPassword"
             android:textColor="@android:color/white" />
         <TextView
             android:id="@+id/lblRepContrasenia"
@@ -135,7 +136,7 @@
             android:layout_height="wrap_content"
             android:ems="10"
             android:hint="**********"
-            android:inputType="numberPassword"
+            android:inputType="textPassword"
             android:textColor="@android:color/white" />
         <TextView
             android:id="@+id/lblNomFac"
@@ -170,7 +171,7 @@
             android:layout_marginBottom="10dp"
             android:ems="10"
             android:hint="Ej.: 5125269"
-            android:inputType="textPersonName"
+            android:inputType="number"
             android:textColor="@android:color/white" />
 
         <Button

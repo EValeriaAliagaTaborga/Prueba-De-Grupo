@@ -125,7 +125,7 @@
             <ScrollView
                 android:id="@+id/scrVistaArmado"
                 android:layout_width="127dp"
-                android:layout_height="371dp"
+                android:layout_height="match_parent"
                 android:layout_above="@+id/btnfCarrito"
                 android:layout_alignParentStart="true"
                 android:layout_below="@+id/lblPrecio">

@@ -34,8 +34,8 @@ public class LoginActivity extends AppCompatActivity {
 
 
         Intent b=getIntent();
-        usuario_registrado = b.getStringArrayExtra("datos_de_cliente")[1];
-        password_registrado = b.getStringArrayExtra("datos_de_cliente")[5];
+        usuario_registrado = (b.getStringArrayExtra("datos_de_cliente"))[1];
+        password_registrado = (b.getStringArrayExtra("datos_de_cliente"))[6];
 
         btnLogin=(Button)findViewById(R.id.btnLogin);
         txtUsuario=(EditText)findViewById(R.id.txtUsuario);
@@ -49,15 +49,10 @@ public class LoginActivity extends AppCompatActivity {
                 String campo_usuario = txtUsuario.getText().toString();
                 String campo_password = txtPassword.getText().toString();
 
-                if(!usuario_registrado.equals("") && !password_registrado.equals("")) {
-                    if(campo_usuario.compareTo(usuario_registrado)== 0 &&  campo_password.compareTo(password_registrado) == 0) {
-                        usuarioRegistrado = true;
-                    }
-                }
 
                 if ((campo_usuario.compareTo("Rosa") == 0 && campo_password.compareTo("i3915") == 0) || (campo_usuario.compareTo("Vale S") == 0 && campo_password.compareTo("valexd") == 0)
                         || (campo_usuario.compareTo("Vale A") == 0 && campo_password.compareTo("vale05") == 0) || (campo_usuario.compareTo("Diego") == 0 && campo_password.compareTo("diego") == 0)
-                        || (usuarioRegistrado)) {
+                     || (usuario_registrado.compareTo(campo_usuario) ==0 && password_registrado.compareTo(campo_password) == 0)) {
 
                     SharedPreferences prefs =
                             getSharedPreferences("MisPreferencias", Context.MODE_PRIVATE);
@@ -68,7 +63,7 @@ public class LoginActivity extends AppCompatActivity {
 
                     editor.commit();
 
-                    Toast.makeText(getApplicationContext(), "Usuario: " + campo_usuario + ", Password: " + campo_password, Toast.LENGTH_SHORT).show();
+                    //Toast.makeText(getApplicationContext(), "Usuario: " + campo_usuario + ", Password: " + campo_password, Toast.LENGTH_SHORT).show();
 
                     Intent a = new Intent(getApplicationContext(), MenuActivity.class);
                     startActivity(a);
