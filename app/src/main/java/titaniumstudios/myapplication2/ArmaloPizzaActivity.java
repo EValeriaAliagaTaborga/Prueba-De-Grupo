@@ -24,6 +24,8 @@ import java.util.ArrayList;
 
 public class ArmaloPizzaActivity extends AppCompatActivity {
 
+    private MenuDeArriba menuDeArriba = new MenuDeArriba();
+
     private ImageView imgToppings;
     private ImageView imgCondimentos;
     private ImageView imgCarnePizza;
@@ -31,7 +33,7 @@ public class ArmaloPizzaActivity extends AppCompatActivity {
     private ImageView imgSalsa;
     private ImageView imgIngredienteElegido;
 
-    private boolean conCuenta = true;
+  //  private boolean conCuenta = true;
 
     private double precio = 10.00;
     private TextView lblPrecio;
@@ -65,8 +67,8 @@ public class ArmaloPizzaActivity extends AppCompatActivity {
 
 
 
-                Intent d=getIntent();
-                conCuenta = d.getBooleanExtra("con_cuenta", true);
+             //   Intent d=getIntent();
+               // conCuenta = d.getBooleanExtra("con_cuenta", true);
 
                 imgToppings = (ImageView) findViewById(R.id.imgToppings);
                 imgCondimentos = (ImageView) findViewById(R.id.imgCondimentos);
@@ -349,7 +351,7 @@ public class ArmaloPizzaActivity extends AppCompatActivity {
                         Intent intent = new Intent(context, VerificacionDePedidoActivity.class);
                         datosDePedido.add(0, Double.toString(precio));
                         intent.putExtra("datos_de_pedido", datosDePedido);
-                        intent.putExtra("con_cuenta", conCuenta);
+                        //intent.putExtra("con_cuenta", conCuenta);
                         startActivity(intent);
                     }
 
@@ -358,7 +360,8 @@ public class ArmaloPizzaActivity extends AppCompatActivity {
 
             @Override
             public boolean onCreateOptionsMenu(Menu menu) {
-                if(conCuenta) {
+                menuDeArriba.menuDeArriba(menu);
+                /*if(conCuenta) {
                     menu.add(Menu.NONE, opcion1, Menu.NONE, "Perfil")
                             .setIcon(android.R.drawable.ic_menu_add);
                     menu.add(Menu.NONE, opcion2, Menu.NONE, "Historial")
@@ -373,7 +376,7 @@ public class ArmaloPizzaActivity extends AppCompatActivity {
                     menu.add(Menu.NONE, opcion5, Menu.NONE, "Login")
                             //cambiar esto creo xD
                             .setIcon(android.R.drawable.ic_dialog_info);
-                }
+                }*/
                 return true;
             }
 
@@ -403,6 +406,7 @@ public class ArmaloPizzaActivity extends AppCompatActivity {
                                         SharedPreferences.Editor editor = prefs.edit();
                                         editor.putString("usuario", "no");
                                         editor.putString("password", "no");
+                                        menuDeArriba.setConCuenta(false);
                                         //Concretamos la edicion
                                         editor.commit(); //pa guardar
 

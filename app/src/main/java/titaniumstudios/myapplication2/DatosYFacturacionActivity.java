@@ -16,6 +16,8 @@ import android.widget.Toast;
 
 public class DatosYFacturacionActivity extends AppCompatActivity {
 
+    private MenuDeArriba menuDeArriba = new MenuDeArriba();
+
     private Button btnEnviar;
     private EditText txtNombreOApellido;
     private EditText txtNombreFac;
@@ -32,7 +34,7 @@ public class DatosYFacturacionActivity extends AppCompatActivity {
     private static final int opcion4 = 4;
     private static final int opcion5 = 5;
 
-    private boolean conCuenta = true;
+   // private boolean conCuenta = true;
     private String precioTotal;
 
     @Override
@@ -41,7 +43,7 @@ public class DatosYFacturacionActivity extends AppCompatActivity {
         setContentView(R.layout.activity_datos_y_facturacion);
 
         Intent d=getIntent();
-        conCuenta = d.getBooleanExtra("con_cuenta", true);
+       // conCuenta = d.getBooleanExtra("con_cuenta", true);
         precioTotal = d.getStringExtra("dato_precio");
 
         context = this;
@@ -72,7 +74,7 @@ public class DatosYFacturacionActivity extends AppCompatActivity {
 
                 if((datosDeCliente[2].length() == 7 || datosDeCliente[2].length() == 8 ) && !datosDeCliente[3].equals("")) {
                     Intent intent = new Intent(context, VerificarFacturaActivity.class);
-                    intent.putExtra("con_cuenta", conCuenta);
+                    //intent.putExtra("con_cuenta", conCuenta);
                     intent.putExtra("datos_de_cliente", datosDeCliente);
                     startActivity(intent);
                 } else {
@@ -84,7 +86,8 @@ public class DatosYFacturacionActivity extends AppCompatActivity {
 
     @Override
     public boolean onCreateOptionsMenu(Menu menu) {
-        if (conCuenta) {
+       menuDeArriba.menuDeArriba(menu);
+        /*if (conCuenta) {
             menu.add(Menu.NONE, opcion1, Menu.NONE, "Perfil")
                     .setIcon(android.R.drawable.ic_menu_add);
             menu.add(Menu.NONE, opcion2, Menu.NONE, "Historial")
@@ -99,9 +102,10 @@ public class DatosYFacturacionActivity extends AppCompatActivity {
             menu.add(Menu.NONE, opcion5, Menu.NONE, "Login")
                     //cambiar esto creo xD
                     .setIcon(android.R.drawable.ic_dialog_info);
-        }
+        }*/
         return true;
     }
+
     @Override
     public boolean onOptionsItemSelected(MenuItem item)
     {
@@ -127,6 +131,7 @@ public class DatosYFacturacionActivity extends AppCompatActivity {
                                 SharedPreferences.Editor editor = prefs.edit();
                                 editor.putString("usuario", "no");
                                 editor.putString("password", "no");
+                                menuDeArriba.setConCuenta(false);
                                 //Concretamos la edicion
                                 editor.commit(); //pa guardar
 

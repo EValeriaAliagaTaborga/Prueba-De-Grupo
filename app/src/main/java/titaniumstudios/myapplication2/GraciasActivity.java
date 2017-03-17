@@ -15,6 +15,8 @@ import android.widget.Toast;
 
 public class GraciasActivity extends AppCompatActivity {
 
+    private  MenuDeArriba menuDeArriba = new MenuDeArriba();
+
     private Button btnHecho;
 
     private static final int opcion1 = 1;
@@ -23,7 +25,7 @@ public class GraciasActivity extends AppCompatActivity {
     private static final int opcion4 = 4;
     private static final int opcion5 = 5;
 
-    private boolean conCuenta = true;
+  //  private boolean conCuenta = true;
 
     private Context context;
 
@@ -32,8 +34,8 @@ public class GraciasActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_gracias);
 
-        Intent d=getIntent();
-        conCuenta = d.getBooleanExtra("con_cuenta", true);
+        //Intent d=getIntent();
+        //conCuenta = d.getBooleanExtra("con_cuenta", true);
 
         context=this;
 
@@ -42,14 +44,15 @@ public class GraciasActivity extends AppCompatActivity {
         btnHecho.setOnClickListener(new View.OnClickListener() {
             public void onClick(View v) {
                 Intent s=new Intent(context,ClienteFrecuenteActivity.class);
-                s.putExtra("con_cuenta", conCuenta);
+              //  s.putExtra("con_cuenta", conCuenta);
                 startActivity(s);
             }
         });
     }
     @Override
     public boolean onCreateOptionsMenu(Menu menu) {
-        if (conCuenta) {
+        menuDeArriba.menuDeArriba(menu);
+        /*if (conCuenta) {
             menu.add(Menu.NONE, opcion1, Menu.NONE, "Perfil")
                     .setIcon(android.R.drawable.ic_menu_add);
             menu.add(Menu.NONE, opcion2, Menu.NONE, "Historial")
@@ -64,9 +67,10 @@ public class GraciasActivity extends AppCompatActivity {
             menu.add(Menu.NONE, opcion5, Menu.NONE, "Login")
                     //cambiar esto creo xD
                     .setIcon(android.R.drawable.ic_dialog_info);
-        }
+        }*/
         return true;
     }
+
     @Override
     public boolean onOptionsItemSelected(MenuItem item)
     {
@@ -92,6 +96,7 @@ public class GraciasActivity extends AppCompatActivity {
                                 SharedPreferences.Editor editor = prefs.edit();
                                 editor.putString("usuario", "no");
                                 editor.putString("password", "no");
+                                menuDeArriba.setConCuenta(false);
                                 //Concretamos la edicion
                                 editor.commit(); //pa guardar
 

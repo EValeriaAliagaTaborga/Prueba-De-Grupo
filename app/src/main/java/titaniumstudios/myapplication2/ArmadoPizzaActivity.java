@@ -17,6 +17,8 @@ import java.util.ArrayList;
 
 public class ArmadoPizzaActivity extends AppCompatActivity {
 
+    private MenuDeArriba menuDeArriba = new MenuDeArriba();
+
     private ImageView imgPizzaCarnivora;
     private ImageView imgPizzaHawaiana;
     private ImageView imgPizzaQueso;
@@ -32,7 +34,7 @@ public class ArmadoPizzaActivity extends AppCompatActivity {
 
     private Context context;
 
-    private boolean conCuenta = true;
+  //  private boolean conCuenta = true;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -41,8 +43,8 @@ public class ArmadoPizzaActivity extends AppCompatActivity {
 
         context=this;
 
-        Intent d=getIntent();
-        conCuenta = d.getBooleanExtra("con_cuenta", true);
+      //  Intent d=getIntent();
+        //conCuenta = d.getBooleanExtra("con_cuenta", true);
 
         imgPizzaCarnivora=(ImageView)findViewById(R.id.imgPizzaCarnivora);
         imgPizzaHawaiana=(ImageView)findViewById(R.id.imgPizzaHawaiana);
@@ -64,7 +66,7 @@ public class ArmadoPizzaActivity extends AppCompatActivity {
                 datosDePedido.add("Mozarella");
                 datosDePedido.add("Salsa de Tomate Tradicional");
                 intent.putStringArrayListExtra("datos_de_pedido",datosDePedido);
-                intent.putExtra("con_cuenta", conCuenta);
+          //      intent.putExtra("con_cuenta", conCuenta);
                 startActivity(intent);
             }
         });
@@ -80,7 +82,7 @@ public class ArmadoPizzaActivity extends AppCompatActivity {
                 datosDePedido.add("Mozarella");
                 datosDePedido.add("Salsa de Tomate Tradicional");
                 intent.putStringArrayListExtra("datos_de_pedido",datosDePedido);
-                intent.putExtra("con_cuenta", conCuenta);
+            //    intent.putExtra("con_cuenta", conCuenta);
                 startActivity(intent);
             }
         });
@@ -97,7 +99,7 @@ public class ArmadoPizzaActivity extends AppCompatActivity {
                 datosDePedido.add("Oregano");
                 datosDePedido.add("Salsa de Tomate Tradicional");
                 intent.putStringArrayListExtra("datos_de_pedido",datosDePedido);
-                intent.putExtra("con_cuenta", conCuenta);
+              //  intent.putExtra("con_cuenta", conCuenta);
                 startActivity(intent);
             }
         });
@@ -117,7 +119,7 @@ public class ArmadoPizzaActivity extends AppCompatActivity {
                 datosDePedido.add("Salsa de Tomate Picante");
                 datosDePedido.add("Aceitunas");
                 intent.putStringArrayListExtra("datos_de_pedido",datosDePedido);
-                intent.putExtra("con_cuenta", conCuenta);
+                //intent.putExtra("con_cuenta", conCuenta);
                 startActivity(intent);
             }
         });
@@ -133,7 +135,7 @@ public class ArmadoPizzaActivity extends AppCompatActivity {
                 datosDePedido.add("Gouda");
                 datosDePedido.add("Salsa de Tomate Tradicional");
                 intent.putStringArrayListExtra("datos_de_pedido",datosDePedido);
-                intent.putExtra("con_cuenta", conCuenta);
+                //intent.putExtra("con_cuenta", conCuenta);
                 startActivity(intent);
             }
         });
@@ -150,14 +152,15 @@ public class ArmadoPizzaActivity extends AppCompatActivity {
                 datosDePedido.add("Gruyere");
                 datosDePedido.add("Salsa de Tomate Tradicional");
                 intent.putStringArrayListExtra("datos_de_pedido",datosDePedido);
-                intent.putExtra("con_cuenta", conCuenta);
+                //intent.putExtra("con_cuenta", conCuenta);
                 startActivity(intent);
             }
         });
     }
     @Override
     public boolean onCreateOptionsMenu(Menu menu) {
-        if(conCuenta) {
+        menuDeArriba.menuDeArriba(menu);
+        /*if(conCuenta) {
             menu.add(Menu.NONE, opcion1, Menu.NONE, "Perfil")
                     .setIcon(android.R.drawable.ic_menu_add);
             menu.add(Menu.NONE, opcion2, Menu.NONE, "Historial")
@@ -172,7 +175,7 @@ public class ArmadoPizzaActivity extends AppCompatActivity {
             menu.add(Menu.NONE, opcion5, Menu.NONE, "Login")
                     //cambiar esto creo xD
                     .setIcon(android.R.drawable.ic_dialog_info);
-        }
+        }*/
         return true;
     }
 
@@ -202,6 +205,7 @@ public class ArmadoPizzaActivity extends AppCompatActivity {
                                 SharedPreferences.Editor editor = prefs.edit();
                                 editor.putString("usuario", "no");
                                 editor.putString("password", "no");
+                                menuDeArriba.setConCuenta(false);
                                 //Concretamos la edicion
                                 editor.commit(); //pa guardar
 

@@ -18,6 +18,8 @@ import java.util.ArrayList;
 
 public class ExtrasActivity extends AppCompatActivity {
 
+    private MenuDeArriba menuDeArriba = new MenuDeArriba();
+
     private static final int opcion1 = 1;
     private static final int opcion2 = 2;
     private static final int opcion3 = 3;
@@ -25,7 +27,7 @@ public class ExtrasActivity extends AppCompatActivity {
     private static final int opcion5 = 5;
 
     private Context context;
-    private boolean conCuenta = true;
+   // private boolean conCuenta = true;
 
     private ArrayList<String> datosDePedido = new ArrayList<>();
 
@@ -43,8 +45,8 @@ public class ExtrasActivity extends AppCompatActivity {
 
         context = this;
 
-        Intent d = getIntent();
-        conCuenta = d.getBooleanExtra("con_cuenta", true);
+        //Intent d = getIntent();
+        //conCuenta = d.getBooleanExtra("con_cuenta", true);
 
         lyPapasFritas = (LinearLayout) findViewById(R.id.lyPapasFritas);
         lyCocaCola = (LinearLayout) findViewById(R.id.lyCocaCola);
@@ -57,7 +59,7 @@ public class ExtrasActivity extends AppCompatActivity {
             @Override
             public void onClick(View view) {
                 Intent intent=new Intent(context,VerificacionDePedidoActivity.class);
-                intent.putExtra("con_cuenta", conCuenta);
+          //      intent.putExtra("con_cuenta", conCuenta);
                 datosDePedido.add(0, "10");
                 datosDePedido.add("Papas fritas");
                 intent.putStringArrayListExtra("datos_de_pedido", datosDePedido);
@@ -69,7 +71,7 @@ public class ExtrasActivity extends AppCompatActivity {
             @Override
             public void onClick(View view) {
                 Intent intent=new Intent(context,VerificacionDePedidoActivity.class);
-                intent.putExtra("con_cuenta", conCuenta);
+            //    intent.putExtra("con_cuenta", conCuenta);
                 datosDePedido.add(0, "8");
                 datosDePedido.add("Coca Cola");
                 intent.putStringArrayListExtra("datos_de_pedido", datosDePedido);
@@ -81,7 +83,7 @@ public class ExtrasActivity extends AppCompatActivity {
             @Override
             public void onClick(View view) {
                 Intent intent=new Intent(context,VerificacionDePedidoActivity.class);
-                intent.putExtra("con_cuenta", conCuenta);
+              //  intent.putExtra("con_cuenta", conCuenta);
                 datosDePedido.add(0, "8");
                 datosDePedido.add("Sprite");
                 intent.putStringArrayListExtra("datos_de_pedido", datosDePedido);
@@ -93,7 +95,7 @@ public class ExtrasActivity extends AppCompatActivity {
             @Override
             public void onClick(View view) {
                 Intent intent=new Intent(context,VerificacionDePedidoActivity.class);
-                intent.putExtra("con_cuenta", conCuenta);
+                //intent.putExtra("con_cuenta", conCuenta);
                 datosDePedido.add(0, "8");
                 datosDePedido.add("Fanta");
                 intent.putStringArrayListExtra("datos_de_pedido", datosDePedido);
@@ -105,7 +107,7 @@ public class ExtrasActivity extends AppCompatActivity {
             @Override
             public void onClick(View view) {
                 Intent intent=new Intent(context,VerificacionDePedidoActivity.class);
-                intent.putExtra("con_cuenta", conCuenta);
+                //intent.putExtra("con_cuenta", conCuenta);
                 datosDePedido.add(0, "10");
                 datosDePedido.add("Arroz");
                 intent.putStringArrayListExtra("datos_de_pedido", datosDePedido);
@@ -117,7 +119,7 @@ public class ExtrasActivity extends AppCompatActivity {
             @Override
             public void onClick(View view) {
                 Intent intent=new Intent(context,VerificacionDePedidoActivity.class);
-                intent.putExtra("con_cuenta", conCuenta);
+                //intent.putExtra("con_cuenta", conCuenta);
                 datosDePedido.add(0, "10");
                 datosDePedido.add("Fideo");
                 intent.putStringArrayListExtra("datos_de_pedido", datosDePedido);
@@ -128,7 +130,8 @@ public class ExtrasActivity extends AppCompatActivity {
 
     @Override
     public boolean onCreateOptionsMenu(Menu menu) {
-        if(conCuenta) {
+        menuDeArriba.menuDeArriba(menu);
+        /*if(conCuenta) {
         menu.add(Menu.NONE, opcion1, Menu.NONE, "Perfil")
                 .setIcon(android.R.drawable.ic_menu_add);
         menu.add(Menu.NONE, opcion2, Menu.NONE, "Historial")
@@ -143,7 +146,7 @@ public class ExtrasActivity extends AppCompatActivity {
             menu.add(Menu.NONE, opcion5, Menu.NONE, "Login")
                     //cambiar esto creo xD
                     .setIcon(android.R.drawable.ic_dialog_info);
-        }
+        }*/
         return true;
     }
 
@@ -173,6 +176,7 @@ public class ExtrasActivity extends AppCompatActivity {
                                 SharedPreferences.Editor editor = prefs.edit();
                                 editor.putString("usuario", "no");
                                 editor.putString("password", "no");
+                                menuDeArriba.setConCuenta(false);
                                 //Concretamos la edicion
                                 editor.commit(); //pa guardar
 

@@ -13,6 +13,8 @@ import android.widget.Toast;
 
 public class LoginActivity extends AppCompatActivity {
 
+    private MenuDeArriba menuDeArriba = new MenuDeArriba();
+
     private Button btnLogin;
     private EditText txtUsuario;
     private EditText txtPassword;
@@ -65,7 +67,9 @@ public class LoginActivity extends AppCompatActivity {
 
                     //Toast.makeText(getApplicationContext(), "Usuario: " + campo_usuario + ", Password: " + campo_password, Toast.LENGTH_SHORT).show();
 
-                    Intent a = new Intent(getApplicationContext(), MenuActivity.class);
+                    menuDeArriba.setConCuenta(true);
+
+                    Intent a = new Intent(context, MenuActivity.class);
                     startActivity(a);
                     finish();
 

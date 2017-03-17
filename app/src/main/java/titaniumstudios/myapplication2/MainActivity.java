@@ -16,6 +16,7 @@ public class MainActivity extends AppCompatActivity {
     private Context context;
     private ImageView imgLogo;
 
+    private MenuDeArriba menuDeArriba = new MenuDeArriba();
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -34,6 +35,7 @@ public class MainActivity extends AppCompatActivity {
         if(usuario_almacenado.compareTo("no")!=0 && password_almacenado.compareTo("no")!=0)
         {
             Intent a=new Intent(getApplicationContext(),MenuActivity.class);
+            menuDeArriba.setConCuenta(true);
             finish();
             startActivity(a);
         }
@@ -56,7 +58,7 @@ public class MainActivity extends AppCompatActivity {
         imgLogo.setOnClickListener(new View.OnClickListener() {
             public void onClick(View v) {
                 Intent a=new Intent(context,MenuActivity.class);
-                a.putExtra("con_cuenta", false);
+                //a.putExtra("con_cuenta", false);
                 startActivity(a);
             }
         });

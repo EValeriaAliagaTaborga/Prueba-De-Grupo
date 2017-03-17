@@ -1,129 +1,32 @@
 package titaniumstudios.myapplication2;
 
-import android.app.AlertDialog;
-import android.app.Dialog;
+import android.app.Activity;
+import android.content.ClipData;
 import android.content.Context;
-import android.content.DialogInterface;
-import android.content.Intent;
-import android.content.SharedPreferences;
-import android.os.Environment;
-import android.support.v7.app.AppCompatActivity;
-import android.os.Bundle;
-import android.util.Log;
-import android.view.Gravity;
 import android.view.LayoutInflater;
 import android.view.Menu;
 import android.view.MenuItem;
-import android.view.View;
-import android.view.ViewGroup;
-import android.widget.Button;
-import android.widget.EditText;
-import android.widget.ImageView;
-import android.widget.TextView;
-import android.widget.Toast;
 
-import java.io.BufferedReader;
-import java.io.File;
-import java.io.FileInputStream;
-import java.io.InputStream;
-import java.io.InputStreamReader;
+/**
+ * Created by DTIC-123 on 16/03/2017.
+ */
 
-public class MenuActivity extends AppCompatActivity {
+ //TODO cambiar la inicializacion de MenuDeArriba en cada clase por un getMenuDeArriba para q se utilice el mismo menu y el atributo sea el mismo
+public class MenuDeArriba {
+
+   // private MenuActivity menuActivity = new MenuActivity();
+
+    private boolean conCuenta=false;
 
 
-    private MenuDeArriba menuDeArriba = new MenuDeArriba();
+    int opcion1 = 1;
+    int opcion2 = 2;
+    int opcion3 = 3;
+    int opcion4 = 4;
+    int opcion5 = 5;
 
-    private ImageView imgHamburguesa;
-    private ImageView imgPizza;
-    private ImageView imgExtras;
-    private ImageView imgAyuda;
-
-    private Context context;
-
-    //private boolean conCuenta = true;
-    private String producto = "";
-
-    //Variables del menu
-    private static final int opcion1 = 1;
-    private static final int opcion2 = 2;
-    private static final int opcion3 = 3;
-    private static final int opcion4 = 4;
-    private static final int opcion5 = 5;
-
-
-    @Override
-    protected void onCreate(Bundle savedInstanceState) {
-        super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_menu);
-
-        context = this;
-
-        imgHamburguesa = (ImageView) findViewById(R.id.imgHamburguesa);
-        imgPizza = (ImageView) findViewById(R.id.imgPizza);
-        imgExtras = (ImageView) findViewById(R.id.imgExtras);
-        imgAyuda = (ImageView) findViewById(R.id.imgAyuda);
-
-
-       // Intent d = getIntent();
-       // conCuenta = d.getBooleanExtra("con_cuenta", true);
-
-        // debemos mandar un parametro q especifique el alimento para saber a qué layout nos van a mandar después
-        imgHamburguesa.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                producto = "hamburguesa";
-                Intent intent = new Intent(context, MenuEleccionActivity.class);
-                intent.putExtra("producto", producto);
-               // intent.putExtra("con_cuenta", conCuenta);
-                startActivity(intent);
-            }
-        });
-
-        imgPizza.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                producto = "pizza";
-                Intent intent = new Intent(context, MenuEleccionActivity.class);
-               // intent.putExtra("con_cuenta", conCuenta);
-                intent.putExtra("producto", producto);
-                startActivity(intent);
-            }
-        });
-
-        imgExtras.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                Intent intent = new Intent(context, ExtrasActivity.class);
-               // intent.putExtra("con_cuenta", conCuenta);
-                startActivity(intent);
-            }
-        });
-
-        imgAyuda.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                AlertDialog dialogo;
-                AlertDialog.Builder builder = new AlertDialog.Builder(MenuActivity.this);
-
-                builder.setTitle("Rubik's?");
-                builder.setMessage("La App que te permite realizar tus combinaciones de comida sin restricciones! Elige algun producto y comienza a crear tus alimentos!");
-                dialogo = builder.create();
-                dialogo.getWindow().getAttributes().windowAnimations = R.style.transicion;
-                dialogo.show();
-                dialogo.setOnCancelListener(new DialogInterface.OnCancelListener() {
-                    public void onCancel(DialogInterface dialog) {
-                        dialog.dismiss();
-                    }
-                });
-            }
-        });
-
-    }
-
-    @Override
-    public boolean onCreateOptionsMenu(Menu menu) {
-        menuDeArriba.menuDeArriba(menu);
-        /*if (conCuenta) {
+    public void menuDeArriba(Menu menu) {
+        if (conCuenta) {
             menu.add(Menu.NONE, opcion1, Menu.NONE, "Perfil")
                     .setIcon(android.R.drawable.ic_menu_add);
             menu.add(Menu.NONE, opcion2, Menu.NONE, "Historial")
@@ -139,14 +42,12 @@ public class MenuActivity extends AppCompatActivity {
             menu.add(Menu.NONE, opcion5, Menu.NONE, "Login")
                     //cambiar esto creo xD
                     .setIcon(android.R.drawable.ic_dialog_info);
-        }*/
-        return true;
+        }
     }
 
-
-    @Override
-    public boolean onOptionsItemSelected(MenuItem item) {
-        switch (item.getItemId()) {
+    public void accionesDeMenuDeArriba(MenuItem item) {
+       // menuActivity.onOptionsItemSelected(item);
+      /*  switch (item.getItemId()) {
             case opcion3:
                 //Layout inflater será el método para agregar un mayout
                 LayoutInflater inflater = getLayoutInflater();
@@ -165,7 +66,7 @@ public class MenuActivity extends AppCompatActivity {
                 mensaje.setView(layouttoast);
                 mensaje.setDuration(Toast.LENGTH_LONG);
                 mensaje.show();
-             break;
+                break;
             case opcion4:
                 AlertDialog.Builder Dialogo = new AlertDialog.Builder(
                         MenuActivity.this);
@@ -186,7 +87,6 @@ public class MenuActivity extends AppCompatActivity {
                                 SharedPreferences.Editor editor = prefs.edit();
                                 editor.putString("usuario", "no");
                                 editor.putString("password", "no");
-                                menuDeArriba.setConCuenta(false);
                                 //Concretamos la edicion
                                 editor.commit(); //pa guardar
 
@@ -211,8 +111,16 @@ public class MenuActivity extends AppCompatActivity {
                 startActivity(intent);
             default:
                 return super.onOptionsItemSelected(item);
-        }
-        return false;
+        }*/
+    }
+
+    public boolean getConCuenta() {
+        return conCuenta;
+    }
+
+    public void setConCuenta(boolean conCuenta) {
+
+        this.conCuenta = conCuenta;
     }
 }
 

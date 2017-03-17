@@ -15,6 +15,8 @@ import android.widget.Toast;
 
 public class ClienteFrecuenteActivity extends AppCompatActivity {
 
+    private MenuDeArriba menuDeArriba = new MenuDeArriba();
+
     private Button btnRegMenu;
     private Button btnRegistrarse;
 
@@ -24,7 +26,7 @@ public class ClienteFrecuenteActivity extends AppCompatActivity {
     private static final int opcion4 = 4;
     private static final int opcion5 = 5;
 
-    private boolean conCuenta = true;
+   // private boolean conCuenta = true;
 
     private Context context;
 
@@ -32,8 +34,8 @@ public class ClienteFrecuenteActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_cliente_frecuente);
-        Intent d=getIntent();
-        conCuenta = d.getBooleanExtra("con_cuenta", true);
+        // Intent d=getIntent();
+        //conCuenta = d.getBooleanExtra("con_cuenta", true);
 
         context=this;
 
@@ -43,14 +45,14 @@ public class ClienteFrecuenteActivity extends AppCompatActivity {
         btnRegMenu.setOnClickListener(new View.OnClickListener() {
             public void onClick(View v) {
                 Intent s=new Intent(context,MenuActivity.class);
-                s.putExtra("con_cuenta", conCuenta);
+          //      s.putExtra("con_cuenta", conCuenta);
                 startActivity(s);
             }
         });
         btnRegistrarse.setOnClickListener(new View.OnClickListener() {
             public void onClick(View v) {
                 Intent s=new Intent(context,RegistroActivity.class);
-                s.putExtra("con_cuenta", conCuenta);
+            //    s.putExtra("con_cuenta", conCuenta);
                 startActivity(s);
             }
         });
@@ -60,7 +62,8 @@ public class ClienteFrecuenteActivity extends AppCompatActivity {
     }
     @Override
     public boolean onCreateOptionsMenu(Menu menu) {
-        if (conCuenta) {
+        menuDeArriba.menuDeArriba(menu);
+        /*if (conCuenta) {
             menu.add(Menu.NONE, opcion1, Menu.NONE, "Perfil")
                     .setIcon(android.R.drawable.ic_menu_add);
             menu.add(Menu.NONE, opcion2, Menu.NONE, "Historial")
@@ -75,7 +78,7 @@ public class ClienteFrecuenteActivity extends AppCompatActivity {
             menu.add(Menu.NONE, opcion5, Menu.NONE, "Login")
                     //cambiar esto creo xD
                     .setIcon(android.R.drawable.ic_dialog_info);
-        }
+        }*/
         return true;
     }
     @Override
@@ -103,6 +106,7 @@ public class ClienteFrecuenteActivity extends AppCompatActivity {
                                 SharedPreferences.Editor editor = prefs.edit();
                                 editor.putString("usuario", "no");
                                 editor.putString("password", "no");
+                                menuDeArriba.setConCuenta(false);
                                 //Concretamos la edicion
                                 editor.commit(); //pa guardar
 

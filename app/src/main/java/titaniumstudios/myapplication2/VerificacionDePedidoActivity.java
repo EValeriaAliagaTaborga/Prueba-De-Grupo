@@ -19,6 +19,8 @@ import java.util.ArrayList;
 
 public class VerificacionDePedidoActivity extends AppCompatActivity {
 
+    private MenuDeArriba menuDeArriba = new MenuDeArriba();
+
     private Button btnAnadir;
     private Button btnComprar;
     private TextView lblPrecio;
@@ -32,7 +34,7 @@ public class VerificacionDePedidoActivity extends AppCompatActivity {
     private static final int opcion4 = 4;
     private static final int opcion5 = 5;
 
-    private boolean conCuenta = true;
+   // private boolean conCuenta = true;
     private double precioTotal = 0.00;
     private String pedidoTotal ="";
 
@@ -42,7 +44,7 @@ public class VerificacionDePedidoActivity extends AppCompatActivity {
         setContentView(R.layout.activity_verificacion_de_pedido);
 
         Intent b = getIntent();
-        conCuenta = b.getBooleanExtra("con_cuenta", true);
+        //conCuenta = b.getBooleanExtra("con_cuenta", true);
         ArrayList<String> datosDePedido = b.getStringArrayListExtra("datos_de_pedido");
         final String precio = datosDePedido.get(0);
         String producto = "";
@@ -63,14 +65,14 @@ public class VerificacionDePedidoActivity extends AppCompatActivity {
         btnAnadir.setOnClickListener(new View.OnClickListener() {
             public void onClick(View v) {
                 Intent s=new Intent(context,MenuActivity.class);
-                s.putExtra("con_cuenta", conCuenta);
+       //         s.putExtra("con_cuenta", conCuenta);
                 startActivity(s);
             }
         });
         btnComprar.setOnClickListener(new View.OnClickListener() {
             public void onClick(View v) {
                 Intent s=new Intent(context,DatosYFacturacionActivity.class);
-                s.putExtra("con_cuenta", conCuenta);
+         //       s.putExtra("con_cuenta", conCuenta);
                 s.putExtra("dato_precio", Double.toString(precioTotal));
                 startActivity(s);
             }
@@ -79,7 +81,8 @@ public class VerificacionDePedidoActivity extends AppCompatActivity {
 
     @Override
     public boolean onCreateOptionsMenu(Menu menu) {
-        if (conCuenta) {
+        menuDeArriba.menuDeArriba(menu);
+       /* if (conCuenta) {
             menu.add(Menu.NONE, opcion1, Menu.NONE, "Perfil")
                     .setIcon(android.R.drawable.ic_menu_add);
             menu.add(Menu.NONE, opcion2, Menu.NONE, "Historial")
@@ -94,9 +97,10 @@ public class VerificacionDePedidoActivity extends AppCompatActivity {
             menu.add(Menu.NONE, opcion5, Menu.NONE, "Login")
                     //cambiar esto creo xD
                     .setIcon(android.R.drawable.ic_dialog_info);
-        }
+        }*/
         return true;
     }
+
     @Override
     public boolean onOptionsItemSelected(MenuItem item)
     {
@@ -122,6 +126,7 @@ public class VerificacionDePedidoActivity extends AppCompatActivity {
                                 SharedPreferences.Editor editor = prefs.edit();
                                 editor.putString("usuario", "no");
                                 editor.putString("password", "no");
+                                menuDeArriba.setConCuenta(false);
                                 //Concretamos la edicion
                                 editor.commit(); //pa guardar
 

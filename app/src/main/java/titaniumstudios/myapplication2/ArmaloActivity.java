@@ -25,6 +25,8 @@ import java.util.ArrayList;
 
 public class ArmaloActivity extends AppCompatActivity {
 
+    private MenuDeArriba menuDeArriba = new MenuDeArriba();
+
     private ImageView imgPanSuperior;
     private ImageView imgCarneDeRes;
     private ImageView imgCarneDePollo;
@@ -37,7 +39,7 @@ public class ArmaloActivity extends AppCompatActivity {
     private ImageView imgPanInferior;
     private ImageView imgIngredienteElegido;
 
-    private boolean conCuenta = true;
+   // private boolean conCuenta = true;
 
     private double precio = 0.00;
     private TextView lblPrecio;
@@ -67,8 +69,8 @@ public class ArmaloActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_armalo);
 
-        Intent d=getIntent();
-        conCuenta = d.getBooleanExtra("con_cuenta", true);
+       // Intent d=getIntent();
+        //conCuenta = d.getBooleanExtra("con_cuenta", true);
 
         imgPanSuperior = (ImageView) findViewById(R.id.imgPanSuperior);
         imgCarneDeRes = (ImageView) findViewById(R.id.imgCarneRes);
@@ -632,7 +634,7 @@ public class ArmaloActivity extends AppCompatActivity {
                 Intent intent = new Intent(context, VerificacionDePedidoActivity.class);
                 datosDePedido.add(0, Double.toString(precio));
                 intent.putExtra("datos_de_pedido", datosDePedido);
-                intent.putExtra("con_cuenta", conCuenta);
+               // intent.putExtra("con_cuenta", conCuenta);
                 startActivity(intent);
             }
 
@@ -640,7 +642,8 @@ public class ArmaloActivity extends AppCompatActivity {
     }
     @Override
     public boolean onCreateOptionsMenu(Menu menu) {
-        if(conCuenta) {
+        menuDeArriba.menuDeArriba(menu);
+        /*if(conCuenta) {
             menu.add(Menu.NONE, opcion1, Menu.NONE, "Perfil")
                     .setIcon(android.R.drawable.ic_menu_add);
             menu.add(Menu.NONE, opcion2, Menu.NONE, "Historial")
@@ -655,7 +658,7 @@ public class ArmaloActivity extends AppCompatActivity {
             menu.add(Menu.NONE, opcion5, Menu.NONE, "Login")
                     //cambiar esto creo xD
                     .setIcon(android.R.drawable.ic_dialog_info);
-        }
+        }*/
         return true;
     }
 
@@ -685,6 +688,7 @@ public class ArmaloActivity extends AppCompatActivity {
                                 SharedPreferences.Editor editor = prefs.edit();
                                 editor.putString("usuario", "no");
                                 editor.putString("password", "no");
+                                menuDeArriba.setConCuenta(false);
                                 //Concretamos la edicion
                                 editor.commit(); //pa guardar
 

@@ -18,6 +18,8 @@ import java.util.ArrayList;
 
 public class ArmadoActivity extends AppCompatActivity {
 
+    private MenuDeArriba menuDeArriba = new MenuDeArriba();
+
     private ImageView imgHambQueso;
     private ImageView imgHambDoble;
     private ImageView imgHambSinPan;
@@ -33,7 +35,7 @@ public class ArmadoActivity extends AppCompatActivity {
 
     private Context context;
 
-    private boolean conCuenta = true;
+   // private boolean conCuenta = true;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -42,8 +44,8 @@ public class ArmadoActivity extends AppCompatActivity {
 
         context=this;
 
-        Intent d=getIntent();
-        conCuenta = d.getBooleanExtra("con_cuenta", true);
+        //Intent d=getIntent();
+       // conCuenta = d.getBooleanExtra("con_cuenta", true);
 
         imgHambQueso=(ImageView)findViewById(R.id.imgHambQueso);
         imgHambDoble=(ImageView)findViewById(R.id.imgHambDoble);
@@ -57,7 +59,7 @@ public class ArmadoActivity extends AppCompatActivity {
             @Override
             public void onClick(View view) {
                 Intent intent=new Intent(context,VerificacionDePedidoActivity.class);
-                intent.putExtra("con_cuenta", conCuenta);
+          //      intent.putExtra("con_cuenta", conCuenta);
                 ArrayList<String> datosDePedido = new ArrayList<>();
                 datosDePedido.add(0, "30");
                 datosDePedido.add("Pan Tradicional");
@@ -75,7 +77,7 @@ public class ArmadoActivity extends AppCompatActivity {
             @Override
             public void onClick(View view) {
                 Intent intent=new Intent(context,VerificacionDePedidoActivity.class);
-                intent.putExtra("con_cuenta", conCuenta);
+            //    intent.putExtra("con_cuenta", conCuenta);
                 ArrayList<String> datosDePedido = new ArrayList<>();
                 datosDePedido.add(0, "38");
                 datosDePedido.add("Pan Tradicional");
@@ -95,7 +97,7 @@ public class ArmadoActivity extends AppCompatActivity {
             @Override
             public void onClick(View view) {
                 Intent intent=new Intent(context,VerificacionDePedidoActivity.class);
-                intent.putExtra("con_cuenta", conCuenta);
+              //  intent.putExtra("con_cuenta", conCuenta);
                 ArrayList<String> datosDePedido = new ArrayList<>();
                 datosDePedido.add(0, "29");
                 datosDePedido.add("Lechuga");
@@ -112,7 +114,7 @@ public class ArmadoActivity extends AppCompatActivity {
             @Override
             public void onClick(View view) {
                 Intent intent=new Intent(context,VerificacionDePedidoActivity.class);
-                intent.putExtra("con_cuenta", conCuenta);
+                //intent.putExtra("con_cuenta", conCuenta);
                 ArrayList<String> datosDePedido = new ArrayList<>();
                 datosDePedido.add(0, "32");
                 datosDePedido.add("Pan Sin Semillas");
@@ -133,7 +135,7 @@ public class ArmadoActivity extends AppCompatActivity {
             @Override
             public void onClick(View view) {
                 Intent intent=new Intent(context,VerificacionDePedidoActivity.class);
-                intent.putExtra("con_cuenta", conCuenta);
+                //intent.putExtra("con_cuenta", conCuenta);
                 ArrayList<String> datosDePedido = new ArrayList<>();
                 datosDePedido.add(0, "21");
                 datosDePedido.add("Pan Integral");
@@ -151,7 +153,7 @@ public class ArmadoActivity extends AppCompatActivity {
             @Override
             public void onClick(View view) {
                 Intent intent=new Intent(context,VerificacionDePedidoActivity.class);
-                intent.putExtra("con_cuenta", conCuenta);
+                //intent.putExtra("con_cuenta", conCuenta);
                 ArrayList<String> datosDePedido = new ArrayList<>();
                 datosDePedido.add(0,"22");
                 datosDePedido.add("Pan Integral");
@@ -167,7 +169,8 @@ public class ArmadoActivity extends AppCompatActivity {
 
     @Override
     public boolean onCreateOptionsMenu(Menu menu) {
-        if(conCuenta) {
+        menuDeArriba.menuDeArriba(menu);
+        /*if(conCuenta) {
             menu.add(Menu.NONE, opcion1, Menu.NONE, "Perfil")
                     .setIcon(android.R.drawable.ic_menu_add);
             menu.add(Menu.NONE, opcion2, Menu.NONE, "Historial")
@@ -182,7 +185,7 @@ public class ArmadoActivity extends AppCompatActivity {
             menu.add(Menu.NONE, opcion5, Menu.NONE, "Login")
                     //cambiar esto creo xD
                     .setIcon(android.R.drawable.ic_dialog_info);
-        }
+        } */
         return true;
     }
 
@@ -212,6 +215,7 @@ public class ArmadoActivity extends AppCompatActivity {
                                 SharedPreferences.Editor editor = prefs.edit();
                                 editor.putString("usuario", "no");
                                 editor.putString("password", "no");
+                                menuDeArriba.setConCuenta(false);
                                 //Concretamos la edicion
                                 editor.commit(); //pa guardar
 
